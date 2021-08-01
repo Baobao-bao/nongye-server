@@ -1,0 +1,443 @@
+{
+  "type": [{
+      "id": "b705c7f0-eedb-11eb-a1fb-e32411107c43",
+      "createTime": 1627391300076,
+      "updateTime": 1627391300076,
+      "name": "手机数码"
+    },
+    {
+      "id": "bbd63bc0-eedb-11eb-8a27-031bfa412cb4",
+      "createTime": 1627391308152,
+      "updateTime": 1627391308152,
+      "name": "家用电器"
+    }
+  ],
+  "subType": [{
+      "id": "666c9520-eedc-11eb-8c78-6d9622a9a104",
+      "createTime": 1627391594352,
+      "updateTime": 1627391988184,
+      "name": "手机通讯",
+      "parentId": "b705c7f0-eedb-11eb-a1fb-e32411107c43",
+      "parentName": "手机数码"
+    },
+    {
+      "id": "72a58cc0-eedc-11eb-8c28-65d73beec274",
+      "createTime": 1627391614859,
+      "updateTime": 1627391614859,
+      "name": "手机配件",
+      "parentId": "b705c7f0-eedb-11eb-a1fb-e32411107c43",
+      "parentName": "手机数码"
+    },
+    {
+      "id": "761f4a30-eedc-11eb-a148-add3eaa43948",
+      "createTime": 1627391620690,
+      "updateTime": 1627392357171,
+      "name": "摄影摄像",
+      "parentId": "b705c7f0-eedb-11eb-a1fb-e32411107c43",
+      "parentName": "手机数码"
+    },
+    {
+      "id": "79548490-eedc-11eb-8e72-9f36c6c47433",
+      "createTime": 1627391626072,
+      "updateTime": 1627391626072,
+      "name": "影音娱乐",
+      "parentId": "b705c7f0-eedb-11eb-a1fb-e32411107c43",
+      "parentName": "手机数码"
+    },
+    {
+      "id": "7d3456d0-eedc-11eb-8fc1-f1bc5fac04d4",
+      "createTime": 1627391632572,
+      "updateTime": 1627392338853,
+      "name": "数码配件",
+      "parentId": "b705c7f0-eedb-11eb-a1fb-e32411107c43",
+      "parentName": "手机数码"
+    },
+    {
+      "id": "e5ef1980-eedc-11eb-8602-b1da3c8529eb",
+      "createTime": 1627391808279,
+      "updateTime": 1627391808279,
+      "name": "电视",
+      "parentId": "bbd63bc0-eedb-11eb-8a27-031bfa412cb4",
+      "parentName": "家用电器"
+    },
+    {
+      "id": "ea5d2200-eedc-11eb-b28e-6b29cb3acc88",
+      "createTime": 1627391815711,
+      "updateTime": 1627391815711,
+      "name": "空调",
+      "parentId": "bbd63bc0-eedb-11eb-8a27-031bfa412cb4",
+      "parentName": "家用电器"
+    },
+    {
+      "id": "ee4c84a0-eedc-11eb-b11d-f989278b7da4",
+      "createTime": 1627391822313,
+      "updateTime": 1627391822313,
+      "name": "洗衣机",
+      "parentId": "bbd63bc0-eedb-11eb-8a27-031bfa412cb4",
+      "parentName": "家用电器"
+    },
+    {
+      "id": "f1808680-eedc-11eb-b34b-2717ffd185d4",
+      "createTime": 1627391827687,
+      "updateTime": 1627391827687,
+      "name": "冰箱",
+      "parentId": "bbd63bc0-eedb-11eb-8a27-031bfa412cb4",
+      "parentName": "家用电器"
+    },
+    {
+      "id": "f47b7700-eedc-11eb-95f9-cffaf42e1961",
+      "createTime": 1627391832687,
+      "updateTime": 1627391832687,
+      "name": "厨卫大电",
+      "parentId": "bbd63bc0-eedb-11eb-8a27-031bfa412cb4",
+      "parentName": "家用电器"
+    }
+  ],
+  "brand": [{
+      "id": "5175d0a0-eee1-11eb-b983-9bd46f61bc24",
+      "createTime": 1627393706665,
+      "updateTime": 1627393706665,
+      "name": "小米"
+    },
+    {
+      "id": "556d2280-eee1-11eb-9851-49ed46ec7c75",
+      "createTime": 1627393713320,
+      "updateTime": 1627393713320,
+      "name": "华为"
+    },
+    {
+      "id": "5a4b2ae0-eee1-11eb-994a-7faabea9f4ac",
+      "createTime": 1627393721485,
+      "updateTime": 1627393721485,
+      "name": "vivo"
+    },
+    {
+      "id": "64eba830-eee1-11eb-a70e-756f9ccbbb14",
+      "createTime": 1627393739314,
+      "updateTime": 1627393739314,
+      "name": "Apple"
+    }
+  ],
+  "product": [{
+      "id": 2,
+      "createTime": 1627447353459,
+      "updateTime": 1627450999388,
+      "type": [
+        "b705c7f0-eedb-11eb-a1fb-e32411107c43",
+        "7d3456d0-eedc-11eb-8fc1-f1bc5fac04d4"
+      ],
+      "name": "Apple iPhone5",
+      "subTitle": "Apple iPhone 8 Plus 64GB 红色特别版 移动联通电信4G手机",
+      "brand": "5a4b2ae0-eee1-11eb-994a-7faabea9f4ac",
+      "description": "【限时限量抢购】Apple产品年中狂欢节，好物尽享，美在智慧！速来 >> 勾选[保障服务][原厂保2年]，获得AppleCare+全方位服务计划，原厂延保售后无忧。",
+      "imgUrl": "http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20180615/5acc5248N6a5f81cd.jpg",
+      "sn": "234234234",
+      "price": "3999",
+      "marketPrice": "5999",
+      "stock": "999",
+      "unit": "克",
+      "weight": "100",
+      "brandMsg": "vivo",
+      "typeMsg": "手机数码/数码配件"
+    },
+    {
+      "id": 3,
+      "createTime": 1627447361308,
+      "updateTime": 1627450968528,
+      "type": [
+        "b705c7f0-eedb-11eb-a1fb-e32411107c43",
+        "666c9520-eedc-11eb-8c78-6d9622a9a104"
+      ],
+      "name": "Apple iPhone10",
+      "subTitle": "Apple iPhone 8 Plus 64GB 红色特别版 移动联通电信4G手机",
+      "brand": "556d2280-eee1-11eb-9851-49ed46ec7c75",
+      "description": "【限时限量抢购】Apple产品年中狂欢节，好物尽享，美在智慧！速来 >> 勾选[保障服务][原厂保2年]，获得AppleCare+全方位服务计划，原厂延保售后无忧。",
+      "imgUrl": "http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20180615/5acc5248N6a5f81cd.jpg",
+      "sn": "234234234",
+      "price": "3999",
+      "marketPrice": "5999",
+      "stock": "999",
+      "unit": "克",
+      "weight": "100"
+    },
+    {
+      "id": 4,
+      "createTime": 1627450510620,
+      "updateTime": 1627450510620,
+      "type": [
+        "b705c7f0-eedb-11eb-a1fb-e32411107c43",
+        "666c9520-eedc-11eb-8c78-6d9622a9a104"
+      ],
+      "typeMsg": "手机数码/手机通讯",
+      "name": "Apple iPhone11",
+      "subTitle": "Apple iPhone 8 Plus 64GB 红色特别版 移动联通电信4G手机",
+      "brand": "64eba830-eee1-11eb-a70e-756f9ccbbb14",
+      "brandMsg": "Apple",
+      "description": "【限时限量抢购】Apple产品年中狂欢节，好物尽享，美在智慧！速来 >> 勾选[保障服务][原厂保2年]，获得AppleCare+全方位服务计划，原厂延保售后无忧。",
+      "imgUrl": "http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20180615/5acc5248N6a5f81cd.jpg",
+      "sn": "234234234",
+      "price": "3999",
+      "marketPrice": "5999",
+      "stock": "999",
+      "unit": "克",
+      "weight": "100"
+    },
+    {
+      "id": 5,
+      "createTime": 1627450510620,
+      "updateTime": 1627450510620,
+      "type": [
+        "b705c7f0-eedb-11eb-a1fb-e32411107c43",
+        "666c9520-eedc-11eb-8c78-6d9622a9a104"
+      ],
+      "typeMsg": "手机数码/手机通讯",
+      "name": "Apple iPhone11",
+      "subTitle": "Apple iPhone 8 Plus 64GB 红色特别版 移动联通电信4G手机",
+      "brand": "64eba830-eee1-11eb-a70e-756f9ccbbb14",
+      "brandMsg": "Apple",
+      "description": "【限时限量抢购】Apple产品年中狂欢节，好物尽享，美在智慧！速来 >> 勾选[保障服务][原厂保2年]，获得AppleCare+全方位服务计划，原厂延保售后无忧。",
+      "imgUrl": "http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20180615/5acc5248N6a5f81cd.jpg",
+      "sn": "234234234",
+      "price": "3999",
+      "marketPrice": "5999",
+      "stock": "999",
+      "unit": "克",
+      "weight": "100"
+    },
+    {
+      "id": 6,
+      "createTime": 1627450510620,
+      "updateTime": 1627450510620,
+      "type": [
+        "b705c7f0-eedb-11eb-a1fb-e32411107c43",
+        "666c9520-eedc-11eb-8c78-6d9622a9a104"
+      ],
+      "typeMsg": "手机数码/手机通讯",
+      "name": "Apple iPhone11",
+      "subTitle": "Apple iPhone 8 Plus 64GB 红色特别版 移动联通电信4G手机",
+      "brand": "64eba830-eee1-11eb-a70e-756f9ccbbb14",
+      "brandMsg": "Apple",
+      "description": "【限时限量抢购】Apple产品年中狂欢节，好物尽享，美在智慧！速来 >> 勾选[保障服务][原厂保2年]，获得AppleCare+全方位服务计划，原厂延保售后无忧。",
+      "imgUrl": "http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20180615/5acc5248N6a5f81cd.jpg",
+      "sn": "234234234",
+      "price": "3999",
+      "marketPrice": "5999",
+      "stock": "999",
+      "unit": "克",
+      "weight": "100"
+    },
+    {
+      "id": 7,
+      "createTime": 1627450510620,
+      "updateTime": 1627450510620,
+      "type": [
+        "b705c7f0-eedb-11eb-a1fb-e32411107c43",
+        "666c9520-eedc-11eb-8c78-6d9622a9a104"
+      ],
+      "typeMsg": "手机数码/手机通讯",
+      "name": "Apple iPhone11",
+      "subTitle": "Apple iPhone 8 Plus 64GB 红色特别版 移动联通电信4G手机",
+      "brand": "64eba830-eee1-11eb-a70e-756f9ccbbb14",
+      "brandMsg": "Apple",
+      "description": "【限时限量抢购】Apple产品年中狂欢节，好物尽享，美在智慧！速来 >> 勾选[保障服务][原厂保2年]，获得AppleCare+全方位服务计划，原厂延保售后无忧。",
+      "imgUrl": "http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20180615/5acc5248N6a5f81cd.jpg",
+      "sn": "234234234",
+      "price": "3999",
+      "marketPrice": "5999",
+      "stock": "999",
+      "unit": "克",
+      "weight": "100"
+    },
+    {
+      "id": 8,
+      "createTime": 1627450510620,
+      "updateTime": 1627450510620,
+      "type": [
+        "b705c7f0-eedb-11eb-a1fb-e32411107c43",
+        "666c9520-eedc-11eb-8c78-6d9622a9a104"
+      ],
+      "typeMsg": "手机数码/手机通讯",
+      "name": "Apple iPhone11",
+      "subTitle": "Apple iPhone 8 Plus 64GB 红色特别版 移动联通电信4G手机",
+      "brand": "64eba830-eee1-11eb-a70e-756f9ccbbb14",
+      "brandMsg": "Apple",
+      "description": "【限时限量抢购】Apple产品年中狂欢节，好物尽享，美在智慧！速来 >> 勾选[保障服务][原厂保2年]，获得AppleCare+全方位服务计划，原厂延保售后无忧。",
+      "imgUrl": "http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20180615/5acc5248N6a5f81cd.jpg",
+      "sn": "234234234",
+      "price": "3999",
+      "marketPrice": "5999",
+      "stock": "999",
+      "unit": "克",
+      "weight": "100"
+    },
+    {
+      "id": 9,
+      "createTime": 1627450510620,
+      "updateTime": 1627450510620,
+      "type": [
+        "b705c7f0-eedb-11eb-a1fb-e32411107c43",
+        "666c9520-eedc-11eb-8c78-6d9622a9a104"
+      ],
+      "typeMsg": "手机数码/手机通讯",
+      "name": "Apple iPhone11",
+      "subTitle": "Apple iPhone 8 Plus 64GB 红色特别版 移动联通电信4G手机",
+      "brand": "64eba830-eee1-11eb-a70e-756f9ccbbb14",
+      "brandMsg": "Apple",
+      "description": "【限时限量抢购】Apple产品年中狂欢节，好物尽享，美在智慧！速来 >> 勾选[保障服务][原厂保2年]，获得AppleCare+全方位服务计划，原厂延保售后无忧。",
+      "imgUrl": "http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20180615/5acc5248N6a5f81cd.jpg",
+      "sn": "234234234",
+      "price": "3999",
+      "marketPrice": "5999",
+      "stock": "999",
+      "unit": "克",
+      "weight": "100"
+    },
+    {
+      "id": 10,
+      "createTime": 1627450510620,
+      "updateTime": 1627450510620,
+      "type": [
+        "b705c7f0-eedb-11eb-a1fb-e32411107c43",
+        "666c9520-eedc-11eb-8c78-6d9622a9a104"
+      ],
+      "typeMsg": "手机数码/手机通讯",
+      "name": "Apple iPhone11",
+      "subTitle": "Apple iPhone 8 Plus 64GB 红色特别版 移动联通电信4G手机",
+      "brand": "64eba830-eee1-11eb-a70e-756f9ccbbb14",
+      "brandMsg": "Apple",
+      "description": "【限时限量抢购】Apple产品年中狂欢节，好物尽享，美在智慧！速来 >> 勾选[保障服务][原厂保2年]，获得AppleCare+全方位服务计划，原厂延保售后无忧。",
+      "imgUrl": "http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20180615/5acc5248N6a5f81cd.jpg",
+      "sn": "234234234",
+      "price": "3999",
+      "marketPrice": "5999",
+      "stock": "999",
+      "unit": "克",
+      "weight": "100"
+    },
+    {
+      "id": 11,
+      "createTime": 1627450510620,
+      "updateTime": 1627450510620,
+      "type": [
+        "b705c7f0-eedb-11eb-a1fb-e32411107c43",
+        "666c9520-eedc-11eb-8c78-6d9622a9a104"
+      ],
+      "typeMsg": "手机数码/手机通讯",
+      "name": "Apple iPhone11",
+      "subTitle": "Apple iPhone 8 Plus 64GB 红色特别版 移动联通电信4G手机",
+      "brand": "64eba830-eee1-11eb-a70e-756f9ccbbb14",
+      "brandMsg": "Apple",
+      "description": "【限时限量抢购】Apple产品年中狂欢节，好物尽享，美在智慧！速来 >> 勾选[保障服务][原厂保2年]，获得AppleCare+全方位服务计划，原厂延保售后无忧。",
+      "imgUrl": "http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20180615/5acc5248N6a5f81cd.jpg",
+      "sn": "234234234",
+      "price": "3999",
+      "marketPrice": "5999",
+      "stock": "999",
+      "unit": "克",
+      "weight": "100"
+    },
+    {
+      "id": 12,
+      "createTime": 1627450510620,
+      "updateTime": 1627450510620,
+      "type": [
+        "b705c7f0-eedb-11eb-a1fb-e32411107c43",
+        "666c9520-eedc-11eb-8c78-6d9622a9a104"
+      ],
+      "typeMsg": "手机数码/手机通讯",
+      "name": "Apple iPhone11",
+      "subTitle": "Apple iPhone 8 Plus 64GB 红色特别版 移动联通电信4G手机",
+      "brand": "64eba830-eee1-11eb-a70e-756f9ccbbb14",
+      "brandMsg": "Apple",
+      "description": "【限时限量抢购】Apple产品年中狂欢节，好物尽享，美在智慧！速来 >> 勾选[保障服务][原厂保2年]，获得AppleCare+全方位服务计划，原厂延保售后无忧。",
+      "imgUrl": "http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20180615/5acc5248N6a5f81cd.jpg",
+      "sn": "234234234",
+      "price": "3999",
+      "marketPrice": "5999",
+      "stock": "999",
+      "unit": "克",
+      "weight": "100"
+    }
+  ],
+  "user": [{
+      "id": "6ab726f0-ef67-11eb-816b-fd9d7ade18a5",
+      "createTime": 1627451301598,
+      "updateTime": 1627452761027,
+      "username": "zhangsan",
+      "password": "1245",
+      "role": "1",
+      "realname": "张三"
+    },
+    {
+      "id": "8c2176e0-ef69-11eb-a182-5dbff11ed18e",
+      "createTime": 1627452216654,
+      "updateTime": 1627452746637,
+      "username": "zhangsi",
+      "password": "1245",
+      "role": "2",
+      "realname": "张四"
+    },
+    {
+      "id": "24b9d960-ef6f-11eb@",
+      "createTime": 1627454620150,
+      "updateTime": 1627454620150,
+      "username": "zhangwu",
+      "realname": "张五",
+      "password": "1245",
+      "role": "1"
+    },
+    {
+      "id": "410ad790-ef6f-11eb8205",
+      "createTime": 1627454667656,
+      "updateTime": 1627454667656,
+      "username": "zhangsan",
+      "realname": "张三",
+      "password": "1245",
+      "role": "1"
+    },
+    {
+      "id": "d6484180ef6f",
+      "createTime": 1627454918039,
+      "updateTime": 1627456631827,
+      "username": "super",
+      "realname": "超级管理员",
+      "password": "81dc9bdb52d04dc20036dbd8313ed055",
+      "role": "1"
+    },
+    {
+      "id": "dd1855e0ef6f",
+      "createTime": 1627454929470,
+      "updateTime": 1627456063299,
+      "username": "admin",
+      "realname": "管理员",
+      "password": "81dc9bdb52d04dc20036dbd8313ed055",
+      "role": "2"
+    },
+    {
+      "id": "9fa4c250ef71",
+      "createTime": 1627455685364,
+      "updateTime": 1627455685364,
+      "username": "zhangsan2",
+      "realname": "张三",
+      "role": "1"
+    },
+    {
+      "id": "05920d20ef72",
+      "createTime": 1627455856369,
+      "updateTime": 1627455856369,
+      "username": "zhangsan",
+      "realname": "张三",
+      "password": "5eac43aceba42c8757b54003a58277b5",
+      "role": "1"
+    },
+    {
+      "id": "11d56500ef72",
+      "createTime": 1627455876943,
+      "updateTime": 1627455876943,
+      "username": "zhangsan2",
+      "realname": "张三",
+      "password": "81dc9bdb52d04dc20036dbd8313ed055",
+      "role": "1"
+    }
+  ]
+}

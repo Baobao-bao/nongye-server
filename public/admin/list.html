@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>模块操作</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ol {
+            border: 1px solid #ebebeb;
+            padding: 30px;
+            margin-top: 50px;
+        }
+
+        #app {
+            padding: 50px 100px;
+        }
+
+        .item {
+            margin-top: 10px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .item button,
+        .item a {
+            width: 120px;
+            text-align: center;
+        }
+
+        .item .text {
+            /* flex-grow: 1; */
+            width: 80%;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            border-bottom: 1px solid #999;
+            line-height: 1.5;
+        }
+
+        .add {
+            text-align: right;
+            line-height: 100px;
+        }
+
+        .add button {
+            height: 50px;
+            width: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <h3 style="text-align: center;">模块列表</h3>
+
+        <ol>
+            <li class="item" v-for="(item,index) in list" :key="index">
+                <span style="margin-right: 10px;">{{index}}. <span class="text">{{formate(item)}}</span></span>
+                <button @click="del(item,index)" style="color: red">删除</button>
+                <!-- <button><a :href="`./edit.html?name=${item.name}&adminId=${item.adminId}`">编辑</a></button> -->
+            </li>
+            <li class="item" style="color: #999;" v-if="!list.length">暂无数据</li>
+
+        </ol>
+        <h3 class="add">
+
+            <button><a :href="`./add.html?name=${name}&type=add`">添加模块</a></button>
+        </h3>
+
+
+    </div>
+
+    <script src="https://cdn.bootcss.com/axios/0.19.0-beta.1/axios.min.js"></script>
+    <script src="https://cdn.bootcss.com/vue/2.6.10/vue.min.js"></script>
+    <script>
+        // let obj = {"code":666,"msg":"success","list":[{"categoryId":"book002","productId":"793","masterName":"树号","salesCount":27,"slaveName":"跟随西伯利亚心灵诗人的“树号”远征，走出迷途。","inventory":197,"marketPrice":0,"price":4980,"imgUrls":["https://mall.s.maizuo.com/bdca3e8ac36b78c33494a49e40d45de8.jpg","https://mall.s.maizuo.com/2fc564440a933e782f7d4a0e84e28180.jpg"],"imgUrl":"https://mall.s.maizuo.com/93bf07b5c79de442f040e1e0720e089d.jpg"},{"categoryId":"book002","productId":"2874","masterName":"就喜欢你看不惯我又干不掉我的样子2","salesCount":855,"slaveName":"百万级畅销书作者白茶全新力作，吾皇巴扎黑爆笑来袭","inventory":202,"marketPrice":0,"price":3990,"imgUrls":["https://mall.s.maizuo.com/3a159eaffa0c718dc44b8f40db970b15.jpg","https://mall.s.maizuo.com/2fc564440a933e782f7d4a0e84e28180.jpg"],"imgUrl":"https://mall.s.maizuo.com/f8e09a8ca691d20d26ef554ff8cf5a97.png"},{"categoryId":"book002","productId":"2817","masterName":"愿所有美好如期而至","salesCount":1224,"slaveName":"十点读书  |  无论是激情奋斗，还是温柔相爱，都在本书中徐徐道来","inventory":160,"marketPrice":0,"price":3900,"imgUrls":["https://mall.s.maizuo.com/03c3a51138bce4d3b1dca9f67a5d56a5.jpg","https://mall.s.maizuo.com/2fc564440a933e782f7d4a0e84e28180.jpg"],"imgUrl":"https://mall.s.maizuo.com/0c4f7012a1c3374073d2b122e9ee65cd.png"},{"categoryId":"book003","productId":"64872780","masterName":"张爱玲全集05：小团圆（2019版）","salesCount":438,"slaveName":"全新精装，臻美典藏，月亮构筑起的永恒传奇","inventory":6,"marketPrice":0,"price":4250,"imgUrls":["https://mall.s.maizuo.com/c381cd8ba014802dc8dc3e4bf2c10118.png","https://mall.s.maizuo.com/c5fee467d9e2579c2456a2da7a674ddd.png","https://mall.s.maizuo.com/7403348f1fac6d0f7629075a51dc3672.png","https://mall.s.maizuo.com/9f89a0e467af955d7ca187f1db9761ff.png"],"imgUrl":"https://mall.s.maizuo.com/2fcfe55347790946aa89fff09f7aa2a8.png"},{"categoryId":"book004","productId":"507","masterName":"优势谈判心理学","salesCount":477,"slaveName":"斯坦福与凯洛格商学院30 年突破性研究成果集结成书","inventory":43,"marketPrice":0,"price":4550,"imgUrls":["https://mall.s.maizuo.com/767c6eb83f76d963e84d7beba6e7a87c.jpg","https://mall.s.maizuo.com/767c6eb83f76d963e84d7beba6e7a87c.jpg"],"imgUrl":"https://mall.s.maizuo.com/133346bd02a1092159230fa04c3dab37.jpg"},{"categoryId":"book004","productId":"474","masterName":"当谎言遇上套路","salesCount":216,"slaveName":"国际测谎专家教你分辨真伪、立破谎言","inventory":72,"marketPrice":0,"price":3480,"imgUrls":["https://mall.s.maizuo.com/98ebecb3725f197f0e66df64daf14a79.jpg","https://mall.s.maizuo.com/2fc564440a933e782f7d4a0e84e28180.jpg"],"imgUrl":"https://mall.s.maizuo.com/eadacd03a58c65fdf1a8fcfa075b1d2b.jpg"},{"categoryId":"book004","productId":"1527","masterName":"蔡康永的说话之道2","salesCount":595,"slaveName":"蔡康永新领悟的说话之道2，演练说话就是演练和别人相处","inventory":0,"marketPrice":0,"price":3080,"imgUrls":["https://mall.s.maizuo.com/ac58c35ab0bbbda7e9d07bc5f5c046e0.jpg","https://mall.s.maizuo.com/2fc564440a933e782f7d4a0e84e28180.jpg"],"imgUrl":"https://mall.s.maizuo.com/9ac2ae847037945a58c4fbb5096c56b5.jpg"},{"categoryId":"book005","productId":"3052","masterName":"“咕噜一家”系列童书（共4本）","salesCount":855,"slaveName":"适读人群：3-6年级小学生 丨 德国青少年文学奖获得者菲利普·阿德代表作！","inventory":100,"marketPrice":0,"price":10250,"imgUrls":["https://mall.s.maizuo.com/04eb3a79901bcb7b20f99be08a730c1d.jpg","https://mall.s.maizuo.com/2fc564440a933e782f7d4a0e84e28180.jpg"],"imgUrl":"https://mall.s.maizuo.com/d787a89ceb95b85751011a950caf8505.png"},{"categoryId":"book005","productId":"3497","masterName":"给孩子读诗","salesCount":531,"slaveName":"精选100位诗人的伟大诗歌，集结世界各地70位插画师，筛选39位杰出翻译家的完美译本，完成一诗一画的完美搭配","inventory":3,"marketPrice":0,"price":5890,"imgUrls":["https://mall.s.maizuo.com/d4ebfe085cf2e45eab79e9b59a5a6b9e.jpg","https://mall.s.maizuo.com/2fc564440a933e782f7d4a0e84e28180.jpg"],"imgUrl":"https://mall.s.maizuo.com/b8aa6213bf91cba210fea4bad9a6cedd.png"},{"categoryId":"book005","productId":"384","masterName":"神秘事件调查局系列","salesCount":351,"slaveName":"套装共6册","inventory":56,"marketPrice":0,"price":9480,"imgUrls":["https://mall.s.maizuo.com/9558c7a00061ef4298b905753848e5d2.jpg","https://mall.s.maizuo.com/2fc564440a933e782f7d4a0e84e28180.jpg"],"imgUrl":"https://mall.s.maizuo.com/c0f27dcb53182716a7ff29e77cc0419e.jpg"},{"categoryId":"book006","productId":"32402212","masterName":"《彼得·潘》+《爱的教育》","salesCount":262,"slaveName":"充满童趣，陶冶心灵的儿童文学作品","inventory":8,"marketPrice":0,"price":6080,"imgUrls":["https://mall.s.maizuo.com/4a6579c05f50a976b61d22023586a0eb.jpg","https://mall.s.maizuo.com/cdc0ff3a47853544c06a50c398984ca8.jpg","https://mall.s.maizuo.com/6a2847eaf80d362af8a84786c8b214a8.jpg","https://mall.s.maizuo.com/37af2391c465bbdc8f53430fb3517dec.jpg"],"imgUrl":"https://mall.s.maizuo.com/2c6bb7f7ee7e4349550692e12c3b4a19.png"},{"categoryId":"book006","productId":"978","masterName":"亲近母语：日有所诵（小学1年级大字珍藏版）","salesCount":369,"slaveName":"一套为孩子们量身定做的儿童诵读教材","inventory":55,"marketPrice":0,"price":3290,"imgUrls":["https://mall.s.maizuo.com/f228b25d857bbfe5ac3fc9e1f28ec74e.jpg","https://mall.s.maizuo.com/2fc564440a933e782f7d4a0e84e28180.jpg"],"imgUrl":"https://mall.s.maizuo.com/01a846f51f48a7e682ac82e40479f9e6.jpg"},{"categoryId":"book006","productId":"904","masterName":"四大名著阅读指导版：西游记（上、下）","salesCount":324,"slaveName":"本书在青少年读者的特殊性的基础上，将该著作重新整理，配以专业阅读指导","inventory":60,"marketPrice":0,"price":6180,"imgUrls":["https://mall.s.maizuo.com/4df9d51b107241aed753fc0efa1664c9.jpg","https://mall.s.maizuo.com/2fc564440a933e782f7d4a0e84e28180.jpg"],"imgUrl":"https://mall.s.maizuo.com/f2611054ff976748db11082748177aee.jpg"},{"categoryId":"book007","productId":"510","masterName":"性感资本","salesCount":99,"slaveName":"继波伏娃《第二性》后又一本女性“圣经”","inventory":87,"marketPrice":3200,"price":3040,"imgUrls":["https://mall.s.maizuo.com/f38cbc12f28170c9dd85fc63bc7a3b33.jpg","https://mall.s.maizuo.com/2fc564440a933e782f7d4a0e84e28180.jpg"],"imgUrl":"https://mall.s.maizuo.com/af51b145447e5077269b667432d5efa0.jpg"},{"categoryId":"book007","productId":"2816","masterName":"未来简史","salesCount":540,"slaveName":"尤瓦尔赫拉利 著  |  人类的新议题","inventory":40,"marketPrice":0,"price":5890,"imgUrls":["https://mall.s.maizuo.com/159552ecc75d54b665814cf545cdd634.jpg","https://mall.s.maizuo.com/2fc564440a933e782f7d4a0e84e28180.jpg"],"imgUrl":"https://mall.s.maizuo.com/f7bf4bfa6035c19d0db33671d05a4257.png"},{"categoryId":"book008","productId":"2960","masterName":"「预订」读者杂志   1年共24期","salesCount":828,"slaveName":"当月下单成功，下下月起订，起订月份开始发货","inventory":396,"marketPrice":0,"price":24900,"imgUrls":["https://mall.s.maizuo.com/8ce10906ed0f3c2770fda4772e9a1482.jpg","https://mall.s.maizuo.com/2fc564440a933e782f7d4a0e84e28180.jpg"],"imgUrl":"https://mall.s.maizuo.com/8516c96e8d65be70fa1db33a95927e8d.png"},{"categoryId":"book008","productId":"2963","masterName":"「预订」孤独星球  一年共12期","salesCount":495,"slaveName":"15号前下单，下月起订；16号后下单，下下月起订","inventory":443,"marketPrice":0,"price":36000,"imgUrls":["https://mall.s.maizuo.com/89d8054346c812f23fe3043297b25ed2.jpg","https://mall.s.maizuo.com/2fc564440a933e782f7d4a0e84e28180.jpg"],"imgUrl":"https://mall.s.maizuo.com/e3ce9a059c7f78f991480702c2a4aa5a.png"}]}
+        new Vue({
+            el: '#app',
+            data: {
+                name: '',
+                list: []
+            },
+
+            created() {
+                this.getList();
+            },
+
+            methods: {
+                search(event) {
+                    this.getList(this.name);
+                },
+                del(item, index) {
+                    let url = `/admin/del`;
+                    let data = {
+                        name: item.name,
+                        adminId: item.adminId
+                    }
+
+                    let ok = window.confirm('确定删除吗');
+                    if (ok) {
+                        axios.post(url, data).then(res => {
+                            this.list.splice(index, 1);
+                        }).catch(err => {
+                            console.log('err', err);
+                        })
+                    }
+                },
+                formate(item) {
+                    let str = JSON.stringify(item);
+                    return str;
+                },
+                getList(name) {
+                    let url = `/admin/all`;
+                    axios.get(url).then((res) => {
+                        this.list = res.data.list;
+                    }).catch((err) => {
+                        console.log('err', err);
+                    });
+                }
+            }
+
+        })
+    </script>
+
+</body>
+
+</html>

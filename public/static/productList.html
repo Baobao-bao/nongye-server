@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" name="viewport">
+    <!-- import CSS -->
+    <link rel="stylesheet" href="../style/index.css">
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <style>
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app" style="margin-top: 80px;">
+        <el-card class="box-card" style="width: 80%;margin: 0 auto;">
+            <div slot="header">
+                <span>书籍列表</span>
+                <a style="float: right;margin-right: 100px;" href="./productAdd.html">添加书籍</a>
+            </div>
+
+            <el-table :data="tableData" stripe style="width: 100%">
+                <el-table-column prop="masterName" label="主名" align="center" min-width="180">
+                </el-table-column>
+                <el-table-column prop="slaveName" label="副名" align="center" min-width="580">
+                </el-table-column>
+                <el-table-column prop="price" label="价格" align="center" min-width="180">
+                </el-table-column>
+
+                <el-table-column fixed="right" label="操作" min-width="100">
+                    <template slot-scope="scope">
+                        <!-- <el-button @click="handleClick(scope.row)" type="text" size="small">查看</el-button> -->
+                        <el-button type="text" size="small" @click="del(scope.row._id,scope.$index)">删除</el-button>
+                    </template>
+                </el-table-column>
+
+            </el-table>
+        </el-card>
+    </div>
+</body>
+<!-- import Vue before Element -->
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<!-- import JavaScript -->
+<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+<script src="https://cdn.bootcss.com/axios/0.19.0-beta.1/axios.js"></script>
+<script>
+    new Vue({
+        el: '#app',
+        data: function () {
+            return {
+                tableData: [{
+                    slaveName: '《嫌疑人X的献身》系列开篇大作，日文版销量超200万册。《名侦探柯南》作者推荐',
+                    masterName: '东野圭吾：侦探伽利略',
+                    price: '42.9'
+                }, {
+                    slaveName: '《嫌疑人X的献身》系列开篇大作，日文版销量超200万册。《名侦探柯南》作者推荐',
+                    masterName: '东野圭吾：侦探伽利略',
+                    price: '42.9'
+                }]
+            }
+        },
+
+        created() {
+            this.getList();
+        },
+
+        methods: {
+
+            async getList(data) {
+                let url = '/product/list';
+                let res = await axios.post(url, data);
+                this.tableData = res.data.list;
+            },
+
+            async del(_id,$index) {
+                let url = '/product/del';
+                let res = await axios.post(url, { _id });
+                this.tableData.splice($index, 1);
+            }
+        }
+    })
+</script>
+
+</html>

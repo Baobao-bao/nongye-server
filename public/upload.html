@@ -1,0 +1,30 @@
+<body>
+  <div>
+      <form>
+          <input type="text" class="filename">
+          <input type="file" name="file" class="imgPath">
+          <div class="submitBtn">提交</div>
+      </form>
+  </div>
+  <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript">
+      $(document).ready(function(){
+          $('.submitBtn').on('click',() => {
+              var params = new FormData();
+              params.append('name',$('.filename').val())
+              params.append('file',$('.imgPath')[0].files[0])
+              $.ajax({
+                  data: params,
+                  url: '/upload/one',
+                  type: 'post',
+                  processData: false,
+                  contentType: false,
+                  success: function(res) {
+                      console.log(res)
+                  }
+              })
+          })
+      })
+  </script>
+  
+</body>

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <!-- import CSS -->
+  <link rel="stylesheet" href="./style/index2.css">
+  <title>测试接口</title>
+  <style>
+    #app {
+      display: flex;
+      justify-content: space-around;
+    }
+
+    .docs,
+    .test {
+      flex-grow: 1;
+    }
+
+    .test {
+      margin-left: 20px;
+    }
+
+    pre {
+      background: #ebebeb;
+      padding: 20px 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="app" style="width: 80%;">
+    <div class="docs">
+      <div class="el-card" style="min-height: 500px;">
+        <div slot="header">
+          <span>{{name}}</span>
+        </div>
+        <ol>
+          <li>
+            <span>接口地址</span>
+            <pre>{{url}}</pre>
+          </li>
+          <li>
+            <span>请求参数</span>
+            <pre>{{params}}</pre>
+          </li>
+          <li>
+            <p>响应数据</p>
+            <p v-html="resp">响应数据</p>
+          </li>
+        </ol>
+      </div>
+    </div>
+
+
+    <div class="test">
+      <div class="el-card">
+        <div slot="header">
+          <span>测试接口</span>
+        </div>
+
+        <div class="el-form" label-width="80px">
+          <div class="el-form-item" label="请求地址">
+            <span class="label">接口地址</span>
+            <input v-model="url" @keydown.native.enter="onSubmit" />
+          </div>
+
+          <div class="el-form-item" v-for="(value,key) in paramObj" :label="key">
+            <span class="label">{{key}}</span>
+            <input @keydown.native.enter="onSubmit" v-model="form[key]" :placeholder="'请输入'+value" />
+          </div>
+          <div class="el-form-item">
+            <button type="primary" @click="onSubmit" style="margin-left:100px;">发送请求</button>
+            <!-- <button>取消</button> -->
+          </div>
+        </div>
+      </div>
+      <div class="el-card" style="margin-top: 20px;min-height:300px;">
+        <div slot="header">
+          <span>响应数据</span>
+        </div>
+        <div v-html="res">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/js/vue.js"></script>
+  <script>
+    new Vue({
+      el: '#app',
+      data: {
+        // 参数名称
+        name: '',
+        url: '',
+        // 参数字符串
+        params: '',
+        // 参数对象
+        paramObj: {},
+        // 提交到后台的数据
+        form: {},
+        // 模拟响应数据
+        resp: '',
+        // 真实的响应数据
+        res: ''
+      },
+
+      created() {
+        let url = this.getRequest('url');
+        let params = this.getRequest('params');
+        let name = this.getRequest('name');
+        let resp = this.getRequest('resp');
+        this.name = name;
+        this.url = url;
+        this.params = params.replace(/,/g, ",\n");;
+        this.paramObj = JSON.parse(params);
+        this.resp = this.formatResp(resp);
+        document.title = name;
+      },
+
+      mounted() {
+        let name = this.getRequest('name');
+        document.title = name;
+      },
+
+      methods: {
+        onSubmit() { 
+          axios.post(this.url, this.form).then(res => { 
+            let data = JSON.stringify(res.data);
+            this.res = this.formatRes(data);
+          }).catch(err => {
+            console.log(err);
+            this.res = err.message;
+          })
+        },
+        formatRes(data) {
+          var jdata = JSON.stringify(JSON.parse(data), null, 4);
+          return `<pre style="overflow:auto;">${jdata}</pre>`;
+        },
+
+        formatResp(objStr) {
+          let obj = JSON.parse(objStr);
+          let data = {
+            ...obj,
+            code: 6666,
+            msg: 'success'
+          }
+          var jdata = JSON.stringify(data, null, 4);
+          return `<pre style="overflow:auto;">${jdata}</pre>`;
+        },
+
+        getRequest(name) {
+          var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+          var reg_rewrite = new RegExp("(^|/)" + name + "/([^/]*)(/|$)", "i");
+
+          var r = decodeURI(window.location.search).substr(1).match(reg);
+          var q = window.location.pathname.substr(1).match(reg_rewrite);
+          if (r != null) {
+            return unescape(r[2]);
+          } else if (q != null) {
+            return unescape(q[2]);
+          } else {
+            return null;
+          }
+        }
+      },
+    })
+  </script>
+  <script src="/js/axios.js"></script>
+
+</body>
+</html>

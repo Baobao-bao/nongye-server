@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>添加和编辑数据</title>
+  <style>
+
+  </style>
+</head>
+
+<body>
+  <div id="app">
+    <h3>{{type==='add'?'添加':'编辑'}}数据</h3>
+    <p>
+      模块名称: <input type="text" v-model="moduleName" placeholder="请输入模块名称并回车">
+    </p>
+    <p v-for="(value,key) in form" :key="key" v-if="type=='add'&&!key.match('Id') || type==='edit'">
+      {{key}}: <input type="text" v-model="form[key]" @keydown.enter="submit" placeholder="请输入名称并回车">
+    </p>
+    <!-- <p>
+      输入name: <input type="text" v-model="form.name" @keydown.enter="submit" placeholder="请输入名称并回车">
+
+    </p> -->
+    <p v-if="show">
+      {{`成功${type==='add'?'添加':'更新'}了${num}条数数据`}}
+    </p>
+    <p v-else style="color: red;">
+      {{msg}}
+    </p>
+
+    <p>
+      <button style="width: 100px;margin-top: 50px;" @click="submit">提交</button>
+      <button style="width: 100px;margin-left: 20px;margin-top: 50px;">
+        <a :href="`./list.html?moduleName=${moduleName}`">查看列表</a>
+      </button>
+    </p>
+  </div>
+
+  <script src="https://cdn.bootcss.com/vue/2.6.10/vue.min.js"></script>
+  <script>
+    new Vue({
+      el: '#app',
+      data: {
+        type: 'add', // add或者edit
+        show: false,
+        moduleName: '',
+        msg: '',
+        num: 0,
+        //  参数
+        form: {
+          name: '',
+          // moduleId
+        }
+      },
+
+      beforeCreate() {},
+
+      created() {
+        // let url = location.search;
+        // this.moduleName = url.replace(/(.*=)(.*)/, '$2');
+        this.moduleName = this.getParam('name');
+        this.type = this.getParam('type');
+        this.form[this.moduleName + 'Id'] = this.getParam(this.moduleName + 'Id');
+
+      },
+
+      methods: {
+        submit() {
+          let url = `/${this.moduleName}/${this.type}`;
+          axios.post(url, this.form).then((res) => {
+            if (res.data.code == 666) {
+              this.num = this.num + 1;
+              this.list = res.data.list;
+              this.show = true;
+            } else {
+              this.show = false;
+              this.msg = '错误信息:' + res.data.msg;
+            }
+
+          }).catch((err) => {
+            this.show = false;
+            console.log('err', err);
+            this.msg = res.err;
+          });
+        },
+
+        getParam(name) {
+          var reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)', 'i');
+          var r = window.location.search.substr(1).match(reg);
+          if (r != null) {
+            return unescape(r[2]);
+          }
+          return null;
+        }
+      }
+
+    })
+  </script>
+  <script src="https://cdn.bootcss.com/axios/0.19.0-beta.1/axios.min.js"></script>
+</body>
+
+</html>

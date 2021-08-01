@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" name="viewport">
+    <!-- import CSS -->
+    <link rel="stylesheet" href="../style/index.css">
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <style>
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <el-card class="box-card">
+            <div slot="header">
+                <span>添加书籍</span>
+                <el-select v-model="categoryId" placeholder="请选择类型">
+                    <el-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value">
+                    </el-option>
+                </el-select>
+                <span>{{categoryId}}</span>
+
+
+                <a href="./productList.html" style="float:right;margin-right: 30px;">书籍列表</a>
+            </div>
+            <el-input type="textarea" :rows="20" v-model="formData"></el-input>
+            <div class="footer">
+                <el-button type="primary" @click="addOne">添加一个</el-button>
+                <el-button type="primary" @click="addAll" style="margin-left: 20px;">添加多个</el-button>
+            </div>
+        </el-card>
+    </div>
+</body>
+<!-- import Vue before Element -->
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<!-- import JavaScript -->
+<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+<script src="https://cdn.staticfile.org/axios/0.19.0-beta.1/axios.js"></script>
+<script>
+   axios.defaults.baseURL='http://132.232.87.95:3001';
+
+    new Vue({
+        el: '#app',
+        data: function () {
+            return {
+                formData: '',
+                options: [],
+                categoryId: '',
+            }
+        },
+
+        created() {
+            this.getCategory();
+        },
+
+        methods: {
+            getCategory() {
+                let url = '/product/category';
+                axios.get(url).then(res => {
+                    this.options = res.data.list.map(item => {
+                        return {
+                            label: item.name,
+                            value: item._id
+                        }
+                    });
+                })
+            },
+
+            addAll() {
+                let obj = JSON.parse(this.formData);
+                // 清空数据
+                this.formData = '';
+                let list = obj.data.list;
+                list.forEach(async item => {
+                    let url = '/product/add';
+                    let data = {
+                        categoryId: this.categoryId,
+                        masterName: item.masterName,
+                        salesCount: item.salesCount,
+                        slaveName: item.slaveName,
+                        imgUrl: item.sku.imgUrl,
+                        // 库存
+                        inventory: item.sku.inventory,
+                        marketPrice: item.sku.marketPrice,
+                        price: item.sku.price
+                    }
+                    let res = await axios.post(url, data);
+                    if (res.data.code === 666) {
+                        console.log('添加成功');
+                    }
+                });
+            },
+
+            async addOne() {
+                let data = JSON.parse(this.formData);
+                // 添加类别id
+                data.categoryId = this.categoryId;
+                let url = '/product/add';
+                let res = await axios.post(url, data);
+                console.log(res.data.code);
+                if (res.data.code === 666) {
+                    console.log('添加成功');
+                }
+            }
+        },
+    })
+</script>
+
+</html>

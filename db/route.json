@@ -1,0 +1,10 @@
+{
+
+    "/data/*": "/$1",
+
+    "/:resource/:id/show": "/:resource/:id",
+
+    "/data1/:name": "/data1?name=:name",
+
+    "/:anyArray\\?id=:id": "/:anyArray/:id"
+}

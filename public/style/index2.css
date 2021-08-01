@@ -1,0 +1,129 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background: #ebebeb;
+}
+
+li {
+  list-style: none;
+  margin-top: 15px;
+}
+
+li:hover {
+  color: #ff5f16;
+}
+
+a:hover {
+  color: #ff5f16;
+}
+
+.title {
+  margin-top: 30px;
+  font-size: 30px;
+  text-align: center;
+}
+
+.container {
+  margin: 0 auto;
+  /* margin-top: 30px; */
+  display: flex;
+  min-width: 80%;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  padding-right: 20px;
+}
+
+.box {
+  box-sizing: border-box;
+  background: #ffffff;
+  margin-left: 20px;
+  border: 1px solid #ebebeb;
+  border-radius: 3px;
+  transition: .2s;
+  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, .1);
+  width: 350px;
+  margin-top: 20px;
+  padding: 20px;
+  flex-grow: 1
+}
+
+#app {
+  margin: 20px auto;
+}
+
+.vsn {
+  visibility: hidden;
+}
+
+.el-card {
+  border: 1px solid #EBEEF5;
+  background-color: #FFF;
+  color: #303133;
+  -webkit-transition: .3s;
+  transition: .3s;
+  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, .1);
+  padding: 20px;
+}
+
+input {
+  -webkit-appearance: none;
+  background-color: #FFF;
+  background-image: none;
+  border-radius: 4px;
+  border: 1px solid #DCDFE6;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  color: #606266;
+  display: inline-block;
+  font-size: inherit;
+  height: 40px;
+  line-height: 40px;
+  outline: 0;
+  padding: 0 15px;
+  -webkit-transition: border-color .2s cubic-bezier(.645, .045, .355, 1);
+  transition: border-color .2s cubic-bezier(.645, .045, .355, 1);
+}
+
+button {
+  color: #FFF;
+  background-color: #409EFF;
+  border-color: #409EFF;
+  display: inline-block;
+  line-height: 1;
+  white-space: nowrap;
+  cursor: pointer;
+  border: 1px solid #DCDFE6;
+  color: #fff;
+  -webkit-appearance: none;
+  text-align: center;
+  box-sizing: border-box;
+  outline: 0;
+  margin: 0;
+  -webkit-transition: .1s;
+  transition: .1s;
+  font-weight: 500;
+  padding: 12px 20px;
+  font-size: 14px;
+  border-radius: 4px;
+  margin-top: 22px;
+}
+
+pre {
+  margin-top: 10px;
+}
+
+.el-form-item {
+  padding: 10px 0;
+  height: 40px;
+  display: flex;
+  align-items: center;
+}
+
+.el-form-item .label {
+  width: 80px;
+  text-align: right;
+  padding-right: 20px;
+}

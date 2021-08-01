@@ -1,0 +1,126 @@
+{
+    "type": [
+      {
+        "id": "b705c7f0-eedb-11eb-a1fb-e32411107c43",
+        "createTime": 1627391300076,
+        "updateTime": 1627391300076,
+        "name": "手机数码"
+      },
+      {
+        "id": "bbd63bc0-eedb-11eb-8a27-031bfa412cb4",
+        "createTime": 1627391308152,
+        "updateTime": 1627391308152,
+        "name": "家用电器"
+      }
+    ],
+    "subType": [
+      {
+        "id": "666c9520-eedc-11eb-8c78-6d9622a9a104",
+        "createTime": 1627391594352,
+        "updateTime": 1627391988184,
+        "name": "手机通讯",
+        "parentId": "b705c7f0-eedb-11eb-a1fb-e32411107c43",
+        "parentName": "手机数码"
+      },
+      {
+        "id": "72a58cc0-eedc-11eb-8c28-65d73beec274",
+        "createTime": 1627391614859,
+        "updateTime": 1627391614859,
+        "name": "手机配件",
+        "parentId": "b705c7f0-eedb-11eb-a1fb-e32411107c43",
+        "parentName": "手机数码"
+      },
+      {
+        "id": "761f4a30-eedc-11eb-a148-add3eaa43948",
+        "createTime": 1627391620690,
+        "updateTime": 1627392357171,
+        "name": "摄影摄像",
+        "parentId": "b705c7f0-eedb-11eb-a1fb-e32411107c43",
+        "parentName": "手机数码"
+      },
+      {
+        "id": "79548490-eedc-11eb-8e72-9f36c6c47433",
+        "createTime": 1627391626072,
+        "updateTime": 1627391626072,
+        "name": "影音娱乐",
+        "parentId": "b705c7f0-eedb-11eb-a1fb-e32411107c43",
+        "parentName": "手机数码"
+      },
+      {
+        "id": "7d3456d0-eedc-11eb-8fc1-f1bc5fac04d4",
+        "createTime": 1627391632572,
+        "updateTime": 1627392338853,
+        "name": "数码配件",
+        "parentId": "b705c7f0-eedb-11eb-a1fb-e32411107c43",
+        "parentName": "手机数码"
+      },
+      {
+        "id": "e5ef1980-eedc-11eb-8602-b1da3c8529eb",
+        "createTime": 1627391808279,
+        "updateTime": 1627391808279,
+        "name": "电视",
+        "parentId": "bbd63bc0-eedb-11eb-8a27-031bfa412cb4",
+        "parentName": "家用电器"
+      },
+      {
+        "id": "ea5d2200-eedc-11eb-b28e-6b29cb3acc88",
+        "createTime": 1627391815711,
+        "updateTime": 1627391815711,
+        "name": "空调",
+        "parentId": "bbd63bc0-eedb-11eb-8a27-031bfa412cb4",
+        "parentName": "家用电器"
+      },
+      {
+        "id": "ee4c84a0-eedc-11eb-b11d-f989278b7da4",
+        "createTime": 1627391822313,
+        "updateTime": 1627391822313,
+        "name": "洗衣机",
+        "parentId": "bbd63bc0-eedb-11eb-8a27-031bfa412cb4",
+        "parentName": "家用电器"
+      },
+      {
+        "id": "f1808680-eedc-11eb-b34b-2717ffd185d4",
+        "createTime": 1627391827687,
+        "updateTime": 1627391827687,
+        "name": "冰箱",
+        "parentId": "bbd63bc0-eedb-11eb-8a27-031bfa412cb4",
+        "parentName": "家用电器"
+      },
+      {
+        "id": "f47b7700-eedc-11eb-95f9-cffaf42e1961",
+        "createTime": 1627391832687,
+        "updateTime": 1627391832687,
+        "name": "厨卫大电",
+        "parentId": "bbd63bc0-eedb-11eb-8a27-031bfa412cb4",
+        "parentName": "家用电器"
+      }
+    ],
+    "brand": [
+      {
+        "id": "5175d0a0-eee1-11eb-b983-9bd46f61bc24",
+        "createTime": 1627393706665,
+        "updateTime": 1627393706665,
+        "name": "小米"
+      },
+      {
+        "id": "556d2280-eee1-11eb-9851-49ed46ec7c75",
+        "createTime": 1627393713320,
+        "updateTime": 1627393713320,
+        "name": "华为"
+      },
+      {
+        "id": "5a4b2ae0-eee1-11eb-994a-7faabea9f4ac",
+        "createTime": 1627393721485,
+        "updateTime": 1627393721485,
+        "name": "vivo"
+      },
+      {
+        "id": "64eba830-eee1-11eb-a70e-756f9ccbbb14",
+        "createTime": 1627393739314,
+        "updateTime": 1627393739314,
+        "name": "Apple"
+      }
+    ],
+    "product": [],
+    "user": []
+  }

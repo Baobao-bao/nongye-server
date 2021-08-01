@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>编辑模块</title>
+  <style>
+
+  </style>
+</head>
+
+<body>
+  <div id="app">
+    <h3>编辑模块</h3>
+
+    <p>
+      adminId: <input type="text" value="form.adminId" disabled>
+    </p>
+    <p>
+      旧名称: <input type="text" v-model="form.oldName">
+    </p>
+    <p>
+      新名称: <input type="text" v-model="form.newName" @keydown.enter="submit">
+    </p>
+    </p>
+    {{`成功更新了${num}条数据`}}
+    </p>
+
+    <p>
+      <button style="width: 100px;margin-top: 50px;" @click="submit">提交</button>
+      <button style="width: 100px;margin-left: 20px;margin-top: 50px;">
+        <a :href="`./list.html?moduleName=${moduleName}`">查看列表</a>
+      </button>
+    </p>
+  </div>
+
+  <script src="https://cdn.bootcss.com/vue/2.6.10/vue.min.js"></script>
+  <script>
+    new Vue({
+      el: '#app',
+      data: {
+        type: 'add', // add或者edit
+        show: true,
+        moduleName: 'admin',
+        num: 0,
+        //  参数
+        form: {
+          adminId: '',
+          oldName: '',
+          newName: ''
+        }
+      },
+
+      beforeCreate() {},
+
+      created() {
+        this.form.oldName = this.getParam('name');
+        this.form.adminId = this.getParam('adminId');
+      },
+
+      methods: {
+        submit() {
+          let url = '/admin/edit';
+          axios.post(url, this.form).then((res) => {
+            this.num = this.num + 1;
+            this.list = res.data.list;
+          }).catch((err) => {
+            console.log('err', err);
+          });
+        },
+
+        getParam(name) {
+          var reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)', 'i');
+          var r = window.location.search.substr(1).match(reg);
+          if (r != null) {
+            return unescape(r[2]);
+          }
+          return null;
+        }
+      }
+
+    })
+  </script>
+  <script src="https://cdn.bootcss.com/axios/0.19.0-beta.1/axios.min.js"></script>
+</body>
+
+</html>
