@@ -9,7 +9,8 @@ module.exports = {
       name: "添加",
       service: brand["add"],
       params: {
-        name: "brand"
+        name: "品牌名称",
+        company: '所属公司'
       }
     },
     // {

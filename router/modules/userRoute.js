@@ -8,7 +8,8 @@ module.exports = {
       name: "添加",
       service: user["add"],
       params: {
-        username: "user",
+        username: "username",
+        realname: "realname",
         password: 'password',
         role: 'role'
       }
@@ -48,15 +49,16 @@ module.exports = {
       name: "修改",
       service: user["edit"],
       params: {
-        id: "id"
+        id: "id",
+        xx: 'xx'
       }
     },
     {
       path: "/del",
-      name: "测试",
+      name: "删除",
       service: user["del"],
       params: {
-        id: "id"
+        id: "id",
       }
     }
   ]
