@@ -99,26 +99,30 @@
     {
       "id": "5175d0a0-eee1-11eb-b983-9bd46f61bc24",
       "createTime": 1627393706665,
-      "updateTime": 1627393706665,
-      "name": "小米"
+      "updateTime": 1627909094590,
+      "name": "小米",
+      "company": "小米有限公司"
     },
     {
       "id": "556d2280-eee1-11eb-9851-49ed46ec7c75",
       "createTime": 1627393713320,
-      "updateTime": 1627393713320,
-      "name": "华为"
+      "updateTime": 1627909102383,
+      "name": "华为",
+      "company": "华为集团"
     },
     {
       "id": "5a4b2ae0-eee1-11eb-994a-7faabea9f4ac",
       "createTime": 1627393721485,
-      "updateTime": 1627393721485,
-      "name": "vivo"
+      "updateTime": 1627909110639,
+      "name": "vivo",
+      "company": "vivo集团"
     },
     {
       "id": "64eba830-eee1-11eb-a70e-756f9ccbbb14",
       "createTime": 1627393739314,
-      "updateTime": 1627393739314,
-      "name": "Apple"
+      "updateTime": 1627909082176,
+      "name": "Apple",
+      "company": "美国苹果有限公司"
     }
   ],
   "product": [
