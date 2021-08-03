@@ -66,23 +66,23 @@ class Service extends Common {
         msg: 'success',
         result: {
           "weekData": [120, 200, 150, 80, 70, 110, 130],
-          "yearData": [1202, 3046, 1025, 445, 2822, 3848, 499, 2594, 2065, 2545, 3224, 1099],
+          "yearData": [1202, 3046, 1025, 445, 2822, 3848, 499, 2594, 2065, 2545, 3224, 1099],  
           "orderData": [{
             "id": 1,
             "name": "本周订单总数",
-            "count": "200"
-          }, {
+            "count": "860"
+          }+{
             "id": 2,
             "name": "本月订单总数",
-            "count": "300"
+            "count": "3600"
           }, {
             "id": 3,
             "name": "本季订单总数",
-            "count": "400"
+            "count": "12360"
           }, {
             "id": 4,
             "name": "本年度订单总数",
-            "count": "400"
+            "count": "258677"
           }]
         }
       };
@@ -93,7 +93,7 @@ class Service extends Common {
       }
     }
   }
-
+  
   async edit(ctx) {
     try {
       ctx.params.updateTime = Date.now();
