@@ -13,13 +13,13 @@ module.exports = {
       }
     },
 
-    {
-      path: "/del",
-      name: "删除模块",
-      service: modules["del"],
-      params: {
-        name: ""
-      }
-    }
+    // {
+    //   path: "/del",
+    //   name: "删除模块",
+    //   service: modules["del"],
+    //   params: {
+    //     name: ""
+    //   }
+    // }
   ]
 };

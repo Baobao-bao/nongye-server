@@ -7,7 +7,7 @@ class Module {
   constructor() { 
   }
 
-  async add(ctx) { 
+  async add(ctx) {  
     try {
       let { name } = ctx.params;
       // 创建文件夹

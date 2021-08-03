@@ -1,6 +1,5 @@
 {
-  "type": [
-    {
+  "type": [{
       "id": "b705c7f0-eedb-11eb-a1fb-e32411107c43",
       "createTime": 1627391300076,
       "updateTime": 1627391300076,
@@ -25,8 +24,7 @@
       "name": "不不不  "
     }
   ],
-  "subType": [
-    {
+  "subType": [{
       "id": "666c9520-eedc-11eb-8c78-6d9622a9a104",
       "createTime": 1627391594352,
       "updateTime": 1627391988184,
@@ -107,8 +105,7 @@
       "parentName": "家用电器"
     }
   ],
-  "brand": [
-    {
+  "brand": [{
       "id": "5175d0a0-eee1-11eb-b983-9bd46f61bc24",
       "createTime": 1627393706665,
       "updateTime": 1627393706665,
@@ -133,8 +130,7 @@
       "name": "Apple"
     }
   ],
-  "product": [
-    {
+  "product": [{
       "id": 1,
       "createTime": 1627447353459,
       "updateTime": 1627450999388,
@@ -1455,8 +1451,7 @@
       "typeMsg": "手机数码/手机通信"
     }
   ],
-  "user": [
-    {
+  "user": [{
       "id": "77646300f42f",
       "createTime": 1627977026864,
       "updateTime": 1627977026864,
