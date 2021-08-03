@@ -71,7 +71,7 @@ class Service extends Common {
             "id": 1,
             "name": "本周订单总数",
             "count": "860"
-          }+{
+          },{
             "id": 2,
             "name": "本月订单总数",
             "count": "3600"
