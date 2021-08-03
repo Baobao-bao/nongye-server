@@ -27,7 +27,7 @@ module.exports = {
       name: "详情",
       service: type["detail"],
       params: {
-        typeId: "typeId"
+        id: "id"
       }
     },
     {
@@ -35,7 +35,7 @@ module.exports = {
       name: "修改",
       service: type["edit"],
       params: {
-        typeId: "typeId"
+        id: "id"
       }
     },
     {
@@ -43,7 +43,7 @@ module.exports = {
       name: "测试",
       service: type["del"],
       params: {
-        typeId: "typeId"
+        id: "id"
       }
     }
   ]
