@@ -60,8 +60,20 @@ class Service extends Common {
   }
 
   async all(ctx) {
+    let {
+      parentId
+    } = ctx.params;
+    let sort = {
+      _sort: 'updateTime',
+      _order: 'desc',
+    }
     try {
-      let res = await $.get(this.url + '/SubType');
+      let res = await $.get(this.url + '/SubType', {
+        params: {
+          parentId,
+          ...sort
+        }
+      });
       ctx.body = {
         code: 666,
         msg: 'success',
