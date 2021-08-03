@@ -15,16 +15,19 @@ module.exports = {
     {
       path: "/all",
       name: "全部列表",
-      service: subType["all"]
+      service: subType["all"],
+      params: {
+        parentId: "父级分类ID"
+      }
     },
-     {
-       path: "/list",
-       name: "列表分页查询",
-       service: subType["list"],
-       params: {
-         pageNum: "当前页"
-       }
-     },
+    //  {
+    //    path: "/list",
+    //    name: "列表分页查询",
+    //    service: subType["list"],
+    //    params: {
+    //      pageNum: "当前页"
+    //    }
+    //  },
        {
        path: "/detail",
        name: "详情",
