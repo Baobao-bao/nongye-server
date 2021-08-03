@@ -11,6 +11,18 @@
       "createTime": 1627391308152,
       "updateTime": 1627391308152,
       "name": "家用电器"
+    },
+    {
+      "id": "a5c7e4f0-f43f-11eb-be6c-7b3ef00ff82a",
+      "createTime": 1627983976638,
+      "updateTime": 1627983976638,
+      "name": "啊啊啊"
+    },
+    {
+      "id": "b0c8f8d0-f43f-11eb-9eec-01d9aff18bd3",
+      "createTime": 1627983995099,
+      "updateTime": 1627983995099,
+      "name": "不不不  "
     }
   ],
   "subType": [
@@ -1443,5 +1455,42 @@
       "typeMsg": "手机数码/手机通信"
     }
   ],
-  "user": []
+  "user": [
+    {
+      "id": "77646300f42f",
+      "createTime": 1627977026864,
+      "updateTime": 1627977026864,
+      "username": "admin",
+      "realname": "admin",
+      "password": "1234",
+      "role": "1"
+    },
+    {
+      "id": "7796e4b0f42f",
+      "createTime": 1627977027195,
+      "updateTime": 1627977027195,
+      "username": "zhangsan",
+      "realname": "张三",
+      "password": "1234",
+      "role": "1"
+    },
+    {
+      "id": "7826efb0f42f",
+      "createTime": 1627977028139,
+      "updateTime": 1627977028139,
+      "username": "zhangsan",
+      "realname": "张三",
+      "password": "1234",
+      "role": "1"
+    },
+    {
+      "id": "8edde880f42f",
+      "createTime": 1627977066248,
+      "updateTime": 1627977066248,
+      "username": "zhangsan",
+      "realname": "张三",
+      "password": "1234",
+      "role": "1"
+    }
+  ]
 }

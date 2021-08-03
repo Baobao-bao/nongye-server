@@ -123,7 +123,7 @@ class Service extends Common {
     }
   }
 
-  async login(ctx) {
+  async login(ctx) {  
     try {
       let res = await $.get(this.url+'/user',{params: ctx.params});
       if (res.data.length===0) {
