@@ -99,30 +99,26 @@
     {
       "id": "5175d0a0-eee1-11eb-b983-9bd46f61bc24",
       "createTime": 1627393706665,
-      "updateTime": 1627909094590,
-      "name": "小米",
-      "company": "小米有限公司"
+      "updateTime": 1627393706665,
+      "name": "小米"
     },
     {
       "id": "556d2280-eee1-11eb-9851-49ed46ec7c75",
       "createTime": 1627393713320,
-      "updateTime": 1627909102383,
-      "name": "华为",
-      "company": "华为集团"
+      "updateTime": 1627393713320,
+      "name": "华为"
     },
     {
       "id": "5a4b2ae0-eee1-11eb-994a-7faabea9f4ac",
       "createTime": 1627393721485,
-      "updateTime": 1627909110639,
-      "name": "vivo",
-      "company": "vivo集团"
+      "updateTime": 1627393721485,
+      "name": "vivo"
     },
     {
       "id": "64eba830-eee1-11eb-a70e-756f9ccbbb14",
       "createTime": 1627393739314,
-      "updateTime": 1627909082176,
-      "name": "Apple",
-      "company": "美国苹果有限公司"
+      "updateTime": 1627393739314,
+      "name": "Apple"
     }
   ],
   "product": [
@@ -1447,60 +1443,5 @@
       "typeMsg": "手机数码/手机通信"
     }
   ],
-  "user": [
-    {
-      "id": "6ab726f0-ef67-11eb-816b-fd9d7ade18a5",
-      "createTime": 1627451301598,
-      "updateTime": 1627897403858,
-      "username": "zhangsan",
-      "password": "1245",
-      "role": "1",
-      "realname": "张五"
-    },
-    {
-      "id": "410ad790-ef6f-11eb8205",
-      "createTime": 1627454667656,
-      "updateTime": 1627897452959,
-      "username": "zhangsan",
-      "realname": "张三2",
-      "password": "1245",
-      "role": "1"
-    },
-    {
-      "id": "d6484180ef6f",
-      "createTime": 1627454918039,
-      "updateTime": 1627897372505,
-      "username": "super",
-      "realname": "超级管理员",
-      "password": "81dc9bdb52d04dc20036dbd8313ed055",
-      "role": "1"
-    },
-    {
-      "id": "dd1855e0ef6f",
-      "createTime": 1627454929470,
-      "updateTime": 1627456063299,
-      "username": "admin",
-      "realname": "管理员",
-      "password": "81dc9bdb52d04dc20036dbd8313ed055",
-      "role": "2"
-    },
-    {
-      "id": "05920d20ef72",
-      "createTime": 1627455856369,
-      "updateTime": 1627455856369,
-      "username": "zhangsan",
-      "realname": "张三",
-      "password": "5eac43aceba42c8757b54003a58277b5",
-      "role": "1"
-    },
-    {
-      "id": "11d56500ef72",
-      "createTime": 1627455876943,
-      "updateTime": 1627455876943,
-      "username": "zhangsan2",
-      "realname": "张三",
-      "password": "81dc9bdb52d04dc20036dbd8313ed055",
-      "role": "1"
-    }
-  ]
+  "user": []
 }
