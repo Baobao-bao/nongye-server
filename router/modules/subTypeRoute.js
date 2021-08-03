@@ -8,8 +8,10 @@ module.exports = {
       path: "/add",
       name: "添加",
       service: subType["add"],
-      params: {
-        name: "subType"
+      params: { 
+        "name": "分类名成功",
+        "parentId": "父类ID",
+        "parentName": "父类名称"
       }
     },
     {
