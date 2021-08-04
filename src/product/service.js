@@ -32,7 +32,7 @@ class Service extends Common {
 
   async list(ctx) {
     let {
-      currPage = 1, pageSize = 7,keyword=""
+      currPage = 1, pageSize = 5,keyword=""
     } = ctx.params;
     this.log(ctx.params);
     let params = {
@@ -83,6 +83,24 @@ class Service extends Common {
     try {
       ctx.params.updateTime = Date.now();
       let res = await $.put(this.url + '/Product/' + ctx.params.id, ctx.params);
+      ctx.body = {
+        code: 666,
+        msg: 'success',
+        result: res.data
+      }
+    } catch (error) {
+      ctx.body = {
+        code: 500,
+        msg: error.message
+      }
+    }
+  }
+
+  // 修改上下架状态
+  async changeStatus(ctx) {
+    try {
+      ctx.params.updateTime = Date.now();
+      let res = await $.patch(this.url + '/Product/' + ctx.params.id, ctx.params);
       ctx.body = {
         code: 666,
         msg: 'success',
