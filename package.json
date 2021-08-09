@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodemon app.js",
-    "json": "json-server --watch ./db/db.json --port 9005",
+    "json": "json-server --watch ./db/db.json --port 9006",
     "pull": "git pull origin master",
     "push": "node push",
     "up": "scp pm2.config.js root@132.232.94.151:/root/deploy/",

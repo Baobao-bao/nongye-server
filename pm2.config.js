@@ -1,5 +1,5 @@
 const app = {
-  name: "yunmi-server",
+  name: "villa-server",
   script: "./app.js",
   watch: true,
   env: {
