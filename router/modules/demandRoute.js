@@ -1,27 +1,26 @@
-module.exports = function createRoute(name,cnname) {
-  return `
-const ${name} = require("../../src/${name}/service");
+
+const demand = require("../../src/demand/service");
 module.exports = {
-  path: "/${name}",
-  name: "${name}(${cnname})模块",
+  path: "/demand",
+  name: "demand(需求)模块",
   children: [
     {
       path: "/add",
       name: "添加",
-      service: ${name}["add"],
+      service: demand["add"],
       params: {
-        name: "${name}"
+        name: "demand"
       }
     },
     {
       path: "/all",
       name: "全部列表",
-      service: ${name}["all"]
+      service: demand["all"]
     },
      {
        path: "/list",
        name: "列表分页查询",
-       service: ${name}["list"],
+       service: demand["list"],
        params: {
          pageNum: "当前页"
        }
@@ -29,7 +28,7 @@ module.exports = {
        {
        path: "/detail",
        name: "详情",
-       service: ${name}["detail"],
+       service: demand["detail"],
        params: {
          id: "id"
        }
@@ -37,7 +36,7 @@ module.exports = {
      {
        path: "/edit",
        name: "修改",
-       service: ${name}["edit"],
+       service: demand["edit"],
        params: {
          id: "id"
        }
@@ -45,12 +44,10 @@ module.exports = {
      {
        path: "/del",
        name: "删除",
-       service: ${name}["del"],
+       service: demand["del"],
        params: {
          id: "id"
        }
      }
   ]
-};
-`;
 };

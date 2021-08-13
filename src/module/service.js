@@ -9,7 +9,7 @@ class Module {
 
   async add(ctx) {  
     try {
-      let { name } = ctx.params;
+      let { name,cnname } = ctx.params;
       // 创建文件夹
       fs.mkdir(path.resolve(__dirname, `../${name}`), () => {});
       // 生成service代码
@@ -22,7 +22,7 @@ class Module {
         __dirname,
         `../../router/modules/${name}Route.js`
       );
-      let routeStr = createRoute(name);
+      let routeStr = createRoute(name,cnname);
       fs.writeFileSync(routePath, routeStr);
 
       ctx.body = {
