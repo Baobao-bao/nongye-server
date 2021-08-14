@@ -29,14 +29,14 @@ module.exports = async (ctx, next) => {
       return false;
     }
   }
-
+debugger;
   // 检查所需参数是否存在
   if (route) {
     // 把需要校验的字段取出来,放入数组
     let attrs = [];
     for (let key in route.params) {
       let value = route.params[key];
-      if (!!value.required) {
+      if (value.includes('(必须)')) {
         attrs.push(key);
       }
     }
@@ -66,5 +66,5 @@ function checkAttr(attrs, ctx) {
     );
   });
 
-  return !!res ? `缺少${res}` : false;
+  return !!res ? `缺少请求参数${res}` : false;
 }

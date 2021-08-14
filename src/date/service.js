@@ -4,7 +4,7 @@
   const Common = require('../common/index');
   class Service extends Common{
     constructor() {
-      super('brand');
+      super('Date');
     };
   
     async add(ctx) {
@@ -12,7 +12,7 @@
       try {
         let createTime = Date.now();
         let updateTime = Date.now();
-        let res = await $.post(this.url + '/brand', {
+        let res = await $.post(this.url + '/Date', {
           id: UUID.v1(),
           createTime,
           updateTime,
@@ -31,7 +31,8 @@
       }
     }
   
-    async list(ctx) {   
+    async list(ctx) {  
+      console.log(this.getTotalPage());
       let {_page,_limit} = ctx.params;
       let params = {
         _sort:'updateTime',_order:'desc',
@@ -39,7 +40,7 @@
         _limit
       }
       try {
-        let res = await $.get(this.url + '/brand',{params});
+        let res = await $.get(this.url + '/Date',{params});
         ctx.body = {
           code: 666,
           msg: 'success',
@@ -55,7 +56,7 @@
   
     async all(ctx) {
       try {
-        let res = await $.get(this.url + '/brand');
+        let res = await $.get(this.url + '/Date');
         ctx.body = {
           code: 666,
           msg: 'success',
@@ -72,7 +73,7 @@
     async edit(ctx) {
       try {
         ctx.params.updateTime = Date.now();
-        let res = await $.put(this.url + '/brand/' + ctx.params.id, ctx.params);
+        let res = await $.put(this.url + '/Date/' + ctx.params.id, ctx.params);
         ctx.body = {
           code: 666,
           msg: 'success',
@@ -88,7 +89,7 @@
   
     async detail(ctx) {
       try {
-        let res = await $.get(this.url + '/brand/' + ctx.params.id);
+        let res = await $.get(this.url + '/Date/' + ctx.params.id);
         ctx.body = {
           code: 666,
           msg: 'success',
@@ -104,7 +105,7 @@
   
     async del(ctx) {
       try {
-        let res = await $.delete(this.url + '/brand/' + ctx.params.id);
+        let res = await $.delete(this.url + '/Date/' + ctx.params.id);
         ctx.body = ctx.body = {
           code: 666,
           msg: 'success',

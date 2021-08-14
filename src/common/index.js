@@ -1,7 +1,7 @@
 const UUID = require("uuid");
 const jwt = require("jsonwebtoken");
-const axiso = require("axios");
-const service = axiso.create({
+const $ = require("axios");
+const service = $.create({
   baseURL: process.env.dbpath,
 });
 service.interceptors.response.use(
