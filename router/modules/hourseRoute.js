@@ -5,6 +5,26 @@ module.exports = {
   name: "hourse模块",
   children: [
     {
+      path: "/introduction",
+      name: "介绍",
+      service: hourse["introduction"]
+    },
+    {
+      path: "/comment",
+      name: "评论",
+      service: hourse["comment"]
+    },
+    {
+      path: "/introduction",
+      name: "介绍",
+      service: hourse["comment"]
+    },
+    {
+      path: "/around",
+      name: "周边",
+      service: hourse["around"]
+    },
+    {
       path: "/add",
       name: "添加",
       service: hourse["add"],

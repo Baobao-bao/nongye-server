@@ -2,10 +2,33 @@
   const $ = require('axios');
   const UUID = require("uuid");
   const Common = require('../common/index');
+  const data = require('./data');
+  const commentData = require('./comment');
   class Service extends Common{
     constructor() {
       super('Hourse');
     };
+
+
+    around(ctx) {
+      ctx.body = {
+        code: 666,
+        msg: 'success',
+        result: data.body.around
+      }
+    }
+
+    introduction(ctx) {
+      ctx.body = {
+        code: 666,
+        msg: 'success',
+        result: data.body.detail
+      }
+    }
+
+    comment(ctx) {
+      ctx.body = commentData;
+    }
   
     async add(ctx) {
       let data = ctx.params;
