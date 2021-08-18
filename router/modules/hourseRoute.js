@@ -11,8 +11,18 @@ module.exports = {
     },
     {
       path: "/comment",
-      name: "评论",
+      name: "评论列表",
       service: hourse["comment"]
+    },
+    {
+      path: "/scene",
+      name: "景点列表",
+      service: hourse["scene"]
+    },
+    {
+      path: "/city",
+      name: "城市列表",
+      service: hourse["city"]
     },
     {
       path: "/introduction",
@@ -21,28 +31,28 @@ module.exports = {
     },
     {
       path: "/around",
-      name: "周边",
+      name: "周边环境",
       service: hourse["around"]
     },
-    {
-      path: "/add",
-      name: "添加",
-      service: hourse["add"],
-      params: {
-        name: "hourse"
-      }
-    },
-    {
-      path: "/all",
-      name: "全部列表",
-      service: hourse["all"]
-    },
+    // {
+    //   path: "/add",
+    //   name: "添加",
+    //   service: hourse["add"],
+    //   params: {
+    //     name: "hourse"
+    //   }
+    // },
+    // {
+    //   path: "/all",
+    //   name: "全部列表",
+    //   service: hourse["all"]
+    // },
      {
        path: "/list",
-       name: "列表分页查询",
+       name: "房源列表",
        service: hourse["list"],
        params: {
-         pageNum: "当前页"
+        //  pageNum: "当前页"
        }
      },
        {

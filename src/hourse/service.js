@@ -18,6 +18,7 @@
       }
     }
 
+    // 介绍
     introduction(ctx) {
       ctx.body = {
         code: 666,
@@ -26,8 +27,19 @@
       }
     }
 
+    // 评论
     comment(ctx) {
       ctx.body = commentData;
+    }
+
+    // 景点
+    scene(ctx) {
+      ctx.body = require('./scene');
+    }
+
+    // 城市
+    city(ctx) {
+      ctx.body = require('./city');
     }
   
     async add(ctx) {
