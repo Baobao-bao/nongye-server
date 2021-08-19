@@ -24,7 +24,7 @@ class Utils {
    * @param {object} userInfo
    */
   getToken(userInfo) {
-    let secret = "fresh"; // 指定密钥
+    let secret = "villa"; // 指定密钥
     // 生成token
     let token = jwt.sign(userInfo, secret, {
       expiresIn: "1000h",

@@ -41,7 +41,7 @@
     city(ctx) {
       ctx.body = require('./city');
     }
-  
+
     async add(ctx) {
       let data = ctx.params;
       try {
@@ -67,19 +67,18 @@
     }
   
     async list(ctx) {  
-      console.log(this.getTotalPage());
       let {_page,_limit} = ctx.params;
       let params = {
         _sort:'updateTime',_order:'desc',
-        _page,
-        _limit
+        // _page,
+        // _limit
       }
       try {
         let res = await $.get(this.url + '/Hourse',{params});
         ctx.body = {
           code: 666,
           msg: 'success',
-          result: res.data
+          result: res.data,
         };
       } catch (error) {
         ctx.body = {
@@ -97,6 +96,7 @@
           msg: 'success',
           result: res.data
         };
+       
       } catch (error) {
         ctx.body = {
           code: 500,
@@ -108,7 +108,7 @@
     async edit(ctx) {
       try {
         ctx.params.updateTime = Date.now();
-        let res = await $.put(this.url + '/Hourse/' + ctx.params.id, ctx.params);
+        let res = await $.patch(this.url + '/Hourse/' + ctx.params.id, ctx.params);
         ctx.body = {
           code: 666,
           msg: 'success',

@@ -72,6 +72,15 @@ module.exports = {
        }
      },
      {
+       path: "/love",
+       name: "收藏",
+       service: hourse["edit"],
+       params: {
+         id: "房子id",
+         love: 'true or false',
+       }
+     },
+     {
        path: "/del",
        name: "删除",
        service: hourse["del"],

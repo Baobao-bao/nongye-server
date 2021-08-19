@@ -8,7 +8,7 @@ module.exports = async (ctx, next) => {
   if (!!token) {
     try {
       // 解密payload，获取用户名和ID
-      let payload = await verify(token.split(" ")[1], "student");
+      let payload = await verify(token.split(" ")[1], "villa");
       ctx.user = payload;
     } catch (err) {
       ctx.user = null;
