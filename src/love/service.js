@@ -2,70 +2,20 @@
   const $ = require('axios');
   const UUID = require("uuid");
   const Common = require('../common/index');
-  const data = require('./data');
-  const commentData = require('./comment');
   class Service extends Common{
     constructor() {
-      super('house');
+      super('Love');
     };
-
-
-    around(ctx) {
-      ctx.body = {
-        code: 666,
-        msg: 'success',
-        result: data.body.around
-      }
-    }
-
-    // 介绍
-    introduction(ctx) {
-      ctx.body = {
-        code: 666,
-        msg: 'success',
-        result: data.body.detail
-      }
-    }
-
-    // 评论
-    comment(ctx) {
-      ctx.body = commentData;
-    }
-
-    // 景点
-    scene(ctx) {
-      ctx.body = require('./scene');
-    }
-
-    // 城市
-    city(ctx) {
-      ctx.body = require('./city');
-    }
-
-    async loveList(ctx) {
-      try {
-        let res = await this.$find('/house',{love: true});
-        console.log(res);
-        ctx.body = {
-          code: 666,
-          msg:'success',
-          result: res
-        }
-      } catch (error) {
-        console.log(error);
-        ctx.body = {
-          code: 500,
-          msg: error
-        }
-      }
-    }
-
+  
     async add(ctx) {
       let data = ctx.params;
       try {
         let createTime = Date.now();
         let updateTime = Date.now();
-        let res = await $.post(this.url + '/house', {
+        let house = await this.$find(data);
+        let res = await $.post(this.url + '/Love', {
+          ...house[0],
+          houseId: data.houseId,
           id: UUID.v1(),
           createTime,
           updateTime,
@@ -85,18 +35,19 @@
     }
   
     async list(ctx) {  
+      console.log(this.getTotalPage());
       let {_page,_limit} = ctx.params;
       let params = {
         _sort:'updateTime',_order:'desc',
-        // _page,
-        // _limit
+        _page,
+        _limit
       }
       try {
-        let res = await $.get(this.url + '/house',{params});
+        let res = await $.get(this.url + '/Love',{params});
         ctx.body = {
           code: 666,
           msg: 'success',
-          result: res.data,
+          result: res.data
         };
       } catch (error) {
         ctx.body = {
@@ -108,13 +59,12 @@
   
     async all(ctx) {
       try {
-        let res = await $.get(this.url + '/house');
+        let res = await $.get(this.url + '/Love');
         ctx.body = {
           code: 666,
           msg: 'success',
           result: res.data
         };
-       
       } catch (error) {
         ctx.body = {
           code: 500,
@@ -126,7 +76,7 @@
     async edit(ctx) {
       try {
         ctx.params.updateTime = Date.now();
-        let res = await $.patch(this.url + '/house/' + ctx.params.id, ctx.params);
+        let res = await $.put(this.url + '/Love/' + ctx.params.id, ctx.params);
         ctx.body = {
           code: 666,
           msg: 'success',
@@ -142,7 +92,7 @@
   
     async detail(ctx) {
       try {
-        let res = await $.get(this.url + '/house/' + ctx.params.id);
+        let res = await $.get(this.url + '/Love/' + ctx.params.id);
         ctx.body = {
           code: 666,
           msg: 'success',
@@ -158,7 +108,7 @@
   
     async del(ctx) {
       try {
-        let res = await $.delete(this.url + '/house/' + ctx.params.id);
+        let res = await $.delete(this.url + '/Love/' + ctx.params.id);
         ctx.body = ctx.body = {
           code: 666,
           msg: 'success',

@@ -71,31 +71,5 @@ module.exports = {
          id: "id"
        }
      },
-     {
-       path: "/love",
-       name: "收藏",
-       service: house["edit"],
-       params: {
-         id: "房子id",
-         love: 'true or false',
-       }
-     },
-     {
-       path: "/loveList",
-       name: "我想去",
-       service: house["loveList"],
-       params: {
-        //  id: "房子id",
-        //  love: 'true or false',
-       }
-     },
-    //  {
-    //    path: "/loveList",
-    //    name: "删除",
-    //    service: house["loveList"],
-    //    params: {
-    //      id: "id"
-    //    }
-    //  }
   ]
 };
