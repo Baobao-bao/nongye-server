@@ -1,56 +1,56 @@
 
-const hourse = require("../../src/hourse/service");
+const house = require("../../src/house/service");
 module.exports = {
-  path: "/hourse",
-  name: "hourse模块",
+  path: "/house",
+  name: "house模块",
   children: [
     {
       path: "/introduction",
       name: "介绍",
-      service: hourse["introduction"]
+      service: house["introduction"]
     },
     {
       path: "/comment",
       name: "评论列表",
-      service: hourse["comment"]
+      service: house["comment"]
     },
     {
       path: "/scene",
       name: "景点列表",
-      service: hourse["scene"]
+      service: house["scene"]
     },
     {
       path: "/city",
       name: "城市列表",
-      service: hourse["city"]
+      service: house["city"]
     },
     {
       path: "/introduction",
       name: "介绍",
-      service: hourse["comment"]
+      service: house["comment"]
     },
     {
       path: "/around",
       name: "周边环境",
-      service: hourse["around"]
+      service: house["around"]
     },
     // {
     //   path: "/add",
     //   name: "添加",
-    //   service: hourse["add"],
+    //   service: house["add"],
     //   params: {
-    //     name: "hourse"
+    //     name: "house"
     //   }
     // },
     // {
     //   path: "/all",
     //   name: "全部列表",
-    //   service: hourse["all"]
+    //   service: house["all"]
     // },
      {
        path: "/list",
        name: "房源列表",
-       service: hourse["list"],
+       service: house["list"],
        params: {
         //  pageNum: "当前页"
        }
@@ -58,7 +58,7 @@ module.exports = {
        {
        path: "/detail",
        name: "详情",
-       service: hourse["detail"],
+       service: house["detail"],
        params: {
          id: "id"
        }
@@ -66,7 +66,7 @@ module.exports = {
      {
        path: "/edit",
        name: "修改",
-       service: hourse["edit"],
+       service: house["edit"],
        params: {
          id: "id"
        }
@@ -74,19 +74,28 @@ module.exports = {
      {
        path: "/love",
        name: "收藏",
-       service: hourse["edit"],
+       service: house["edit"],
        params: {
          id: "房子id",
          love: 'true or false',
        }
      },
      {
-       path: "/del",
-       name: "删除",
-       service: hourse["del"],
+       path: "/loveList",
+       name: "我想去",
+       service: house["loveList"],
        params: {
-         id: "id"
+        //  id: "房子id",
+        //  love: 'true or false',
        }
-     }
+     },
+    //  {
+    //    path: "/loveList",
+    //    name: "删除",
+    //    service: house["loveList"],
+    //    params: {
+    //      id: "id"
+    //    }
+    //  }
   ]
 };
