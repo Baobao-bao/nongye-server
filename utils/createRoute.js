@@ -13,11 +13,11 @@ module.exports = {
         name: "${name}"
       }
     },
-    {
-      path: "/all",
-      name: "全部列表",
-      service: ${name}["all"]
-    },
+    // {
+    //   path: "/all",
+    //   name: "全部列表",
+    //   service: ${name}["all"]
+    // },
      {
        path: "/list",
        name: "列表分页查询",
@@ -42,14 +42,14 @@ module.exports = {
          id: "id"
        }
      },
-     {
-       path: "/del",
-       name: "删除",
-       service: ${name}["del"],
-       params: {
-         id: "id"
-       }
-     }
+    //  {
+    //    path: "/del",
+    //    name: "删除",
+    //    service: ${name}["del"],
+    //    params: {
+    //      id: "id"
+    //    }
+    //  }
   ]
 };
 `;

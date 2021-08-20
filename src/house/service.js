@@ -143,10 +143,15 @@
     async detail(ctx) {
       try {
         let res = await $.get(this.url + '/house/' + ctx.params.id);
+        let loveRes = await this.$find('/love',{houseId:ctx.params.id});
+        let love = loveRes.length>0?true:false;
         ctx.body = {
           code: 666,
           msg: 'success',
-          result: res.data
+          result: {
+            love,
+            ...res.data, 
+          }
         }
       } catch (error) {
         ctx.body = {

@@ -28,8 +28,7 @@ module.exports = async (ctx, next) => {
       };
       return false;
     }
-  }
-debugger;
+  } 
   // 检查所需参数是否存在
   if (route) {
     // 把需要校验的字段取出来,放入数组

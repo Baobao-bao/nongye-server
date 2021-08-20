@@ -5,24 +5,24 @@ module.exports = {
   name: "love(收藏)模块",
   children: [
     {
-      path: "/add",
-      name: "添加",
-      service: love["add"],
+      path: "/change",
+      name: "收藏",
+      service: love["change"],
       params: {
         houseId: "房屋id(必须)"
       }
-    },
-    {
-      path: "/all",
-      name: "全部列表",
-      service: love["all"]
-    },
+    }, 
+    // {
+    //   path: "/all",
+    //   name: "全部列表",
+    //   service: love["all"]
+    // },
      {
        path: "/list",
-       name: "列表分页查询",
+       name: "列表",
        service: love["list"],
        params: {
-         pageNum: "当前页"
+        //  pageNum: "当前页"
        }
      },
        {

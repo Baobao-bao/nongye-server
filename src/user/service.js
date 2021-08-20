@@ -97,7 +97,7 @@ class Service extends Common {
     }
   }
 
-  async loginBySmsCode(ctx) {
+  async loginBySmsCode(ctx) { 
     try {
       let res = await this.$find('/user',ctx.params);
       let userInfo = res[0];
@@ -106,6 +106,7 @@ class Service extends Common {
         code: 666,
         msg: "success",
         result: {
+          ...userInfo,
           token: this.getToken(userInfo),
         },
       };
@@ -117,8 +118,7 @@ class Service extends Common {
     }
   }
 
-  async getSmsCode(ctx) {
-    console.log(ctx.params.phone);
+  async getSmsCode(ctx) { 
     try {
       const smsCode = Mock.Random.integer(1000, 9999);
       // 根据用户去查找用户
@@ -136,8 +136,7 @@ class Service extends Common {
       setTimeout(async ()=>{
         await this.$update('/user',{...user,smsCode:7777});
       },2000);
-
-        console.log(ctx.params.phone);
+ 
       ctx.body = {
         code: 666,
         msg: "success",
@@ -171,31 +170,6 @@ class Service extends Common {
         reject(error);
       }
     });
-  }
-
-  // async find() {
-  //   return new Promise((resolve,reject)=> {
-  //     try {
-  //       let res = await $.get(this.url)
-  //     } catch (error) {
-        
-  //     }
-  //   })
-  // }
-
-  // async loginBySmsCode(ctx) {
-  //   try {
-  //     let url = "http://huruqing.cn:3000/api/user/loginBySmsCode";
-  //     let res = await $.get(url, { params: ctx.params });
-  //     ctx.body = {
-  //       ...res.data,
-  //     };
-  //   } catch (error) {
-  //     ctx.body = {
-  //       code: 500,
-  //       msg: error.message,
-  //     };
-  //   }
-  // }
+  } 
 }
 module.exports = new Service();

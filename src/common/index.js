@@ -69,14 +69,21 @@ class Utils {
   $find(url, data) {
     return service.get(url, { params: data });
   }
-  $update(url, data) {
-    return service.put(url + `/${data.id}`, data);
+  
+  $findById(url, id) { 
+    return service.get(url+'?id='+id);
+  }
+  $update(url, data) { 
+    return service.patch(url + `/${data.id}`, data);
   }
   $replace(url, data) {
-    return service.patch(url + `/${data.id}`, data);
+    return service.put(url + `/${data.id}`, data);
   }
   $del(url, data) {
     return service.delete(url + `/${data.id}`, data);
+  }
+  $delById(url, id) {
+    return service.delete(url + `/${id}`);
   }
 }
 
