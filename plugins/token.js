@@ -5,7 +5,6 @@ const verify = util.promisify(jwt.verify);
 module.exports = async (ctx, next) => {
   // 获取jwt
   let tokenStr = ctx.header["user-token"];
-  debugger;
   const token = "Bearer " + tokenStr;
   if (!!tokenStr) {
     // 解密payload，获取用户名和ID
