@@ -79,8 +79,8 @@ class Utils {
   $replace(url, data) {
     return service.put(url + `/${data.id}`, data);
   }
-  $del(url, data) {
-    return service.delete(url + `/${data.id}`, data);
+  $del(url, id) {
+    return service.delete(url + `/${id}`);
   }
   $delById(url, id) {
     return service.delete(url + `/${id}`);
