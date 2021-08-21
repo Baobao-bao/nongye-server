@@ -2,7 +2,7 @@
 const date = require("../../src/date/service");
 module.exports = {
   path: "/date",
-  name: "date(日历)模块",
+  name: "date(日期)模块",
   children: [
     {
       path: "/add",

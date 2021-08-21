@@ -1,7 +1,7 @@
 const user = require("../../src/user/service");
 module.exports = {
   path: "/user",
-  name: "user模块",
+  name: "user(用户)模块",
   children: [
     // {
     //   path: "/add",

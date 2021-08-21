@@ -2,7 +2,7 @@
 const browse = require("../../src/browse/service");
 module.exports = {
   path: "/browse",
-  name: "browse(undefined)模块",
+  name: "browse(浏览)模块",
   children: [
     {
       path: "/add",

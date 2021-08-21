@@ -2,7 +2,7 @@
 const demo = require("../../src/demo/service");
 module.exports = {
   path: "/demo",
-  name: "demo(undefined)模块",
+  name: "demo(例子)模块",
   children: [
     {
       path: "/add",
