@@ -66,7 +66,7 @@ module.exports = {
       name: "获取验证码",
       service: user["getSmsCode"],
       params: {
-        phone: "手机号码",
+        phone: "手机号码(必须)",
       },
     },
     {
@@ -74,8 +74,8 @@ module.exports = {
       name: "获取验证码",
       service: user["loginBySmsCode"],
       params: {
-        phone: "手机号码",
-        smsCode: "验证码",
+        phone: "手机号码(必须)",
+        smsCode: "验证码(必须)",
       },
     },
   ],
