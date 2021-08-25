@@ -35,9 +35,9 @@ module.exports = async (ctx, next) => {
     let attrs = [];
     for (let key in route.params) {
       let value = route.params[key];
-      if (value.includes('(必须)')) {
-        attrs.push(key);
-      }
+      // if (!value.includes('(必须)')) {
+      //   attrs.push(key);
+      // }
     }
     let result = checkAttr(attrs, ctx);
     if (result) {
