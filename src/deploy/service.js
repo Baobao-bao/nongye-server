@@ -9,10 +9,23 @@
     };
   
     async index(ctx) {
-      shell.exec('git checkout .');
-      shell.exec('git pull origin master');
-      // shell.exec('git pull origin master');
-      ctx.body = 2222;
+      let obj = new Promise((resolve,reject)=> {
+        try {
+          shell.exec('git checkout .');
+          shell.exec('git pull origin master');
+          shell.exec('pm2 restart villa2-server');
+          resolve('部署成功');
+        } catch (error) {
+          reject(error);
+        }
+      })
+     
+      try {
+        await obj;
+        ctx.body = '部署成功';
+      } catch (error) {
+        ctx.body = error;
+      }
     }
   
     async list(ctx) {  
