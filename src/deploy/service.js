@@ -14,6 +14,7 @@
           shell.exec('git checkout .');
           shell.exec('git pull origin master');
           shell.exec('pm2 restart villa2-server');
+          shell.exec('pm2 restart villa2-json');
           resolve('部署成功');
         } catch (error) {
           console.log(error);
