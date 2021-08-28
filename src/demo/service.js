@@ -32,20 +32,20 @@
     }
   
     async list(ctx) {  
-      console.log(this.getTotalPage());
       let {_page,_limit} = ctx.params;
-      let params = {
-        _sort:'updateTime',_order:'desc',
-        _page,
-        _limit
-      }
-      try {
-        let res = await $.get(this.url + '/Demo',{params});
-        ctx.body = {
-          code: 666,
-          msg: 'success',
-          result: res.data
-        };
+      // let params = {
+      //   _sort:'updateTime',_order:'desc',
+      //   _page,
+      //   _limit
+      // }
+      // try {
+      //   let res = await $.get(this.url + '/Demo',{params});
+      //   ctx.body = {
+      //     code: 666,
+      //     msg: 'success',
+      //     result: res.data
+      //   };
+      ctx.body = 2222;
       } catch (error) {
         ctx.body = {
           code: 500,
