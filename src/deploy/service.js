@@ -11,9 +11,13 @@
     async index(ctx) {
       let obj = new Promise((resolve,reject)=> {
         try {
+          console.log('git checkout .');
           shell.exec('git checkout .');
+          console.log('git pull origin master');
           shell.exec('git pull origin master');
+          console.log('pm2 restart villa2-server');
           shell.exec('pm2 restart villa2-server');
+          console.log('pm2 restart villa2-json');
           shell.exec('pm2 restart villa2-json');
           resolve('部署成功');
         } catch (error) {
