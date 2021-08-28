@@ -11,6 +11,7 @@
     async index(ctx) {
       let obj = new Promise((resolve,reject)=> {
         try {
+          console.log(a);
           shell.exec('git checkout .');
           shell.exec('git pull origin master');
           shell.exec('pm2 restart villa2-server');
