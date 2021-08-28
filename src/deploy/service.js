@@ -9,12 +9,9 @@
     };
   
     async index(ctx) { 
-      console.log('1. git pull origin master');
       shell.exec('git pull origin master');
-      console.log('2. pm2 restart villa2-server');
-      shell.exec('pm2 restart villa2-server');
-      console.log('3. pm2 restart villa2-json');
-      shell.exec('pm2 restart villa2-json');
+      // shell.exec('pm2 restart villa2-server');
+      // shell.exec('pm2 restart villa2-json');
       ctx.body = '部署中........';
     }
   
