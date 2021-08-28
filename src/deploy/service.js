@@ -16,6 +16,7 @@
           shell.exec('pm2 restart villa2-server');
           resolve('部署成功');
         } catch (error) {
+          console.log(error);
           reject(error);
         }
       })
@@ -24,7 +25,7 @@
         await obj;
         ctx.body = '部署成功';
       } catch (error) {
-        ctx.body = error;
+        ctx.body = error.message;
       }
     }
   
