@@ -46,12 +46,12 @@
       //     result: res.data
       //   };
       ctx.body = 2222;
-      } catch (error) {
-        ctx.body = {
-          code: 500,
-          msg: error.message
-        }
-      }
+      // } catch (error) {
+      //   ctx.body = {
+      //     code: 500,
+      //     msg: error.message
+      //   }
+      // }
     }
   
     async all(ctx) {
