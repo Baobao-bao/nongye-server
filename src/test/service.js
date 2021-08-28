@@ -2,31 +2,32 @@
   const $ = require('axios');
   const UUID = require("uuid");
   const Common = require('../common/index');
-  const shell = require('shelljs');
   class Service extends Common{
     constructor() {
-      super('Deploy');
+      super('Test');
     };
   
-    async index(ctx) {
-      let obj = new Promise((resolve,reject)=> {
-        try {
-          shell.exec('git checkout .');
-          shell.exec('git pull origin master');
-          shell.exec('pm2 restart villa2-server');
-          shell.exec('pm2 restart villa2-json');
-          resolve('部署成功');
-        } catch (error) {
-          console.log(error);
-          reject(error);
-        }
-      })
-     
+    async add(ctx) {
+      let data = ctx.params;
       try {
-        await obj;
-        ctx.body = '部署成功';
+        let createTime = Date.now();
+        let updateTime = Date.now();
+        let res = await $.post(this.url + '/Test', {
+          id: UUID.v1(),
+          createTime,
+          updateTime,
+          ...data,
+        }) 
+        ctx.body = {
+          code: 666,
+          msg: 'success',
+          result: res.data
+        };
       } catch (error) {
-        ctx.body = error.message;
+        ctx.body = {
+          code: 500,
+          msg: error
+        }
       }
     }
   
@@ -39,7 +40,7 @@
         _limit
       }
       try {
-        let res = await $.get(this.url + '/Deploy',{params});
+        let res = await $.get(this.url + '/Test',{params});
         ctx.body = {
           code: 666,
           msg: 'success',
@@ -55,7 +56,7 @@
   
     async all(ctx) {
       try {
-        let res = await $.get(this.url + '/Deploy');
+        let res = await $.get(this.url + '/Test');
         ctx.body = {
           code: 666,
           msg: 'success',
@@ -72,7 +73,7 @@
     async edit(ctx) {
       try {
         ctx.params.updateTime = Date.now();
-        let res = await $.put(this.url + '/Deploy/' + ctx.params.id, ctx.params);
+        let res = await $.put(this.url + '/Test/' + ctx.params.id, ctx.params);
         ctx.body = {
           code: 666,
           msg: 'success',
@@ -88,7 +89,7 @@
   
     async detail(ctx) {
       try {
-        let res = await $.get(this.url + '/Deploy/' + ctx.params.id);
+        let res = await $.get(this.url + '/Test/' + ctx.params.id);
         ctx.body = {
           code: 666,
           msg: 'success',
@@ -104,7 +105,7 @@
   
     async del(ctx) {
       try {
-        let res = await $.delete(this.url + '/Deploy/' + ctx.params.id);
+        let res = await $.delete(this.url + '/Test/' + ctx.params.id);
         ctx.body = ctx.body = {
           code: 666,
           msg: 'success',
