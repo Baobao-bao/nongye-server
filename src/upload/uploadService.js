@@ -15,10 +15,10 @@ class Service extends CommonService {
       let fileName = file.name;
       // 创建可读流
       const render = fs.createReadStream(file.path);
-      let filePath = path.join(__dirname, "../public/img/", fileName);
+      let filePath = path.join(__dirname, "../public/images/", fileName);
       const upStream = fs.createWriteStream(filePath);
       render.pipe(upStream);
-      let imgUrl = "http://" + process.env.publicPath + "/img/" + fileName;
+      let imgUrl = "http://" + process.env.publicPath + "/images/" + fileName;
       ctx.body = {
         code: 666,
         msg: "上传成功",

@@ -2,22 +2,30 @@
   const $ = require('axios');
   const UUID = require("uuid");
   const Common = require('../common/index');
+  const shell = require('shelljs');
   class Service extends Common{
     constructor() {
-      super('Demo');
+      super('Deploy');
     };
   
-    async add(ctx) {
-      let data = ctx.params;
+    async index(ctx) { 
+      shell.exec('git pull origin master');
+      shell.exec('pm2 stop villa2-server');
+      shell.exec('pm2 start villa2-server');
+      // shell.exec('pm2 restart villa2-json');
+      ctx.body = '部署中........';
+    }
+  
+    async list(ctx) {  
+      console.log(this.getTotalPage());
+      let {_page,_limit} = ctx.params;
+      let params = {
+        _sort:'updateTime',_order:'desc',
+        _page,
+        _limit
+      }
       try {
-        let createTime = Date.now();
-        let updateTime = Date.now();
-        let res = await $.post(this.url + '/Demo', {
-          id: UUID.v1(),
-          createTime,
-          updateTime,
-          ...data,
-        }) 
+        let res = await $.get(this.url + '/Deploy',{params});
         ctx.body = {
           code: 666,
           msg: 'success',
@@ -26,37 +34,14 @@
       } catch (error) {
         ctx.body = {
           code: 500,
-          msg: error
+          msg: error.message
         }
       }
     }
   
-    async list(ctx) {  
-      let {_page,_limit} = ctx.params;
-      // let params = {
-      //   _sort:'updateTime',_order:'desc',
-      //   _page,
-      //   _limit
-      // }
-      // try {
-      //   let res = await $.get(this.url + '/Demo',{params});
-      //   ctx.body = {
-      //     code: 666,
-      //     msg: 'success',
-      //     result: res.data
-      //   };
-      ctx.body = 666;
-      // } catch (error) {
-      //   ctx.body = {
-      //     code: 500,
-      //     msg: error.message
-      //   }
-      // }
-    }
-  
     async all(ctx) {
       try {
-        let res = await $.get(this.url + '/Demo');
+        let res = await $.get(this.url + '/Deploy');
         ctx.body = {
           code: 666,
           msg: 'success',
@@ -73,7 +58,7 @@
     async edit(ctx) {
       try {
         ctx.params.updateTime = Date.now();
-        let res = await $.put(this.url + '/Demo/' + ctx.params.id, ctx.params);
+        let res = await $.put(this.url + '/Deploy/' + ctx.params.id, ctx.params);
         ctx.body = {
           code: 666,
           msg: 'success',
@@ -89,7 +74,7 @@
   
     async detail(ctx) {
       try {
-        let res = await $.get(this.url + '/Demo/' + ctx.params.id);
+        let res = await $.get(this.url + '/Deploy/' + ctx.params.id);
         ctx.body = {
           code: 666,
           msg: 'success',
@@ -105,7 +90,7 @@
   
     async del(ctx) {
       try {
-        let res = await $.delete(this.url + '/Demo/' + ctx.params.id);
+        let res = await $.delete(this.url + '/Deploy/' + ctx.params.id);
         ctx.body = ctx.body = {
           code: 666,
           msg: 'success',
