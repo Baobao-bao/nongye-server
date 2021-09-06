@@ -5,7 +5,7 @@ module.exports = {
         {
             "hashid": "0r8ej6Kenk",
             "holiday": true,
-            "icon": "http://qyaajxjcj.hn-bkt.clouddn.com/images/67-15986836140730-20210824085300911.jpg", 
+            "icon": "https://img.villaday.com/images/scene/67/67-15986836140730.jpg", 
             "id": 67,
             "island": false,
             "name": "海边别墅",
@@ -16,7 +16,7 @@ module.exports = {
         {
             "hashid": "d9XepE7w1y",
             "holiday": true,
-            "icon": "http://qyaajxjcj.hn-bkt.clouddn.com/images/61-15991012737380-20210824085300911.jpg",
+            "icon": "https://img.villaday.com/images/scene/61/61-15991012737380.jpg",
             "id": 61,
             "island": false,
             "name": "泳池别墅",
@@ -27,7 +27,7 @@ module.exports = {
         {
             "hashid": "OM4wR82bQ9",
             "holiday": true,
-            "icon": "http://qyaajxjcj.hn-bkt.clouddn.com/images/64-15991013081570-20210824085300911.jpg",
+            "icon": "https://img.villaday.com/images/scene/64/64-15991013081570.jpg",
             "id": 64,
             "island": false,
             "name": "温泉别墅",
@@ -37,7 +37,7 @@ module.exports = {
         {
             "hashid": "yY6wdxkwrR",
             "holiday": false,
-            "icon": "http://qyaajxjcj.hn-bkt.clouddn.com/images/70-15986836009660-20210824085300911.jpg",
+            "icon": "https://img.villaday.com/images/scene/70/70-15986836009660.jpg",
             "id": 70,
             "island": false,
             "name": "团建轰趴",
@@ -47,7 +47,7 @@ module.exports = {
         {
             "hashid": "YONlyWeQxE",
             "holiday": true,
-            "icon": "http://qyaajxjcj.hn-bkt.clouddn.com/images/10-14931185260590-20210824085300911.jpg",
+            "icon": "https://img.villaday.com/images/scene/10/10-14931185260590.jpg",
             "id": 10,
             "island": false,
             "name": "海景套房",
@@ -58,7 +58,7 @@ module.exports = {
         {
             "hashid": "xaGb2Lw1gn",
             "holiday": true,
-            "icon": "http://qyaajxjcj.hn-bkt.clouddn.com/images/2-15181678196720-20210824085300911.jpg",
+            "icon": "https://img.villaday.com/images/scene/2/2-15181678196720.jpg",
             "id": 2,
             "island": false,
             "name": "民宿客栈",
@@ -68,7 +68,7 @@ module.exports = {
         {
             "hashid": "V7Wb3PeBY3",
             "holiday": true,
-            "icon": "http://qyaajxjcj.hn-bkt.clouddn.com/images/5-14931185084110-20210824085300911.jpg",
+            "icon": "https://img.villaday.com/images/scene/5/5-14931185084110.jpg",
             "id": 5,
             "island": false,
             "name": "轻奢酒店",
