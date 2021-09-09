@@ -38,6 +38,6 @@ app.use(serv(__dirname + "/public"));
 // 初始化路由
 router.initRouter(app);
 // let { PORT, NODE_ENV } = process.env;
-let PORT = 3006;
+let PORT = 3007;
 app.listen(PORT);
 console.log(`服务已启动，在 http://localhost:${PORT}/`);

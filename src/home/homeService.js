@@ -44,7 +44,7 @@ class Home extends Common {
     }
     const app = new Vue({
       data: {
-        ip: `http://${ip}:3006`,
+        ip: `http://${ip}:3007`,
         title: process.env.serverName,
         env: process.env.NODE_ENV === "production" ? "生产环境" : "开发环境",
         routes: []
