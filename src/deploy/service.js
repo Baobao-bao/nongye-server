@@ -10,8 +10,8 @@
   
     async index(ctx) { 
       shell.exec('git pull origin master');
-      shell.exec('pm2 stop villa2-server');
-      shell.exec('pm2 start villa2-server');
+      shell.exec('pm2 stop nongye-server');
+      shell.exec('pm2 start nongye-server');
       // shell.exec('pm2 restart villa2-json');
       ctx.body = '部署中........';
     }

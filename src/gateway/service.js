@@ -1,12 +1,10 @@
-module.exports = function createService(name) {
-  let collName = name[0].toUpperCase() + name.slice(1);
-  return `
+
   const $ = require('axios');
   const UUID = require("uuid");
   const Common = require('../common/index');
   class Service extends Common{
     constructor() {
-      super('${collName}');
+      super('Gateway');
     };
   
     async add(ctx) {
@@ -14,7 +12,7 @@ module.exports = function createService(name) {
       try {
         let createTime = Date.now();
         let updateTime = Date.now();
-        let res = await $.post(this.url + '/${collName}', {
+        let res = await $.post(this.url + '/Gateway', {
           id: UUID.v1(),
           createTime,
           updateTime,
@@ -41,7 +39,7 @@ module.exports = function createService(name) {
         _limit
       }
       try {
-        let res = await $.get(this.url + '/${collName}',{params});
+        let res = await $.get(this.url + '/Gateway',{params});
         ctx.body = {
           code: 666,
           msg: 'success',
@@ -57,7 +55,7 @@ module.exports = function createService(name) {
   
     async all(ctx) {
       try {
-        let res = await $.get(this.url + '/${collName}');
+        let res = await $.get(this.url + '/Gateway');
         ctx.body = {
           code: 666,
           msg: 'success',
@@ -74,7 +72,7 @@ module.exports = function createService(name) {
     async edit(ctx) {
       try {
         ctx.params.updateTime = Date.now();
-        let res = await $.put(this.url + '/${collName}/' + ctx.params.id, ctx.params);
+        let res = await $.put(this.url + '/Gateway/' + ctx.params.id, ctx.params);
         ctx.body = {
           code: 666,
           msg: 'success',
@@ -90,7 +88,7 @@ module.exports = function createService(name) {
   
     async detail(ctx) {
       try {
-        let res = await $.get(this.url + '/${collName}/' + ctx.params.id);
+        let res = await $.get(this.url + '/Gateway/' + ctx.params.id);
         ctx.body = {
           code: 666,
           msg: 'success',
@@ -106,7 +104,7 @@ module.exports = function createService(name) {
   
     async del(ctx) {
       try {
-        let res = await $.delete(this.url + '/${collName}/' + ctx.params.id);
+        let res = await $.delete(this.url + '/Gateway/' + ctx.params.id);
         ctx.body = ctx.body = {
           code: 666,
           msg: 'success',
@@ -121,5 +119,3 @@ module.exports = function createService(name) {
     } 
   }
   module.exports = new Service();
-`;
-};

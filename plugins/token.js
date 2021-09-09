@@ -8,7 +8,7 @@ module.exports = async (ctx, next) => {
   const token = "Bearer " + tokenStr;
   if (!!tokenStr) {
     // 解密payload，获取用户名和ID
-    let payload = await verify(token.split(" ")[1], "villa");
+    let payload = await verify(token.split(" ")[1], "nongye");
     ctx.user = payload;
   } else {
     // 没带token,使用的是默认的token

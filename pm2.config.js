@@ -1,5 +1,5 @@
 const app = {
-  name: "villa-server",
+  name: "nongye-server",
   script: "./app.js",
   watch: true,
   env: {
