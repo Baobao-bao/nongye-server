@@ -12,6 +12,6 @@ server.use(router);
 server.use(middlewares);
 server.use(jsonServer.bodyParser);
 
-server.listen(9006, () => {
-    console.log('服务已启动, 在 http://localhost:9006');
+server.listen(9007, () => {
+    console.log('服务已启动, 在 http://localhost:9007');
 });
