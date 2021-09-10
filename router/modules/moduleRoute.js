@@ -2,7 +2,7 @@ const modules = require("../../src/module/service");
 module.exports = {
   path: "/module",
   name: "系统模块",
-  hidden: true,
+  // hidden: true,
   children: [
     {
       path: "/add",

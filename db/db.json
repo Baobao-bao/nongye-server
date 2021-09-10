@@ -1,37 +1,158 @@
 {
-  "gateway":[
-    {
-    "eui": "2CF7F17221300055",
-    "name": "智慧农业-网关",
-    "mhz": "CN470-510",
-    "online": "在线",
-    "country": "China",
-    "agreement": "LoRaPP",
-    "bTime": "2021-07-30 14:46:17",
-    "uploadTime": "2021-09-01 15:36:08",
-    "desc": ""
+  "gateway": [{
+      "eui": "2CF7F17221300055",
+      "name": "智慧农业-网关",
+      "mhz": "CN470-510",
+      "online": "在线",
+      "country": "China",
+      "agreement": "LoRaPP",
+      "bTime": "2021-07-30 14:46:17",
+      "uploadTime": "2021-09-01 15:36:08",
+      "desc": ""
     },
     {
-    "eui": "2CF7F17221300055",
-    "name": "智慧农业-网关",
-    "mhz": "CN470-510",
-    "online": "在线",
-    "country": "China",
-    "agreement": "LoRaPP",
-    "bTime": "2021-07-30 14:46:17",
-    "uploadTime": "2021-09-01 15:36:08",
-    "desc": ""
+      "eui": "2CF7F17221300055",
+      "name": "智慧农业-网关",
+      "mhz": "CN470-510",
+      "online": "在线",
+      "country": "China",
+      "agreement": "LoRaPP",
+      "bTime": "2021-07-30 14:46:17",
+      "uploadTime": "2021-09-01 15:36:08",
+      "desc": ""
     },
     {
-    "eui": "2CF7F17221300055",
-    "name": "智慧农业-网关",
-    "mhz": "CN470-510",
-    "online": "在线",
-    "country": "China",
-    "agreement": "LoRaPP",
-    "bTime": "2021-07-30 14:46:17",
-    "uploadTime": "2021-09-01 15:36:08",
-    "desc": ""
+      "eui": "2CF7F17221300055",
+      "name": "智慧农业-网关",
+      "mhz": "CN470-510",
+      "online": "在线",
+      "country": "China",
+      "agreement": "LoRaPP",
+      "bTime": "2021-07-30 14:46:17",
+      "uploadTime": "2021-09-01 15:36:08",
+      "desc": ""
     }
-    ]
+  ],
+  "nodeGround": [{
+      "groupName": "7788",
+      "nodeNums": "22",
+      "groupNums": "13",
+      "devNums": "9",
+      "online": "在线",
+      "onlineNums": "7",
+      "cTime": "2021-09-01 15:36:08"
+    },
+    {
+      "groupName": "南山",
+      "nodeNums": "2",
+      "groupNums": "3",
+      "devNums": "9",
+      "online": "在线",
+      "onlineNums": "7",
+      "cTime": "2021-09-01 15:36:08"
+    },
+    {
+      "groupName": "675",
+      "nodeNums": "21",
+      "groupNums": "3",
+      "devNums": "9",
+      "online": "在线",
+      "onlineNums": "17",
+      "cTime": "2021-09-01 15:36:08"
+    },
+    {
+      "groupName": "23",
+      "nodeNums": "4",
+      "groupNums": "3",
+      "devNums": "4",
+      "online": "在线",
+      "onlineNums": "17",
+      "cTime": "2021-09-01 15:36:08"
+    }
+  ],
+  "node": [{
+      "eui": "2CF7F17221300055",
+      "name": "二氧化碳传感器",
+      "mhz": "CN470-510",
+      "online": "在线",
+      "nums": "1",
+      "devGroup": "LoRaPP",
+      "bTime": "2021-07-30 14:46:17",
+      "loop": "2"
+    },
+    {
+      "eui": "2CF7F17221300055",
+      "name": "空气温湿度传感器",
+      "mhz": "CN470-510",
+      "online": "在线",
+      "nums": "2",
+      "devGroup": "LoRaPP",
+      "bTime": "2021-07-30 14:46:17",
+      "loop": "4"
+    },
+    {
+      "eui": "2CF7F17221300055",
+      "name": "土壤温湿度传感器",
+      "mhz": "CN470-510",
+      "online": "在线",
+      "nums": "1",
+      "devGroup": "LoRaPP",
+      "bTime": "2021-07-30 14:46:17",
+      "loop": "5"
+    },
+    {
+      "eui": "2CF7F17221300055",
+      "name": "气压传感器",
+      "mhz": "CN470-510",
+      "online": "在线",
+      "nums": "1",
+      "devGroup": "LoRaPP",
+      "bTime": "2021-07-30 14:46:17",
+      "loop": "5"
+    }
+  ],
+  "developKit": [{
+      "eui": "2CF7F17221300055",
+      "name": "二氧化碳传感器",
+      "online": "在线",
+      "nums": "1",
+      "devGroup": "LoRaPP",
+      "bTime": "2021-07-30 14:46:17"
+    },
+    {
+      "eui": "2CF7F17221300055",
+      "name": "空气温湿度传感器",
+      "online": "在线",
+      "nums": "2",
+      "devGroup": "LoRaPP",
+      "bTime": "2021-07-30 14:46:17"
+    },
+    {
+      "eui": "2CF7F17221300055",
+      "name": "土壤温湿度传感器",
+      "online": "在线",
+      "nums": "1",
+      "devGroup": "LoRaPP",
+      "bTime": "2021-07-30 14:46:17"
+    },
+    {
+      "eui": "2CF7F17221300055",
+      "name": "气压传感器",
+      "online": "在线",
+      "nums": "1",
+      "devGroup": "LoRaPP",
+      "bTime": "2021-07-30 14:46:17"
+    }
+  ],
+  "account": [{
+    "account": "xxxc",
+    "username": "xiaoming",
+    "type": "普通",
+    "action": "998",
+    "channel": "绑定设备赠送",
+    "cTime": "2021-08-11 16:35:25",
+    "uTime": "2021-08-11 16:35:25",
+    "lTime": "2021-08-11 16:35:25",
+    "desc": ""
+  }]
 }
