@@ -6,8 +6,8 @@
         super("Upload");
     let attrs = {
       name: String,
-      createTime: Number,
-      updateTime: Number
+      cTime: Number,
+      uTime: Number
     };
     this.model = this.createModel(attrs);
   }
@@ -15,12 +15,12 @@
   add(data) {
     let promise = new Promise(async (resolve, reject) => {
       try {
-        let createTime = Date.now();
-        let updateTime = Date.now();
+        let cTime = Date.now();
+        let uTime = Date.now();
         let model = this.model({
           ...data,
-          createTime,
-          updateTime
+          cTime,
+          uTime
         });
         let res = await model.save();
         resolve(this.handleData(res,'uploadId'));
@@ -34,7 +34,7 @@
   all() {
     return new Promise(async (resovle, reject) => {
       try {
-        let res = await this.model.find().sort({ createTime: -1 });
+        let res = await this.model.find().sort({ cTime: -1 });
         resovle(this.handleData(res,'uploadId'));
       } catch (error) {
         reject(error);
@@ -50,7 +50,7 @@
       let p2 = this.model
         .find()
         .skip(skipNum)
-        .sort({ createTime: -1 })
+        .sort({ cTime: -1 })
         .limit(pageSize);
       try {
         let res = await Promise.all([p1, p2]);

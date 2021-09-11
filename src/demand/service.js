@@ -9,12 +9,12 @@
     async add(ctx) {
       let data = ctx.params;
       try {
-        let createTime = Date.now();
-        let updateTime = Date.now();
+        let cTime = Date.now();
+        let uTime = Date.now();
         let res = await $.post(this.url + '/Demand', {
           id: this.uuid(),
-          createTime,
-          updateTime,
+          cTime,
+          uTime,
           ...data,
         }) 
         ctx.body = {
@@ -34,7 +34,7 @@
       console.log(this.getTotalPage());
       let {_page,_limit} = ctx.params;
       let params = {
-        _sort:'updateTime',_order:'desc',
+        _sort:'uTime',_order:'desc',
         _page,
         _limit
       }
@@ -71,7 +71,7 @@
   
     async edit(ctx) {
       try {
-        ctx.params.updateTime = Date.now();
+        ctx.params.uTime = Date.now();
         let res = await $.put(this.url + '/Demand/' + ctx.params.id, ctx.params);
         ctx.body = {
           code: 666,

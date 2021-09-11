@@ -10,12 +10,14 @@
     async add(ctx) {
       let data = ctx.params;
       try {
-        let createTime = Date.now();
-        let updateTime = Date.now();
+        let cTime = Date.now();
+        let uTime = Date.now();
+        let lTime = Date.now();
         let res = await $.post(this.url + '/Account', {
           id: UUID.v1(),
-          createTime,
-          updateTime,
+          cTime,
+          uTime,
+          lTime,
           ...data,
         }) 
         ctx.body = {
@@ -34,7 +36,7 @@
     async list(ctx) {   
       let {_page,_limit} = ctx.params;
       let params = {
-        _sort:'updateTime',_order:'desc',
+        _sort:'uTime',_order:'desc',
         _page,
         _limit
       }
@@ -43,19 +45,7 @@
         ctx.body = {
           code: 666,
           msg: 'success',
-          data: [
-            {
-              account:'xxxc',
-              username:'xiaoming',
-              type:'普通',
-              action:'998',
-              channel:'绑定设备赠送',
-              cTime:'2021-08-11 16:35:25',
-              uTime:'2021-08-11 16:35:25',
-              lTime:'2021-08-11 16:35:25',
-              desc:'',
-            }
-          ]
+          data: res.data
         };
       } catch (error) {
         ctx.body = {
@@ -83,7 +73,7 @@
   
     async edit(ctx) {
       try {
-        ctx.params.updateTime = Date.now();
+        ctx.params.uTime = Date.now();
         let res = await $.put(this.url + '/Account/' + ctx.params.id, ctx.params);
         ctx.body = {
           code: 666,

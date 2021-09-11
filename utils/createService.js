@@ -12,12 +12,12 @@ module.exports = function createService(name) {
     async add(ctx) {
       let data = ctx.params;
       try {
-        let createTime = Date.now();
-        let updateTime = Date.now();
+        let cTime = Date.now();
+        let uTime = Date.now();
         let res = await $.post(this.url + '/${collName}', {
           id: UUID.v1(),
-          createTime,
-          updateTime,
+          cTime,
+          uTime,
           ...data,
         }) 
         ctx.body = {
@@ -36,7 +36,7 @@ module.exports = function createService(name) {
     async list(ctx) {   
       let {_page,_limit} = ctx.params;
       let params = {
-        _sort:'updateTime',_order:'desc',
+        _sort:'uTime',_order:'desc',
         _page,
         _limit
       }
@@ -73,7 +73,7 @@ module.exports = function createService(name) {
   
     async edit(ctx) {
       try {
-        ctx.params.updateTime = Date.now();
+        ctx.params.uTime = Date.now();
         let res = await $.put(this.url + '/${collName}/' + ctx.params.id, ctx.params);
         ctx.body = {
           code: 666,

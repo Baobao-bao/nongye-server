@@ -13,7 +13,7 @@ module.exports = async (ctx, next) => {
   } else {
     // 没带token,使用的是默认的token
     ctx.user = {
-      createTime: 1628840664201,
+      cTime: 1628840664201,
       id: "475c0ea0fc0a",
       phone: "13800000000",
     };

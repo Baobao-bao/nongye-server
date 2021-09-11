@@ -4,18 +4,18 @@
   const Common = require('../common/index');
   class Service extends Common{
     constructor() {
-      super('NodeGround');
+      super('group');
     };
   
     async add(ctx) {
       let data = ctx.params;
       try {
-        let createTime = Date.now();
-        let updateTime = Date.now();
-        let res = await $.post(this.url + '/NodeGround', {
+        let cTime = Date.now();
+        let uTime = Date.now();
+        let res = await $.post(this.url + '/group', {
           id: UUID.v1(),
-          createTime,
-          updateTime,
+          cTime,
+          uTime,
           ...data,
         }) 
         ctx.body = {
@@ -34,12 +34,12 @@
     async list(ctx) {   
       let {_page,_limit} = ctx.params;
       let params = {
-        _sort:'updateTime',_order:'desc',
+        _sort:'uTime',_order:'desc',
         _page,
         _limit
       }
       try {
-        let res = await $.get(this.url + '/NodeGround',{params});
+        let res = await $.get(this.url + '/group',{params});
         ctx.body = {
           code: 666,
           msg: 'success',
@@ -55,7 +55,7 @@
   
     async all(ctx) {
       try {
-        let res = await $.get(this.url + '/NodeGround');
+        let res = await $.get(this.url + '/group');
         ctx.body = {
           code: 666,
           msg: 'success',
@@ -71,8 +71,8 @@
   
     async edit(ctx) {
       try {
-        ctx.params.updateTime = Date.now();
-        let res = await $.put(this.url + '/NodeGround/' + ctx.params.id, ctx.params);
+        ctx.params.uTime = Date.now();
+        let res = await $.put(this.url + '/group/' + ctx.params.id, ctx.params);
         ctx.body = {
           code: 666,
           msg: 'success',
@@ -88,7 +88,7 @@
   
     async detail(ctx) {
       try {
-        let res = await $.get(this.url + '/NodeGround/' + ctx.params.id);
+        let res = await $.get(this.url + '/group/' + ctx.params.id);
         ctx.body = {
           code: 666,
           msg: 'success',
@@ -104,7 +104,7 @@
   
     async del(ctx) {
       try {
-        let res = await $.delete(this.url + '/NodeGround/' + ctx.params.id);
+        let res = await $.delete(this.url + '/group/' + ctx.params.id);
         ctx.body = ctx.body = {
           code: 666,
           msg: 'success',

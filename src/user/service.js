@@ -10,7 +10,7 @@ class Service extends Common {
   async list(ctx) {
     let { _page, _limit } = ctx.params;
     let params = {
-      _sort: "updateTime",
+      _sort: "uTime",
       _order: "desc",
       _page,
       _limit,
@@ -50,7 +50,7 @@ class Service extends Common {
 
   async edit(ctx) {
     try {
-      ctx.params.updateTime = Date.now();
+      ctx.params.uTime = Date.now();
       let res = await $.put(this.url + "/user/" + ctx.params.id, ctx.params);
       ctx.body = {
         code: 666,
@@ -157,12 +157,12 @@ class Service extends Common {
   async add(data) {
     return new Promise(async (resolve, reject) => {
       try {
-        let createTime = Date.now();
-        let updateTime = Date.now();
+        let cTime = Date.now();
+        let uTime = Date.now();
         let res = await $.post(this.url + "/user", {
           id: this.uuid(),
-          createTime,
-          updateTime,
+          cTime,
+          uTime,
           ...data,
         });
         resolve(res.data);

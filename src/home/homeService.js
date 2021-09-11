@@ -57,8 +57,8 @@ class Home extends Common {
         handleParams(route, item) {
           let params = JSON.stringify(item.params) || "";
           let resp = JSON.stringify(item.resp || {});
-          let url = `/test.html?url=${route.path +
-            item.path}&params=${params}&name=${item.name}&resp=${resp}`;
+          let routePath = encodeURIComponent(route.path + item.path);
+          let url = `/test.html?params=${params}&name=${item.name}&resp=${resp}&url=${routePath}`;
           url = encodeURI(url);
           return url;
         }

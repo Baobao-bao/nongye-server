@@ -20,7 +20,7 @@
       console.log(this.getTotalPage());
       let {_page,_limit} = ctx.params;
       let params = {
-        _sort:'updateTime',_order:'desc',
+        _sort:'uTime',_order:'desc',
         _page,
         _limit
       }
@@ -57,7 +57,7 @@
   
     async edit(ctx) {
       try {
-        ctx.params.updateTime = Date.now();
+        ctx.params.uTime = Date.now();
         let res = await $.put(this.url + '/Deploy/' + ctx.params.id, ctx.params);
         ctx.body = {
           code: 666,
