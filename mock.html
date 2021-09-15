@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/Mock.js/1.0.1-beta3/mock-min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.13/vue.min.js"></script>
+    <style>
+      li {
+        font-size: 10px;
+      }
+      li:nth-child(odd) {
+        background-color: gray;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+        mockjs文档: https://github.com/nuysoft/Mock/wiki/Syntax-Specification#%E6%95%B0%E6%8D%AE%E6%A8%A1%E6%9D%BF%E5%AE%9A%E4%B9%89%E8%A7%84%E8%8C%83-dtd
+    </div>
+
+    <div id="app">
+      <ul>
+        <li v-for="item in list" v-text="item"></li>
+      </ul>
+    </div>
+
+    <script>
+      let mock = Mock.mock;
+      let random = Mock.Random;
+      let list = mock({
+        "list|1-3": [{ "id|3-5": 10 }],
+      });
+      console.log(list);
+
+      //   let list = [];
+      //   for (let i = 0; i < 3; i++) {
+      //     list.push(
+      //       mock({
+      //         //   'id':mock('@id'),
+      //         //   'userName':mock('@cname'),
+      //         //   'age|18-45':1,
+      //         //   'gender|1':['男','女'],
+      //         //   'addr':mock('@city(true)'),
+
+      //         eui: mock("@id"),
+      //         name: "智慧农业-网关",
+      //         mhz: `CN${random.integer(1,3)}-510`,
+      //         online: "在线",
+      //         country: "China",
+      //         agreement: "LoRaPP",
+      //         bTime: "2021-07-30 14:46:17",
+      //         uploadTime: "2021-09-01 15:36:08",
+      //         desc: "",
+      //       })
+      //     );
+      //   }
+
+      new Vue({
+        el: "#app",
+        data: {
+          list,
+        },
+      });
+    </script>
+  </body>
+</html>
