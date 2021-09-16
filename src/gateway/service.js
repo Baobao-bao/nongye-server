@@ -32,18 +32,24 @@
     }
   
     async list(ctx) {   
-      let {_page,_limit} = ctx.params;
+      let {currPage=1,pageSize=5,agreement} = ctx.params;
+      agreement=agreement==='all'?undefined:agreement;
       let params = {
-        _sort:'uTime',_order:'desc',
-        _page,
-        _limit
+        agreement,
+        _sort:'uTime',_order:'desc'
       }
       try {
-        let res = await $.get(this.url + '/Gateway',{params});
+        let res = await $.get(this.url + '/Gateway',{params:params}); 
+        let list = res.data.slice((currPage-1)*pageSize,(currPage-1)*pageSize+5);
+        // console.log('list',list);
+        let total = res.data.length;
         ctx.body = {
+          pageSize,
+          currPage, 
+          total,
           code: 666,
           msg: 'success',
-          data: res.data
+          data: list
         };
       } catch (error) {
         ctx.body = {
