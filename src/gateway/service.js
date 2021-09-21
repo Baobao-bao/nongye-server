@@ -32,16 +32,17 @@
     }
   
     async list(ctx) {   
-      let {currPage=1,pageSize=5,agreement} = ctx.params;
+      let {currPage=1,pageSize=5,agreement,online} = ctx.params;
       agreement=agreement==='all'?undefined:agreement;
+      online=online==='all'?undefined:online;
       let params = {
+        online,
         agreement,
         _sort:'uTime',_order:'desc'
       }
       try {
         let res = await $.get(this.url + '/Gateway',{params:params}); 
         let list = res.data.slice((currPage-1)*pageSize,(currPage-1)*pageSize+5);
-        // console.log('list',list);
         let total = res.data.length;
         ctx.body = {
           pageSize,

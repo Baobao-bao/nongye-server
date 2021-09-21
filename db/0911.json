@@ -4,7 +4,7 @@
       "eui": "2CF7F17221300055",
       "name": "智慧农业-网关",
       "mhz": "CN470-510",
-      "online": "在线",
+      "online": true,
       "country": "China",
       "agreement": "LoRaPP",
       "bTime": "2021-07-30 14:46:17",
@@ -15,7 +15,7 @@
       "eui": "2CF7F17221300055",
       "name": "智慧农业-网关",
       "mhz": "CN470-510",
-      "online": "在线",
+      "online": true,
       "country": "China",
       "agreement": "LoRaPP",
       "bTime": "2021-07-30 14:46:17",
@@ -26,7 +26,7 @@
       "eui": "2CF7F17221300055",
       "name": "智慧农业-网关",
       "mhz": "CN470-510",
-      "online": "在线",
+      "online": true,
       "country": "China",
       "agreement": "LoRaPP",
       "bTime": "2021-07-30 14:46:17",
@@ -40,7 +40,7 @@
       "nodeNums": "22",
       "groupNums": "13",
       "devNums": "9",
-      "online": "在线",
+      "online": true,
       "onlineNums": "7",
       "cTime": "2021-09-01 15:36:08"
     },
@@ -49,7 +49,7 @@
       "nodeNums": "2",
       "groupNums": "3",
       "devNums": "9",
-      "online": "在线",
+      "online": true,
       "onlineNums": "7",
       "cTime": "2021-09-01 15:36:08"
     },
@@ -58,7 +58,7 @@
       "nodeNums": "21",
       "groupNums": "3",
       "devNums": "9",
-      "online": "在线",
+      "online": true,
       "onlineNums": "17",
       "cTime": "2021-09-01 15:36:08"
     },
@@ -67,7 +67,7 @@
       "nodeNums": "4",
       "groupNums": "3",
       "devNums": "4",
-      "online": "在线",
+      "online": true,
       "onlineNums": "17",
       "cTime": "2021-09-01 15:36:08"
     }
@@ -77,7 +77,7 @@
       "eui": "2CF7F17221300055",
       "name": "二氧化碳传感器",
       "mhz": "CN470-510",
-      "online": "在线",
+      "online": true,
       "nums": "1",
       "devGroup": "LoRaPP",
       "bTime": "2021-07-30 14:46:17",
@@ -87,7 +87,7 @@
       "eui": "2CF7F17221300055",
       "name": "空气温湿度传感器",
       "mhz": "CN470-510",
-      "online": "在线",
+      "online": true,
       "nums": "2",
       "devGroup": "LoRaPP",
       "bTime": "2021-07-30 14:46:17",
@@ -97,7 +97,7 @@
       "eui": "2CF7F17221300055",
       "name": "土壤温湿度传感器",
       "mhz": "CN470-510",
-      "online": "在线",
+      "online": true,
       "nums": "1",
       "devGroup": "LoRaPP",
       "bTime": "2021-07-30 14:46:17",
@@ -107,7 +107,7 @@
       "eui": "2CF7F17221300055",
       "name": "气压传感器",
       "mhz": "CN470-510",
-      "online": "在线",
+      "online": true,
       "nums": "1",
       "devGroup": "LoRaPP",
       "bTime": "2021-07-30 14:46:17",
@@ -118,7 +118,7 @@
     {
       "eui": "2CF7F17221300055",
       "name": "二氧化碳传感器",
-      "online": "在线",
+      "online": true,
       "nums": "1",
       "devGroup": "LoRaPP",
       "bTime": "2021-07-30 14:46:17"
@@ -126,7 +126,7 @@
     {
       "eui": "2CF7F17221300055",
       "name": "空气温湿度传感器",
-      "online": "在线",
+      "online": true,
       "nums": "2",
       "devGroup": "LoRaPP",
       "bTime": "2021-07-30 14:46:17"
@@ -134,7 +134,7 @@
     {
       "eui": "2CF7F17221300055",
       "name": "土壤温湿度传感器",
-      "online": "在线",
+      "online": true,
       "nums": "1",
       "devGroup": "LoRaPP",
       "bTime": "2021-07-30 14:46:17"
@@ -142,7 +142,7 @@
     {
       "eui": "2CF7F17221300055",
       "name": "气压传感器",
-      "online": "在线",
+      "online": true,
       "nums": "1",
       "devGroup": "LoRaPP",
       "bTime": "2021-07-30 14:46:17"
