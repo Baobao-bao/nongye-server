@@ -1,26 +1,26 @@
 
-const node = require("../../src/node/service");
+const device = require("../../src/device/service");
 module.exports = {
-  path: "/node",
-  name: "node(传感器节点)模块",
+  path: "/device",
+  name: "device(设备)模块",
   children: [
     {
       path: "/add",
       name: "添加",
-      service: node["add"],
+      service: device["add"],
       params: {
-        name: "node"
+        name: "device"
       }
     },
     {
       path: "/count",
       name: "全部列表",
-      service: node["count"]
+      service: device["count"]
     },
      {
        path: "/list",
        name: "列表分页查询",
-       service: node["list"],
+       service: device["list"],
        params: {
          pageNum: "当前页"
        }
@@ -28,7 +28,7 @@ module.exports = {
        {
        path: "/detail",
        name: "详情",
-       service: node["detail"],
+       service: device["detail"],
        params: {
          id: "id"
        }
@@ -36,7 +36,7 @@ module.exports = {
      {
        path: "/edit",
        name: "修改",
-       service: node["edit"],
+       service: device["edit"],
        params: {
          id: "id"
        }
@@ -44,7 +44,7 @@ module.exports = {
     //  {
     //    path: "/del",
     //    name: "删除",
-    //    service: node["del"],
+    //    service: device["del"],
     //    params: {
     //      id: "id"
     //    }
