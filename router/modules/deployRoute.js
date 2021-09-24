@@ -2,7 +2,8 @@
 const deploy = require("../../src/deploy/service");
 module.exports = {
   path: "/deploy",
-  name: "deploy(undefined)模块",
+  name: "deploy(部署)模块",
+  hidden: true,
   children: [
     {
       path: "/index",

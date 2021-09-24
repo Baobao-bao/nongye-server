@@ -4,12 +4,13 @@ module.exports = () => {
   let mock = Mock.mock;
   let Random = Mock.Random;
   let list = [];
-  for (var i = 1; i <= 20; i++) {
+  for (var i = 1; i <= 40; i++) {
     list.push(madeObj());
   }
 
   function madeObj() {
     return mock({
+      "id":mock('@id'),
       eui: mock(/\d[A-Z]{2}\d{8}/),
       // 频率
       mhz: `CN${mock(/\d{3}/)}-${mock(/\d{3}/)}`,
@@ -78,7 +79,7 @@ module.exports = () => {
       powerNum: Random.integer(0, 100),
       // 通道
       nums: mock(/[1-6]/),
-      "devGroup|1": ["智慧南山", "智慧龙华"],
+      "devGroup|1": ["青岛市农业基地", "济南农业基地","潍坊农业基地","泰安农业基地","菏泽农业基地","威海农业基地"], 
       // 上报周期
       "loop|1": [1, 3, 5, 7],
     });

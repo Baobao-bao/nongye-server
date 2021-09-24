@@ -3,6 +3,7 @@ const house = require("../../src/house/service");
 module.exports = {
   path: "/house",
   name: "house(房源)模块",
+  hidden: true,
   children: [
     {
       path: "/introduction",

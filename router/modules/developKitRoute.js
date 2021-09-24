@@ -2,6 +2,7 @@
 const developKit = require("../../src/developKit/service");
 module.exports = {
   path: "/developKit",
+  hidden: true,
   name: "developKit(开发套件)模块",
   children: [
     {
