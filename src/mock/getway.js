@@ -1,3 +1,4 @@
+// 网关模拟接口
 const getway = (ctx) => {
   let { _page, _limit } = ctx.params;
   let params = {

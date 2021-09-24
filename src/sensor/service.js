@@ -3,7 +3,7 @@ const UUID = require("uuid");
 const Common = require("../common/index");
 class Service extends Common {
   constructor() {
-    super("Node");
+    super("sensor");
   }
 
   async add(ctx) {
@@ -11,7 +11,7 @@ class Service extends Common {
     try {
       let cTime = Date.now();
       let uTime = Date.now();
-      let res = await $.post(this.url + "/Node", {
+      let res = await $.post(this.url + "/sensor", {
         id: UUID.v1(),
         cTime,
         uTime,
@@ -39,7 +39,7 @@ class Service extends Common {
       _limit,
     };
     try {
-      let res = await $.get(this.url + "/Node", { params });
+      let res = await $.get(this.url + "/sensor", { params });
       ctx.body = {
         code: 666,
         msg: "success",
@@ -55,7 +55,7 @@ class Service extends Common {
 
   async all(ctx) {
     try {
-      let res = await $.get(this.url + "/Node");
+      let res = await $.get(this.url + "/sensor");
       ctx.body = {
         code: 666,
         msg: "success",
@@ -100,7 +100,7 @@ class Service extends Common {
   async edit(ctx) {
     try {
       ctx.params.uTime = Date.now();
-      let res = await $.put(this.url + "/Node/" + ctx.params.id, ctx.params);
+      let res = await $.put(this.url + "/sensor/" + ctx.params.id, ctx.params);
       ctx.body = {
         code: 666,
         msg: "success",
@@ -116,7 +116,7 @@ class Service extends Common {
 
   async detail(ctx) {
     try {
-      let res = await $.get(this.url + "/Node/" + ctx.params.id);
+      let res = await $.get(this.url + "/sensor/" + ctx.params.id);
       ctx.body = {
         code: 666,
         msg: "success",
@@ -132,7 +132,7 @@ class Service extends Common {
 
   async del(ctx) {
     try {
-      let res = await $.delete(this.url + "/Node/" + ctx.params.id);
+      let res = await $.delete(this.url + "/sensor/" + ctx.params.id);
       ctx.body = ctx.body = {
         code: 666,
         msg: "success",
