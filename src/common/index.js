@@ -66,7 +66,7 @@ class Utils {
     return service.post(url, data);
   }
   
-  $find(url, data) {
+  $find(url, data={}) {
     return service.get(url, { params: data });
   }
   

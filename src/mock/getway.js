@@ -20,7 +20,7 @@ const getway = (ctx) => {
         eui: mock(/[A-Z]{2}\d{9}/),
         name: "智慧农业-网关",
         mhz: `CN${mock(/\d{3}/)}-${mock(/\d{3}/)}`,
-        "online|1": ["在线", "下线"],
+        "online|1": [true, false],
         country: "China",
         "agreement|1": ["LoRaPP", "LoRaWAN"],
         year: Random.integer(2010, 2020),

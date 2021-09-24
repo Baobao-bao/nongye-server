@@ -6,7 +6,7 @@ let obj = {
         {
             "eui": "7BI78729534",
             "mhz": "CN568-024",
-            "online": "下线",
+            "online": false,
             "country": "China",
             "agreement": "LoRaWAN",
             "year": 2020,
@@ -26,7 +26,7 @@ let obj = {
         {
             "eui": "3NU63320836",
             "mhz": "CN738-322",
-            "online": "在线",
+            "online": true,
             "country": "China",
             "agreement": "NB-IoT",
             "year": 2019,
@@ -46,7 +46,7 @@ let obj = {
         {
             "eui": "7GA24028175",
             "mhz": "CN792-146",
-            "online": "下线",
+            "online": false,
             "country": "China",
             "agreement": "LoRaPP",
             "year": 2016,
@@ -66,7 +66,7 @@ let obj = {
         {
             "eui": "1YU41176393",
             "mhz": "CN168-387",
-            "online": "下线",
+            "online": false,
             "country": "China",
             "agreement": "LoRaWAN",
             "year": 2015,
@@ -86,7 +86,7 @@ let obj = {
         {
             "eui": "3VW36123639",
             "mhz": "CN997-473",
-            "online": "下线",
+            "online": false,
             "country": "China",
             "agreement": "LoRaPP",
             "year": 2010,
@@ -106,7 +106,7 @@ let obj = {
         {
             "eui": "8GI47494726",
             "mhz": "CN928-848",
-            "online": "下线",
+            "online": false,
             "country": "China",
             "agreement": "4G/2G",
             "year": 2013,
@@ -126,7 +126,7 @@ let obj = {
         {
             "eui": "4LD74523599",
             "mhz": "CN842-765",
-            "online": "下线",
+            "online": false,
             "country": "China",
             "agreement": "NB-IoT",
             "year": 2020,
@@ -146,7 +146,7 @@ let obj = {
         {
             "eui": "7CL44835594",
             "mhz": "CN916-837",
-            "online": "在线",
+            "online": true,
             "country": "China",
             "agreement": "LoRaPP",
             "year": 2016,
@@ -166,7 +166,7 @@ let obj = {
         {
             "eui": "3JV32012960",
             "mhz": "CN328-801",
-            "online": "在线",
+            "online": true,
             "country": "China",
             "agreement": "NB-IoT",
             "year": 2013,
@@ -186,7 +186,7 @@ let obj = {
         {
             "eui": "6NA59615671",
             "mhz": "CN376-116",
-            "online": "在线",
+            "online": true,
             "country": "China",
             "agreement": "LoRaWAN",
             "year": 2020,
@@ -206,7 +206,7 @@ let obj = {
         {
             "eui": "4RX74444211",
             "mhz": "CN461-752",
-            "online": "在线",
+            "online": true,
             "country": "China",
             "agreement": "NB-IoT",
             "year": 2013,
@@ -226,7 +226,7 @@ let obj = {
         {
             "eui": "8GF80518435",
             "mhz": "CN431-586",
-            "online": "下线",
+            "online": false,
             "country": "China",
             "agreement": "NB-IoT",
             "year": 2014,
@@ -246,7 +246,7 @@ let obj = {
         {
             "eui": "4VK92205331",
             "mhz": "CN215-261",
-            "online": "在线",
+            "online": true,
             "country": "China",
             "agreement": "4G/2G",
             "year": 2011,
@@ -266,7 +266,7 @@ let obj = {
         {
             "eui": "8DC51400422",
             "mhz": "CN629-113",
-            "online": "下线",
+            "online": false,
             "country": "China",
             "agreement": "4G/2G",
             "year": 2018,
@@ -286,7 +286,7 @@ let obj = {
         {
             "eui": "3UO62916118",
             "mhz": "CN438-367",
-            "online": "下线",
+            "online": false,
             "country": "China",
             "agreement": "NB-IoT",
             "year": 2013,
@@ -306,7 +306,7 @@ let obj = {
         {
             "eui": "8DF81816522",
             "mhz": "CN887-681",
-            "online": "下线",
+            "online": false,
             "country": "China",
             "agreement": "NB-IoT",
             "year": 2014,
@@ -326,7 +326,7 @@ let obj = {
         {
             "eui": "6PH55129627",
             "mhz": "CN242-330",
-            "online": "下线",
+            "online": false,
             "country": "China",
             "agreement": "NB-IoT",
             "year": 2011,
@@ -346,7 +346,7 @@ let obj = {
         {
             "eui": "1NH91731437",
             "mhz": "CN177-634",
-            "online": "下线",
+            "online": false,
             "country": "China",
             "agreement": "NB-IoT",
             "year": 2013,
@@ -366,7 +366,7 @@ let obj = {
         {
             "eui": "6UI65564481",
             "mhz": "CN882-162",
-            "online": "下线",
+            "online": false,
             "country": "China",
             "agreement": "NB-IoT",
             "year": 2015,
@@ -386,7 +386,7 @@ let obj = {
         {
             "eui": "6YQ89853514",
             "mhz": "CN028-634",
-            "online": "下线",
+            "online": false,
             "country": "China",
             "agreement": "NB-IoT",
             "year": 2012,
@@ -406,7 +406,7 @@ let obj = {
         {
             "eui": "0XC13428415",
             "mhz": "CN880-843",
-            "online": "在线",
+            "online": true,
             "country": "China",
             "agreement": "LoRaPP",
             "year": 2018,
@@ -426,7 +426,7 @@ let obj = {
         {
             "eui": "6HV41967305",
             "mhz": "CN067-561",
-            "online": "下线",
+            "online": false,
             "country": "China",
             "agreement": "NB-IoT",
             "year": 2012,
@@ -446,7 +446,7 @@ let obj = {
         {
             "eui": "5HH25348938",
             "mhz": "CN073-173",
-            "online": "在线",
+            "online": true,
             "country": "China",
             "agreement": "NB-IoT",
             "year": 2019,
@@ -466,7 +466,7 @@ let obj = {
         {
             "eui": "6FE46144346",
             "mhz": "CN577-764",
-            "online": "下线",
+            "online": false,
             "country": "China",
             "agreement": "LoRaWAN",
             "year": 2014,
@@ -486,7 +486,7 @@ let obj = {
         {
             "eui": "0NL42711071",
             "mhz": "CN525-452",
-            "online": "下线",
+            "online": false,
             "country": "China",
             "agreement": "NB-IoT",
             "year": 2017,
@@ -506,7 +506,7 @@ let obj = {
         {
             "eui": "8TT76461244",
             "mhz": "CN223-014",
-            "online": "在线",
+            "online": true,
             "country": "China",
             "agreement": "LoRaWAN",
             "year": 2018,
@@ -526,7 +526,7 @@ let obj = {
         {
             "eui": "8OC18479836",
             "mhz": "CN513-015",
-            "online": "下线",
+            "online": false,
             "country": "China",
             "agreement": "NB-IoT",
             "year": 2016,
@@ -546,7 +546,7 @@ let obj = {
         {
             "eui": "5JA67018323",
             "mhz": "CN130-644",
-            "online": "下线",
+            "online": false,
             "country": "China",
             "agreement": "LoRaWAN",
             "year": 2018,
@@ -566,7 +566,7 @@ let obj = {
         {
             "eui": "8GN89151384",
             "mhz": "CN482-462",
-            "online": "下线",
+            "online": false,
             "country": "China",
             "agreement": "NB-IoT",
             "year": 2016,
@@ -586,7 +586,7 @@ let obj = {
         {
             "eui": "8BJ27119452",
             "mhz": "CN720-088",
-            "online": "下线",
+            "online": false,
             "country": "China",
             "agreement": "NB-IoT",
             "year": 2014,
@@ -606,7 +606,7 @@ let obj = {
         {
             "eui": "1LD03752778",
             "mhz": "CN740-837",
-            "online": "在线",
+            "online": true,
             "country": "China",
             "agreement": "LoRaPP",
             "year": 2019,
@@ -626,7 +626,7 @@ let obj = {
         {
             "eui": "8LJ96131118",
             "mhz": "CN345-991",
-            "online": "下线",
+            "online": false,
             "country": "China",
             "agreement": "LoRaWAN",
             "year": 2015,
@@ -646,7 +646,7 @@ let obj = {
         {
             "eui": "6RJ63936015",
             "mhz": "CN452-502",
-            "online": "下线",
+            "online": false,
             "country": "China",
             "agreement": "LoRaPP",
             "year": 2016,
@@ -666,7 +666,7 @@ let obj = {
         {
             "eui": "6XT35401880",
             "mhz": "CN914-892",
-            "online": "在线",
+            "online": true,
             "country": "China",
             "agreement": "NB-IoT",
             "year": 2019,
@@ -686,7 +686,7 @@ let obj = {
         {
             "eui": "5MS69972196",
             "mhz": "CN922-583",
-            "online": "下线",
+            "online": false,
             "country": "China",
             "agreement": "4G/2G",
             "year": 2015,
@@ -706,7 +706,7 @@ let obj = {
         {
             "eui": "1HZ15250247",
             "mhz": "CN973-315",
-            "online": "在线",
+            "online": true,
             "country": "China",
             "agreement": "4G/2G",
             "year": 2015,
@@ -726,7 +726,7 @@ let obj = {
         {
             "eui": "2ED85442694",
             "mhz": "CN050-318",
-            "online": "下线",
+            "online": false,
             "country": "China",
             "agreement": "LoRaWAN",
             "year": 2019,
@@ -746,7 +746,7 @@ let obj = {
         {
             "eui": "6VC13264380",
             "mhz": "CN286-641",
-            "online": "在线",
+            "online": true,
             "country": "China",
             "agreement": "LoRaWAN",
             "year": 2016,
@@ -766,7 +766,7 @@ let obj = {
         {
             "eui": "9RZ05361075",
             "mhz": "CN842-852",
-            "online": "下线",
+            "online": false,
             "country": "China",
             "agreement": "LoRaWAN",
             "year": 2017,
@@ -786,7 +786,7 @@ let obj = {
         {
             "eui": "5UT41284232",
             "mhz": "CN857-661",
-            "online": "下线",
+            "online": false,
             "country": "China",
             "agreement": "NB-IoT",
             "year": 2016,

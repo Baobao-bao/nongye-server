@@ -14,15 +14,15 @@ module.exports = {
     },
     {
       path: "/count",
-      name: "全部列表",
+      name: "设备统计",
       service: device["count"]
     },
      {
-       path: "/list",
-       name: "列表分页查询",
-       service: device["list"],
+       path: "/sensorList",
+       name: "传感器列表",
+       service: device["sensorList"],
        params: {
-         pageNum: "当前页"
+        //  pageNum: "当前页"
        }
      },
        {

@@ -2,7 +2,7 @@
 const gateway = require("../../src/gateway/service");
 module.exports = {
   path: "/gateway",
-  name: "gateway(undefined)模块",
+  name: "gateway(网关)模块",
   children: [
     {
       path: "/add",

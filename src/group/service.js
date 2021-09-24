@@ -59,7 +59,7 @@ class Service extends Common {
         let devNums = nodeNums+Mock.mock(/[1-3]/)*1;
         // 在线设备数量
         let onlineNums = itemList.filter(
-          (item) => item.online === "在线"
+          (item) => item.online === true
         ).length;
         let cTime =
           Mock.mock(/202[01]-0[1-9]-[1-2][1-28]/) +
