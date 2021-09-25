@@ -33,7 +33,7 @@ class Service extends Common {
 
 
   async list(ctx) {
-    const madeFn = require('./chuanganqi');
+    const madeFn = require('./db');
     const list = madeFn();
     ctx.body = list;
   }

@@ -53,6 +53,24 @@ class Service extends Common {
     }
   }
 
+  async changeGroup(ctx) { 
+    let {id,devGroup} = ctx.params;
+    try { 
+      let res = await $.patch(this.url+`/sensor/${id}`,{devGroup});
+      ctx.body = {
+        code: 666,
+        data: res.data,
+        msg: "success",
+      };
+    } catch (error) {
+      // console.log(error);
+      ctx.body = {
+        code: 500,
+        msg: error.message,
+      };
+    }
+  }
+
   async all(ctx) {
     try {
       let res = await $.get(this.url + "/sensor");

@@ -57,6 +57,12 @@ class Utils {
   $get(url, data) {
     return service.get(url, { params: data });
   }
+  $patch() {
+    return service.patch;
+  }
+  $put() {
+    return service.put;
+  }
 
   $post(url, data) {
     return service.post(url, data);
@@ -74,6 +80,7 @@ class Utils {
     return service.get(url+'?id='+id);
   }
   $update(url, data) { 
+    console.log(data.id);
     return service.patch(url + `/${data.id}`, data);
   }
   $replace(url, data) {

@@ -17,6 +17,7 @@ const getway = (ctx) => {
 
     function madeObj() {
       return mock({
+        id:mock('@id'),
         eui: mock(/[A-Z]{2}\d{9}/),
         name: "智慧农业-网关",
         mhz: `CN${mock(/\d{3}/)}-${mock(/\d{3}/)}`,

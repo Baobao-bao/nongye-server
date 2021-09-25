@@ -118,7 +118,7 @@
     {
       "eui": "7BI78729534",
       "mhz": "CN568-024",
-      "online": false,
+      "online": true,
       "country": "China",
       "agreement": "LoRaWAN",
       "year": 2020,
@@ -178,7 +178,7 @@
     {
       "eui": "1YU41176393",
       "mhz": "CN168-387",
-      "online": false,
+      "online": true,
       "country": "China",
       "agreement": "LoRaWAN",
       "year": 2015,
@@ -238,7 +238,7 @@
     {
       "eui": "4LD74523599",
       "mhz": "CN842-765",
-      "online": false,
+      "online": true,
       "country": "China",
       "agreement": "NB-IoT",
       "year": 2020,
@@ -398,7 +398,7 @@
     {
       "eui": "3UO62916118",
       "mhz": "CN438-367",
-      "online": false,
+      "online": true,
       "country": "China",
       "agreement": "NB-IoT",
       "year": 2013,
@@ -458,7 +458,7 @@
     {
       "eui": "1NH91731437",
       "mhz": "CN177-634",
-      "online": false,
+      "online": true,
       "country": "China",
       "agreement": "NB-IoT",
       "year": 2013,
@@ -478,7 +478,7 @@
     {
       "eui": "6UI65564481",
       "mhz": "CN882-162",
-      "online": false,
+      "online": true,
       "country": "China",
       "agreement": "NB-IoT",
       "year": 2015,
@@ -578,7 +578,7 @@
     {
       "eui": "6FE46144346",
       "mhz": "CN577-764",
-      "online": false,
+      "online": true,
       "country": "China",
       "agreement": "LoRaWAN",
       "year": 2014,
@@ -678,7 +678,7 @@
     {
       "eui": "8GN89151384",
       "mhz": "CN482-462",
-      "online": false,
+      "online": true,
       "country": "China",
       "agreement": "NB-IoT",
       "year": 2016,
@@ -758,7 +758,7 @@
     {
       "eui": "6RJ63936015",
       "mhz": "CN452-502",
-      "online": false,
+      "online": true,
       "country": "China",
       "agreement": "LoRaPP",
       "year": 2016,
@@ -898,7 +898,7 @@
     {
       "eui": "5UT41284232",
       "mhz": "CN857-661",
-      "online": false,
+      "online": true,
       "country": "China",
       "agreement": "NB-IoT",
       "year": 2016,

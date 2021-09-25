@@ -41,6 +41,15 @@ module.exports = {
          id: "id"
        }
      },
+     {
+       path: "/changeGroup",
+       name: "换组",
+       service: sensor["changeGroup"],
+       params: {
+        id: "ie",
+        devGroup: '新组名称'
+       }
+     },
     //  {
     //    path: "/del",
     //    name: "删除",
