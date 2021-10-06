@@ -22,7 +22,11 @@ module.exports = {
        name: "列表分页查询",
        service: gateway["list"],
        params: {
-         pageNum: "当前页"
+         currPage: "当前页(可选)",
+         pageSize: '每页条数(可选)',
+         eui: 'eui关键词(可选)',
+         online: '是否在线(可选)',
+         agreement: '网关协议(可选)', 
        }
      },
        {

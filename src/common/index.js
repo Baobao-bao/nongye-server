@@ -20,6 +20,43 @@ class Utils {
   }
 
   /**
+   * 分页
+   */
+  pageing(list, currPage = 1, pageSize = 5) {
+    return list.slice(
+      (currPage - 1) * pageSize,
+      (currPage - 1) * pageSize + pageSize
+    );
+  }
+
+  /**
+   * 过滤列表
+   * @param {*} obj 要过滤的属性
+   */
+  filterList(list, attrObj) {
+    let newList = list;
+    for (let key in attrObj) {
+      // vale值为undefined或者'all'的不进行过滤
+      if (!!attrObj[key] && attrObj[key] !== "all") {
+        newList = filterFn(key);
+      }
+    }
+
+    function filterFn(key) {
+      // 值带有key
+      if (key.includes("key")) {
+        // 原来的key
+       let originkey = key.slice(0, -3);
+        console.log(key);
+        return newList.filter((item) => item[originkey].includes(attrObj[key]));
+      } else {
+        return newList.filter((item) => item[key] === attrObj[key]);
+      }
+    }
+    return newList;
+  }
+
+  /**
    * 添加token
    * @param {object} userInfo
    */
@@ -71,15 +108,15 @@ class Utils {
   $insert(url, data) {
     return service.post(url, data);
   }
-  
-  $find(url, data={}) {
+
+  $find(url, data = {}) {
     return service.get(url, { params: data });
   }
-  
-  $findById(url, id) { 
-    return service.get(url+'?id='+id);
+
+  $findById(url, id) {
+    return service.get(url + "?id=" + id);
   }
-  $update(url, data) { 
+  $update(url, data) {
     console.log(data.id);
     return service.patch(url + `/${data.id}`, data);
   }

@@ -14,11 +14,15 @@ module.exports = {
         desc: "描述",
       },
     },
-    // {
-    //   path: "/all",
-    //   name: "全部列表",
-    //   service: account["all"]
-    // },
+    {
+      path: "/login",
+      name: "登录",
+      service: account["login"],
+      params: {
+        account:'账号(必须)',
+        password:'密码(必须)',
+      }
+    },
     {
       path: "/list",
       name: "列表分页查询",

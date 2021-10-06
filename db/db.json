@@ -1,4 +1,12 @@
 {
+  "demo": [
+    {
+      "id": "fc164f50-265c-11ec-a080-7702f2ec0e7d",
+      "cTime": 1633494134980,
+      "uTime": 1633494134980,
+      "name": "aaa"
+    }
+  ],
   "gateway": [
     {
       "id": "500000202104260426",
@@ -1004,7 +1012,7 @@
       "id": "32000020160125407X",
       "account": "xxxc",
       "username": "xiaoming",
-      "type": "普通",
+      "type": "3",
       "action": "998",
       "channel": "绑定设备赠送",
       "cTime": "2021-08-11 16:35:25",
@@ -1019,7 +1027,7 @@
       "lTime": 1631350943947,
       "account": "acc123456",
       "username": "测试账号",
-      "psw": "123",
+      "password": "123",
       "type": "2",
       "desc": "这是一个测试账号"
     },
@@ -1030,7 +1038,7 @@
       "lTime": 1631350948421,
       "account": "acc123456",
       "username": "测试账号",
-      "psw": "123",
+      "password": "123",
       "type": "2",
       "desc": "这是一个测试账号"
     },
@@ -1041,7 +1049,7 @@
       "lTime": 1631697592825,
       "account": "acc123456",
       "username": "测试账号",
-      "psw": "123",
+      "password": "123",
       "type": "2",
       "desc": "这是一个测试账号"
     },
@@ -1052,7 +1060,7 @@
       "lTime": 1631697600122,
       "account": "acc123456",
       "username": "测试账号",
-      "psw": "123",
+      "password": "123",
       "type": "2",
       "desc": "这是一个测试账号"
     },
@@ -1063,9 +1071,42 @@
       "lTime": 1631697609692,
       "account": "acc123456",
       "username": "测试账号",
-      "psw": "123",
+      "password": "123",
       "type": "2",
       "desc": "这是一个测试账号"
+    },
+    {
+      "id": "38926c20-25ae-11ec-b917-2f568e91184d",
+      "cTime": 1633419074530,
+      "uTime": 1633419074530,
+      "lTime": 1633419074530,
+      "account": "admin",
+      "username": "张三",
+      "password": "admin",
+      "type": "2",
+      "desc": "这是一个管理员账号"
+    },
+    {
+      "id": "38926c20-25ae-11ec-b917-2f588e91184d",
+      "cTime": 1633419074530,
+      "uTime": 1633419074530,
+      "lTime": 1633419074530,
+      "account": "super",
+      "username": "张总",
+      "password": "super",
+      "type": "1",
+      "desc": "这是一个超级管理员账号"
+    },
+    {
+      "id": "67132f40-265c-11ec-98ce-ad04652fb27b",
+      "cTime": 1633493884980,
+      "uTime": 1633493884980,
+      "lTime": 1633493884980,
+      "account": "watch",
+      "username": "观察员",
+      "password": "123",
+      "type": "3",
+      "desc": "这是一个观察员账号"
     }
   ]
 }
