@@ -25,8 +25,9 @@ module.exports = {
          currPage: "当前页(可选)",
          pageSize: '每页条数(可选)',
          eui: 'eui关键词(可选)',
-         online: '是否在线(可选)',
+         online: 'true,false(可选)',
          agreement: '网关协议(可选)', 
+         date: '日期字符串 date1-date2 (可选)',  
        }
      },
        {

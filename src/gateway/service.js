@@ -2,6 +2,7 @@ const _ = require("lodash");
 const $ = require("axios");
 const UUID = require("uuid");
 const Common = require("../common/index");
+const moment = require('moment');
 class Service extends Common {
   constructor() {
     super("Gateway");
@@ -32,24 +33,35 @@ class Service extends Common {
   }
 
   async list(ctx) {
-    let { currPage, pageSize, agreement, online, eui } = ctx.params;
-    // let params = {
-    //   online,
-    //   agreement,
-    //   _sort:'uTime',_order:'desc'
-    // }
+    let { currPage, pageSize, agreement, online, eui,date } = ctx.params;
+    currPage = !!currPage ? currPage : 1;
+    pageSize = !!pageSize ? pageSize : 5;
 
     try {
       let res = await $.get(this.url + "/Gateway");
       let list = res.data;
-      list = _.sortBy(list, "uTime");
+      // 排序 ['asc', 'desc']
+      list = _.orderBy(list, ["bTime"], ["desc"]);
+      // 根据条件过滤数组
       list = this.filterList(list, {
         agreement,
         online,
-        euikey:eui,
+        euikey: eui,
       });
+      // 根据日期过滤
+      list = this.filterByDate(list,date);
       let total = list.length;
+      // 分页
       list = this.pageing(list, currPage, pageSize);
+
+   
+      list = list.map(item=> {
+        return {
+          ...item,
+          bTime: moment(item.bTime).format("YYYY-MM-DD"),
+          uTime: moment(item.uTime).format("YYYY-MM-DD"),
+        } 
+      })
       ctx.body = {
         pageSize,
         currPage,

@@ -33,7 +33,7 @@ class Service extends Common {
 
 
   async list(ctx) {
-    const madeFn = require('./db');
+    const madeFn = require('./getway.js');
     const list = madeFn();
     ctx.body = list;
   }

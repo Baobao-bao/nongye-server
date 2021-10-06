@@ -43,14 +43,14 @@ class Service extends Common {
 
       let groupRes = await $.get(this.url + "/group");
       let groupList = groupRes.data;
-      groupList = groupList.map(item=>item.groupName);
+      // groupList = groupList.map(item=>item.groupName);
 
 
       let res = await $.get(this.url + "/sensor", { params });
       let list = res.data; 
-      let newList = groupList.map((groupName) => {
-        let itemList = list.filter((item) => groupName === item.devGroup);
-        let id = Mock.mock("@id");
+      let newList = groupList.map((item) => {
+        let itemList = list.filter((subitem) => item.groupName === subitem.devGroup);
+        // let id = Mock.mock("@id");
         // 传感器数量
         let nodeNums = itemList.length;
         // 开发套件
@@ -65,8 +65,9 @@ class Service extends Common {
           Mock.mock(/202[01]-0[1-9]-[1-2][1-28]/) +
           Mock.Random.time("HH:mm:ss");
         return {
-          id,
-          groupName,
+          // id,
+          ...item,
+          // groupName,
           nodeNums,
           groupNums,
           devNums,

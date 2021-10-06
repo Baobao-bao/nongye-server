@@ -22,11 +22,24 @@ class Utils {
   /**
    * 分页
    */
-  pageing(list, currPage = 1, pageSize = 5) {
+  pageing(list, currPage, pageSize) {
     return list.slice(
-      (currPage - 1) * pageSize,
-      (currPage - 1) * pageSize + pageSize
+      (currPage - 1) * Number(pageSize),
+      (currPage - 1) * Number(pageSize) + Number(pageSize)
     );
+  }
+
+  filterByDate(list, date) {
+    if (!!date) {
+      let index = date.indexOf("-");
+      let date1 = date.slice(0, index);
+      let date2 = date.slice(index + 1);
+      return list.filter((item) => {
+        return item.bTime >= date1 && item.bTime <= date2;
+      });
+    } else {
+      return list;
+    }
   }
 
   /**
@@ -36,8 +49,14 @@ class Utils {
   filterList(list, attrObj) {
     let newList = list;
     for (let key in attrObj) {
-      // vale值为undefined或者'all'的不进行过滤
-      if (!!attrObj[key] && attrObj[key] !== "all") {
+      let value = attrObj[key];
+      if (typeof value !== "boolean") {
+        // vale值为undefined或者'all'的不进行过滤
+        if (!!value && value !== "all") {
+          newList = filterFn(key);
+        }
+      } else {
+        // 布尔类型执行判断
         newList = filterFn(key);
       }
     }
@@ -46,8 +65,7 @@ class Utils {
       // 值带有key
       if (key.includes("key")) {
         // 原来的key
-       let originkey = key.slice(0, -3);
-        console.log(key);
+        let originkey = key.slice(0, -3);
         return newList.filter((item) => item[originkey].includes(attrObj[key]));
       } else {
         return newList.filter((item) => item[key] === attrObj[key]);
