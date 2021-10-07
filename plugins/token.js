@@ -18,5 +18,12 @@ module.exports = async (ctx, next) => {
   //     phone: "13800000000",
   //   };
   // }
-  await next();
+  if (tokenStr) {
+    await next();
+  } else {
+    ctx.body = {
+      code: 602,
+      msg:'token存在'
+    }
+  }
 };

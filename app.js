@@ -20,7 +20,7 @@ app.use(
 
 // 中间件
 app.use(require("./plugins/cros"));
-app.use(require("./plugins/token"));
+// app.use(require("./plugins/token"));
 app.use(require("./plugins/params"));
 app.use(require("./plugins/checkAttr"));
 
