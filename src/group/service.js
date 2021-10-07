@@ -32,12 +32,12 @@ class Service extends Common {
   }
 
   async list(ctx) {
-    let { _page, _limit } = ctx.params;
+    let { currPage, pageSize,keyword } = ctx.params;
+    // currPage=!!currPage?currPage:1;
+    // pageSize=!!pageSize?pageSize:5;
     let params = {
       _sort: "uTime",
       _order: "desc",
-      _page,
-      _limit,
     };
     try {
 
@@ -75,12 +75,21 @@ class Service extends Common {
           cTime,
         };
       });
-
+      newList = this.filterList(newList,{groupNamekey:keyword})
+      let total = newList.length;
+      if (!!currPage) {
+        newList = this.pageing(newList,currPage,pageSize);
+      }
+      
       ctx.body = {
         code: 666,
         msg: "success",
+        currPage,
+        pageSize,
+        total,
         data: newList,
       };
+      return newList;
     } catch (error) {
       ctx.body = {
         code: 500,

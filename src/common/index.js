@@ -23,6 +23,8 @@ class Utils {
    * 分页
    */
   pageing(list, currPage, pageSize) {
+    currPage=!!currPage?currPage:1;
+    pageSize=!!pageSize?pageSize:5;
     return list.slice(
       (currPage - 1) * Number(pageSize),
       (currPage - 1) * Number(pageSize) + Number(pageSize)

@@ -1,6 +1,8 @@
 const $ = require("axios");
 const UUID = require("uuid");
 const Common = require("../common/index");
+const  moment = require('moment');
+const _ = require('lodash');
 class Service extends Common {
   constructor() {
     super("sensor");
@@ -31,19 +33,43 @@ class Service extends Common {
   }
 
   async list(ctx) {
-    let { _page, _limit } = ctx.params;
-    let params = {
-      _sort: "uTime",
-      _order: "desc",
-      _page,
-      _limit,
-    };
+    let { currPage, pageSize, agreement, online, eui,date,devGroup } = ctx.params;
+    currPage = !!currPage ? currPage : 1;
+    pageSize = !!pageSize ? pageSize : 5;
+
     try {
-      let res = await $.get(this.url + "/sensor", { params });
+      let res = await $.get(this.url + "/sensor");
+      let list = res.data;
+      // 排序 ['asc', 'desc']
+      list = _.orderBy(list, ["bTime"], ["desc"]);
+      // 根据条件过滤数组
+      list = this.filterList(list, {
+        agreement,
+        devGroup,
+        online,
+        euikey: eui,
+      });
+      // 根据日期过滤
+      list = this.filterByDate(list,date);
+      let total = list.length;
+      // 分页
+      list = this.pageing(list, currPage, pageSize);
+
+   
+      // list = list.map(item=> {
+      //   return {
+      //     ...item,
+      //     bTime: moment(item.bTime).format("YYYY-MM-DD"),
+      //     uTime: moment(item.uTime).format("YYYY-MM-DD"),
+      //   } 
+      // })
       ctx.body = {
+        pageSize,
+        currPage,
+        total,
         code: 666,
         msg: "success",
-        data: res.data,
+        data: list,
       };
     } catch (error) {
       ctx.body = {

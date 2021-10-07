@@ -34,6 +34,7 @@ module.exports = async (ctx, next) => {
     // 把需要校验的字段取出来,放入数组
     let attrs = [];
     for (let key in route.params) {
+      console.log(key);
       let value = route.params[key];
       if (value.includes('(必须)')) {
         attrs.push(key);

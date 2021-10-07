@@ -17,33 +17,16 @@ module.exports = () => {
       "online|1": [true, false],
       country: "China",
       "agreement|1": ["LoRaPP", "LoRaWAN", "NB-IoT", "4G/2G"],
-      year: Random.integer(2010, 2020),
-      month: Random.integer(1, 12),
-      date: function () {
-        var big = [1, 3, 5, 7, 8, 10, 12];
-        if (big.includes(this.month)) {
-          return Random.integer(1, 31);
-        } else if (this.month === 2) {
-          return Random.integer(1, 28);
-        } else {
-          return Random.integer(1, 30);
-        }
+       // 随机日期
+       bTime: function () {
+        let d1 = new Date("2019-1-1");
+        d1 = d1.getTime();
+        let d2 = Date.now();
+        let time = Random.integer(d1, d2);
+        return time;
       },
-      time: Random.time("HH:mm:ss"),
-      bTime: function () {
-        return `${this.year}/${this.month}/${this.date} ${this.time}`;
-      },
-      uploadTime: function () {
-        var month;
-        var year = this.year;
-        if (this.month < 12) {
-          month = this.month + mock(/[1,5]/);
-        }
-        if (month > 12) {
-          month -= 12;
-          year += 1;
-        }
-        return `${year}/${month}/${this.date} ${this.time}`;
+      uTime: function () {
+        return this.bTime; 
       },
       "name|1": [
         "光照传感器",

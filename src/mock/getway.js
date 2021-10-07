@@ -34,18 +34,7 @@ const getway = (ctx) => {
           return time;
         },
         uTime: function () {
-          return this.bTime;
-          // var month;
-          // var year = this.year;
-          // if (this.month < 12) {
-          //   month = this.month + mock(/[1,5]/);
-          // }
-          // if (month > 12) {
-          //   month -= 12;
-          //   year += 1;
-          // }
-
-          // return `${year}/${month}/${this.date} ${this.time}`;
+          return this.bTime; 
         },
         desc: "用于智慧农业的网关设备",
       });

@@ -34,18 +34,14 @@ module.exports = function createService(name) {
     }
   
     async list(ctx) {   
-      let {_page,_limit} = ctx.params;
-      let params = {
-        _sort:'uTime',_order:'desc',
-        _page,
-        _limit
-      }
+      let {pageSize,currPage} = ctx.params; 
       try {
-        let res = await $.get(this.url + '/${collName}',{params});
+        let res = await $.get(this.url + '/${collName}');
+        let list = res.data;
         ctx.body = {
           code: 666,
           msg: 'success',
-          data: res.data
+          data: list
         };
       } catch (error) {
         ctx.body = {

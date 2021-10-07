@@ -55,13 +55,13 @@ class Service extends Common {
       list = this.pageing(list, currPage, pageSize);
 
    
-      list = list.map(item=> {
-        return {
-          ...item,
-          bTime: moment(item.bTime).format("YYYY-MM-DD"),
-          uTime: moment(item.uTime).format("YYYY-MM-DD"),
-        } 
-      })
+      // list = list.map(item=> {
+      //   return {
+      //     ...item,
+      //     bTime: moment(item.bTime).format("YYYY-MM-DD"),
+      //     uTime: moment(item.uTime).format("YYYY-MM-DD"),
+      //   } 
+      // })
       ctx.body = {
         pageSize,
         currPage,

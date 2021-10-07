@@ -6,13 +6,8 @@
   "scripts": {
     "dev": "nodemon app.js",
     "json": "json-server --watch ./db/db.json --port 9007",
-    "pull": "git pull origin master",
-    "push": "node push",
-    "up": "scp pm2.config.js root@132.232.94.151:/root/deploy/",
-    "down": "scp root@132.232.94.151:/root/deploy/pm2.config.js ./",
-    "pm2-prod": "pm2 start pm2.config.js --env production",
-    "pm2-dev": "pm2 start pm2.config.js --env development",
-    "pm2-stop": "pm2 stop pm2.config.js --env development"
+    "pull": "git pull origin master", 
+    "debug":"node --inspect app.js"
   },
   "author": "",
   "license": "ISC",
