@@ -68,13 +68,13 @@ module.exports = {
          id: "id"
        }
      },
-    //  {
-    //    path: "/del",
-    //    name: "删除",
-    //    service: fee["del"],
-    //    params: {
-    //      id: "id"
-    //    }
-    //  }
+     {
+       path: "/del",
+       name: "删除",
+       service: fee["del"],
+       params: {
+         id: "id"
+       }
+     }
   ]
 };
