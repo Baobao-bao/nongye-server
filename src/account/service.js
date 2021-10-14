@@ -131,6 +131,13 @@ class Service extends Common {
 
   async del(ctx) {
     try {
+      if(ctx.params.id === '38926c20-25ae-11ec-b917-2f588e91184d') {
+          ctx.body = {
+            code: 603,
+            msg: '此账号不允许删除'
+          }
+          return false;
+      }
       let res = await $.delete(this.url + "/Account/" + ctx.params.id);
       ctx.body = ctx.body = {
         code: 666,
