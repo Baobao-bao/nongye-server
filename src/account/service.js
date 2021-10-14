@@ -134,7 +134,7 @@ class Service extends Common {
       if(ctx.params.id === '38926c20-25ae-11ec-b917-2f588e91184d') {
           ctx.body = {
             code: 603,
-            msg: '此账号不允许删除'
+            msg: '超级管理员账号不允许删除'
           }
           return false;
       }
