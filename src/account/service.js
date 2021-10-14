@@ -141,8 +141,7 @@ class Service extends Common {
       let res = await $.delete(this.url + "/Account/" + ctx.params.id);
       ctx.body = ctx.body = {
         code: 666,
-        msg: "success",
-        data: res.data,
+        msg: "删除成功",
       };
     } catch (error) {
       ctx.body = {
