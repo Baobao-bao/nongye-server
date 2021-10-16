@@ -8,10 +8,9 @@ module.exports = {
       name: "添加",
       service: security["add"],
       params: {
-        security: "账号(必须)",
-        username: "用户名(必须)",
-        type: "类型(必须)",
-        desc: "描述",
+        authority: "访问权限(必须)",
+        tag: "标签(必须)",
+        online: "是否在使用(必须)",
       },
     }, 
     {
