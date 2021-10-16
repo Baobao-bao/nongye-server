@@ -6,6 +6,7 @@ num = num.toString();
 num = Number(num) + 1;
 fs.writeFileSync("num.txt", num);
 
+
 console.log("执行 git add .");
 shell.exec("git add .");
 
