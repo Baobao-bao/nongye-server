@@ -1,6 +1,6 @@
 const _ = require("lodash");
 const $ = require("axios");
-const UUID = require("uuid");
+const {mock} = require('mockjs');
 const Common = require("../common/index");
 const moment = require('moment');
 class Service extends Common {
@@ -14,7 +14,7 @@ class Service extends Common {
       let cTime = Date.now();
       let uTime = Date.now();
       let res = await $.post(this.url + "/Gateway", {
-        id: UUID.v1(),
+        id: mock('@id'),
         cTime,
         uTime,
         ...data,

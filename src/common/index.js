@@ -1,4 +1,4 @@
-const UUID = require("uuid");
+const {mock} = require('mockjs');
 const jwt = require("jsonwebtoken");
 const $ = require("axios");
 const service = $.create({

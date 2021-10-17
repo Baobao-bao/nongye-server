@@ -2,7 +2,7 @@ module.exports = function createService(name) {
   let collName = name[0].toUpperCase() + name.slice(1);
   return `
   const $ = require('axios');
-  const UUID = require("uuid");
+  const {mock} = require('mockjs');
   const Common = require('../common/index');
   class Service extends Common{
     constructor() {
@@ -15,7 +15,7 @@ module.exports = function createService(name) {
         let cTime = Date.now();
         let uTime = Date.now();
         let res = await $.post(this.url + '/${collName}', {
-          id: UUID.v1(),
+          id: mock('@id'),
           cTime,
           uTime,
           ...data,

@@ -1,6 +1,6 @@
 const $ = require("axios");
 let Mock = require('mockjs');
-const UUID = require("uuid");
+const {mock} = require('mockjs');
 const Common = require("../common/index");
 class Service extends Common {
   constructor() {
@@ -13,7 +13,7 @@ class Service extends Common {
       let cTime = Date.now();
       let uTime = Date.now();
       let res = await $.post(this.url + "/group", {
-        id: UUID.v1(),
+        id: mock('@id'),
         cTime,
         uTime,
         ...data,

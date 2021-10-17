@@ -1,6 +1,6 @@
 
   const $ = require('axios');
-  const UUID = require("uuid");
+  const {mock} = require('mockjs');
   const Common = require('../common/index');
   const data = require('./data');
   const commentData = require('./comment');
@@ -66,7 +66,7 @@
         let cTime = Date.now();
         let uTime = Date.now();
         let res = await $.post(this.url + '/house', {
-          id: UUID.v1(),
+          id: mock('@id'),
           cTime,
           uTime,
           ...data,

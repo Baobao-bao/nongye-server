@@ -1,6 +1,6 @@
 
   const $ = require('axios');
-  const UUID = require("uuid");
+  const {mock} = require('mockjs');
   const Common = require('../common/index');
   const shell = require('shelljs');
   class Service extends Common{
