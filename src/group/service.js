@@ -1,6 +1,5 @@
 const $ = require("axios");
 let Mock = require('mockjs');
-const {mock} = require('mockjs');
 const Common = require("../common/index");
 class Service extends Common {
   constructor() {
@@ -63,7 +62,7 @@ class Service extends Common {
         ).length;
         let cTime =
           Mock.mock(/202[01]-0[1-9]-[1-2][1-28]/) +
-          Mock.Random.time("HH:mm:ss");
+          Mock.Random.time(" HH:mm:ss");
         return {
           // id,
           ...item,
