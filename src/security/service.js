@@ -1,8 +1,7 @@
 const $ = require("axios");
 const _ = require('lodash');
 const {mock} = require('mockjs');
-const Common = require("../common/index");
-const {mock} = require('mockjs');
+const Common = require("../common/index"); 
 class Service extends Common {
   constructor() {
     super("security");
