@@ -2,7 +2,7 @@
 const mock = require("../../src/mock/service");
 module.exports = {
   path: "/mock",
-  hidden: true,
+  // hidden: true,
   name: "mock(模拟数据)模块",
   children: [
     {

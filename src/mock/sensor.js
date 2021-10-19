@@ -4,7 +4,7 @@ module.exports = () => {
   let mock = Mock.mock;
   let Random = Mock.Random;
   let list = [];
-  for (var i = 1; i <= 40; i++) {
+  for (var i = 1; i <= 200; i++) {
     list.push(madeObj());
   }
 
@@ -19,7 +19,7 @@ module.exports = () => {
       "agreement|1": ["LoRaPP", "LoRaWAN", "NB-IoT", "4G/2G"],
        // 随机日期
        bTime: function () {
-        let d1 = new Date("2019-1-1");
+        let d1 = new Date("2021-1-1");
         d1 = d1.getTime();
         let d2 = Date.now();
         let time = Random.integer(d1, d2);

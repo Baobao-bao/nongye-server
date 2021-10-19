@@ -33,7 +33,7 @@ class Service extends Common {
 
 
   async list(ctx) {
-    const madeFn = require('./celiang.js');
+    const madeFn = require('./sensor.js');
     const list = madeFn();
     ctx.body = list;
   }

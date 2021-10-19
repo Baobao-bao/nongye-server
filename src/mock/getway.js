@@ -12,7 +12,7 @@ const getway = (ctx) => {
     let mock = Mock.mock;
     let Random = Mock.Random;
     let list = [];
-    for (var i = 1; i <= 15; i++) {
+    for (var i = 1; i <= 45; i++) {
       list.push(madeObj());
     }
 
@@ -27,7 +27,7 @@ const getway = (ctx) => {
         "agreement|1": ["LoRaPP", "LoRaWAN"],
         // 随机日期
         bTime: function () {
-          let d1 = new Date("2019-1-1");
+          let d1 = new Date("2021-1-1");
           d1 = d1.getTime();
           let d2 = Date.now();
           let time = Random.integer(d1, d2);
