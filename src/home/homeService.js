@@ -13,7 +13,7 @@ let template = `<!DOCTYPE html>
 </head>
 <body>
     <h3 class="title">
-    <span>智慧农业服务器接口</span><span style="color:#999;margin-left:5px;font-size:18px;">({{env}})</span>
+    <span>智慧农业服务器接口</span><span style="color:#999;margin-left:5px;font-size:18px;"></span>
     </h3>
   <div class="container">
     <ul v-if="route.path!='/' && !route.hidden" class="box" v-for="(route,index) in routes" :key="index">
