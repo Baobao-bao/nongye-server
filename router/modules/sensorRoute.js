@@ -15,6 +15,7 @@ module.exports = {
       path: "/count",
       name: "全部列表",
       service: sensor["count"],
+      params: {},
       resp: {
         air: '空气数据',
         beam: '光照数据',
