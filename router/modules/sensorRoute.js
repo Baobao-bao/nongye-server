@@ -66,13 +66,13 @@ module.exports = {
         devGroup: "新组名称",
       },
     },
-    //  {
-    //    path: "/del",
-    //    name: "删除",
-    //    service: sensor["del"],
-    //    params: {
-    //      id: "id"
-    //    }
-    //  }
+     {
+       path: "/del",
+       name: "删除",
+       service: sensor["del"],
+       params: {
+         id: "id"
+       }
+     }
   ],
 };
