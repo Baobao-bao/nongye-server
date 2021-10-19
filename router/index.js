@@ -32,7 +32,7 @@ function initRouter(app) {
         let servicePath = `../src${route.path}/service`;
         serviceObj = require(servicePath);
       } catch (error) {
-        console.log("error", error);
+        console.error("error", error);
       }
       children.forEach(item => {
         // .bind(serviceObj)不让this发生改变

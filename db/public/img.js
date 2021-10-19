@@ -5,4 +5,3 @@ imgs.forEach((item) => {
   var url = `![](${item.src})\n`
   htmlStr+=url;
 });
-console.log(htmlStr);

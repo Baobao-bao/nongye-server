@@ -378,8 +378,7 @@ class Common {
       "601": "字段校验失败",
       "600": "其他错误"
     };
-
-    console.log("错误信息", error);
+ 
     let { errcode, message, name } = error;
     switch (name) {
       case "ValidationError":
@@ -397,11 +396,11 @@ class Common {
   }
 
   log(data, data2) {
-    console.log("|----------- " + this.coll + "Service.js -----------|");
-    console.log("                                                ");
-    console.log(data, data2 || "");
-    console.log("                                                ");
-    console.log("|----------- " + this.coll + "Service.js -----------|");
+    console.info("|----------- " + this.coll + "Service.js -----------|");
+    console.info("                                                ");
+    console.info(data, data2 || "");
+    console.info("                                                ");
+    console.info("|----------- " + this.coll + "Service.js -----------|");
   }
 }
 

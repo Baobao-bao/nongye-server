@@ -34,14 +34,12 @@ class Service extends Common {
 
   async rechargeList(ctx) {
     let { currPage = 1, pageSize = 5, date } = ctx.params;
-    console.log('date',date);
     try {
       let res = await $.get(this.url + "/Fee");
       let list = res.data.filter((item) => item.type === "recharge");
       if (!!date) {
         list = list.filter((item) => {
           let cTime = moment(item.cTime).format("YYYY-MM");
-          console.log(cTime,date);
           return cTime == date;
         });
       }
@@ -58,8 +56,7 @@ class Service extends Common {
         total,
         data: list,
       };
-    } catch (error) {
-      console.log(error);
+    } catch (error) { 
       ctx.body = {
         code: 500,
         msg: error.message,
@@ -69,14 +66,12 @@ class Service extends Common {
 
   async usageList(ctx) {
     let { currPage = 1, pageSize = 5, date } = ctx.params;
-    console.log('date',date);
     try {
       let res = await $.get(this.url + "/Fee");
       let list = res.data.filter((item) => item.type === "usege");
       if (!!date) {
         list = list.filter((item) => {
           let cTime = moment(item.cTime).format("YYYY-MM");
-          console.log(cTime,date);
           return cTime == date;
         });
       }
@@ -93,8 +88,7 @@ class Service extends Common {
         total,
         data: list,
       };
-    } catch (error) {
-      console.log(error);
+    } catch (error) { 
       ctx.body = {
         code: 500,
         msg: error.message,
@@ -131,11 +125,7 @@ class Service extends Common {
       let list = res.data;
       let balance = _.filter(list, (item) => item.type === "recharge")
         .map((item) => item.amount * 1)
-        .reduce((a, b) => a + b);
-      // let balance = list.reduce((a,b)=>{
-      //   console.log(a)
-      //   return a.amount*1+b.amount*1;
-      // },0)
+        .reduce((a, b) => a + b); 
       ctx.body = {
         code: 666,
         msg: "success",

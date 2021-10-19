@@ -12,7 +12,7 @@ class Service extends Common {
       let cTime = Date.now();
       let uTime = Date.now();
       let res = await $.post(this.url + "/group", {
-        id: mock('@id'),
+        id: Mock.mock('@id'),
         cTime,
         uTime,
         ...data,
@@ -22,7 +22,7 @@ class Service extends Common {
         msg: "success",
         data: res.data,
       };
-    } catch (error) {
+    } catch (error) { 
       ctx.body = {
         code: 500,
         msg: error,

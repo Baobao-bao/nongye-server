@@ -134,7 +134,6 @@
             let data = JSON.stringify(res.data);
             this.res = this.formatRes(data);
           }).catch(err => {
-            console.log(err);
             this.res = err.message;
           })
         },

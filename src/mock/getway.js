@@ -41,7 +41,6 @@ const getway = (ctx) => {
     }
     return list;
   } catch (error) {
-    console.log(error);
     return [];
     // ctx.body = {
     //   code: 500,

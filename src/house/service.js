@@ -45,14 +45,12 @@
     async loveList(ctx) {
       try {
         let res = await this.$find('/house',{love: true});
-        console.log(res);
         ctx.body = {
           code: 666,
           msg:'success',
           result: res
         }
       } catch (error) {
-        console.log(error);
         ctx.body = {
           code: 500,
           msg: error

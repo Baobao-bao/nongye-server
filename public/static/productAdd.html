@@ -92,7 +92,7 @@
                     }
                     let res = await axios.post(url, data);
                     if (res.data.code === 666) {
-                        console.log('添加成功');
+                        console.info('添加成功');
                     }
                 });
             },
@@ -103,9 +103,8 @@
                 data.categoryId = this.categoryId;
                 let url = '/product/add';
                 let res = await axios.post(url, data);
-                console.log(res.data.code);
                 if (res.data.code === 666) {
-                    console.log('添加成功');
+                    console.info('添加成功');
                 }
             }
         },

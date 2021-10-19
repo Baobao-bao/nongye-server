@@ -108,7 +108,7 @@
                         axios.post(url, data).then(res => {
                             this.list.splice(index, 1);
                         }).catch(err => {
-                            console.log('err', err);
+                            console.error('err', err);
                         })
                     }
                 },
@@ -121,7 +121,7 @@
                     axios.get(url).then((res) => {
                         this.list = res.data.list;
                     }).catch((err) => {
-                        console.log('err', err);
+                        console.error('err', err);
                     });
                 }
             }

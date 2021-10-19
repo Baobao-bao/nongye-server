@@ -89,7 +89,6 @@ class Service extends Common {
         msg: "success",
       };
     } catch (error) {
-      // console.log(error);
       ctx.body = {
         code: 500,
         msg: error.message,

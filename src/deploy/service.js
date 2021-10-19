@@ -17,7 +17,6 @@
     }
   
     async list(ctx) {  
-      console.log(this.getTotalPage());
       let {_page,_limit} = ctx.params;
       let params = {
         _sort:'uTime',_order:'desc',

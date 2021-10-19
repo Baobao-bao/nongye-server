@@ -832,8 +832,7 @@ let newList = groupList.map(groupName=> {
         cTime
     }
 })
-
-console.log(newList);
+ 
 
 // "groupName": "7788",
 // "nodeNums": "22",

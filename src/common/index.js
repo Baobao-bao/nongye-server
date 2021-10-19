@@ -105,11 +105,11 @@ class Utils {
   }
 
   log() {
-    console.log("<----------- " + this.coll + " ----------->");
+    console.info("<----------- " + this.coll + " ----------->");
     for (let i = 0; i < arguments.length; i++) {
-      console.log(arguments[i]);
+      console.info(arguments[i]);
     }
-    console.log("<----------- " + this.coll + " ----------->");
+    console.info("<----------- " + this.coll + " ----------->");
   }
   $get(url, data) {
     return service.get(url, { params: data });
@@ -137,7 +137,6 @@ class Utils {
     return service.get(url + "?id=" + id);
   }
   $update(url, data) {
-    console.log(data.id);
     return service.patch(url + `/${data.id}`, data);
   }
   $replace(url, data) {
