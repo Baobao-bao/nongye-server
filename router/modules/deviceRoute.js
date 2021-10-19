@@ -19,7 +19,7 @@ module.exports = {
     },
      {
        path: "/sensorList",
-       name: "传感器列表",
+       name: "传感器分组列表",
        service: device["sensorList"],
        params: {
         //  currPage: "当前页"
