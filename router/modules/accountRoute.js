@@ -30,6 +30,17 @@ module.exports = {
       params: {
         currPage: "当前页",
       },
+      resp: {
+          "id": '',
+          "cTime": '',
+          "uTime": '',
+          "lTime": '',
+          "account": '',
+          "username": '',
+          "password": '',
+          "type": '',
+          "desc": ''
+      }
     },
     {
       path: "/detail",

@@ -63,6 +63,8 @@ class Service extends Common {
         let cTime =
           Mock.mock(/202[01]-0[1-9]-[1-2][1-28]/) +
           Mock.Random.time(" HH:mm:ss");
+          cTime = new Date(cTime);
+          cTime = cTime.getTime()
         return {
           // id,
           ...item,
