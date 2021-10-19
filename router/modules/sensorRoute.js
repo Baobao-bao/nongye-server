@@ -15,6 +15,12 @@ module.exports = {
       path: "/count",
       name: "全部列表",
       service: sensor["count"],
+      resp: {
+        air: '空气数据',
+        beam: '光照数据',
+        soil: '土壤数据',
+        pressure: '气压数据',
+      }
     },
     {
       path: "/list",
@@ -49,26 +55,27 @@ module.exports = {
         id: "id",
       },
     },
-    {
-      path: "/edit",
-      name: "修改",
-      service: sensor["edit"],
-      params: {
-        id: "id",
-      },
-    },
+    // {
+    //   path: "/edit",
+    //   name: "修改",
+    //   service: sensor["edit"],
+    //   params: {
+    //     id: "id",
+    //   },
+    // },
     {
       path: "/changeGroup",
       name: "换组",
       service: sensor["changeGroup"],
       params: {
-        id: "ie",
-        devGroup: "新组名称",
+        id: "id(编号)",
+        devGroup: "新组名称(必须)",
       },
     },
      {
        path: "/del",
        name: "删除",
+       hidden: true,
        service: sensor["del"],
        params: {
          id: "id"
