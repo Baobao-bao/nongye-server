@@ -23,7 +23,7 @@ module.exports = {
        name: "列表分页查询",
        service: ${name}["list"],
        params: {
-         pageNum: "当前页"
+         currPage: "当前页"
        }
      },
        {

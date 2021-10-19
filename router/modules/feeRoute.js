@@ -40,7 +40,7 @@ module.exports = {
        name: "列表分页查询",
        service: fee["list"],
        params: {
-         pageNum: "当前页"
+         currPage: "当前页"
        }
      },
     
@@ -49,7 +49,7 @@ module.exports = {
        name: "余额查询",
        service: fee["balance"],
        params: {
-         pageNum: "当前页"
+         currPage: "当前页"
        }
      },
        {

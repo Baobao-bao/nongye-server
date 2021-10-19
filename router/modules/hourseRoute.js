@@ -53,7 +53,7 @@ module.exports = {
        name: "房源列表",
        service: house["list"],
        params: {
-        //  pageNum: "当前页"
+        //  currPage: "当前页"
        }
      },
        {

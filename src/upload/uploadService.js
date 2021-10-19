@@ -50,15 +50,15 @@ class Service extends CommonService {
   }
 
   async list(ctx) {
-    let result = this.checkAttr(["pageNum"], ctx);
+    let result = this.checkAttr(["currPage"], ctx);
     if (result) {
       ctx.body = result;
       return false;
     }
     try {
-      let { pageNum = 1, pageSize = this.pageSize } = ctx.params;
+      let { currPage = 1, pageSize = this.pageSize } = ctx.params;
       let query = {
-        pageNum,
+        currPage,
         pageSize
       };
       let res = await this.controller.list(query);

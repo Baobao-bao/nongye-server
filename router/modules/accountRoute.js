@@ -28,7 +28,7 @@ module.exports = {
       name: "列表分页查询",
       service: account["list"],
       params: {
-        pageNum: "当前页",
+        currPage: "当前页",
       },
     },
     {

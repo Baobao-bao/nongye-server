@@ -43,8 +43,8 @@
   }
 
   list(query) {
-    let { pageNum, pageSize } = query;
-    let skipNum = (pageNum - 1) * pageSize;
+    let { currPage, pageSize } = query;
+    let skipNum = (currPage - 1) * pageSize;
     return new Promise(async (resovle, reject) => {
       let p1 = this.model.countDocuments();
       let p2 = this.model
@@ -57,7 +57,7 @@
         let total = res[0];
         let list = this.handleData(res,'uploadId'[1]);
         let isEnd = list.length === 0 ? true : false;
-        resovle({ total, pageNum, pageSize, list, isEnd });
+        resovle({ total, currPage, pageSize, list, isEnd });
       } catch (error) {
         reject(error);
       }

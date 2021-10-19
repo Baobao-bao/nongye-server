@@ -50,7 +50,7 @@ module.exports = {
       hidden: true,
       service: user["list"],
       params: {
-        pageNum: "当前页"
+        currPage: "当前页"
       }
     },
     {

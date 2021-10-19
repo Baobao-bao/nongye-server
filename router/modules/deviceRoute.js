@@ -22,7 +22,7 @@ module.exports = {
        name: "传感器列表",
        service: device["sensorList"],
        params: {
-        //  pageNum: "当前页"
+        //  currPage: "当前页"
        }
      },
        {
