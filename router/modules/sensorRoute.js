@@ -13,7 +13,7 @@ module.exports = {
     },
     {
       path: "/count",
-      name: "全部列表",
+      name: "传感器统计数据",
       service: sensor["count"],
       params: {},
       resp: {
