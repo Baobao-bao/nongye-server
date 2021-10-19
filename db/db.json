@@ -1328,54 +1328,6 @@
       "uTime": 1605658071041,
       "devName": "二氧化碳",
       "devValue": "111ppm"
-    },
-    {
-      "id": "df717f20-2f4c-11ec-9eb1-df121eef40db",
-      "cTime": 1634476775442,
-      "uTime": 1634476775442,
-      "tag": "普通用户",
-      "authority": "8",
-      "online": false
-    },
-    {
-      "id": "f8ee75c0-2f4c-11ec-aa19-73889c79cc98",
-      "cTime": 1634476818203,
-      "uTime": 1634476818203,
-      "tag": "普通用户",
-      "authority": "8",
-      "online": false
-    },
-    {
-      "id": "6baf7190-2f4d-11ec-893f-9d561fa81b30",
-      "cTime": 1634477010729,
-      "uTime": 1634477010729,
-      "tag": "普通用户",
-      "authority": "8",
-      "online": false
-    },
-    {
-      "id": "6f01d0e0-2f4d-11ec-a1ab-1fb9fd7d4270",
-      "cTime": 1634477016302,
-      "uTime": 1634477016302,
-      "tag": "普通用户",
-      "authority": "8",
-      "online": false
-    },
-    {
-      "id": "71e9fcb0-2f4d-11ec-b347-39042a7482ad",
-      "cTime": 1634477021178,
-      "uTime": 1634477021178,
-      "tag": "普通用户",
-      "authority": "8",
-      "online": false
-    },
-    {
-      "id": "82a7b920-2f4d-11ec-9e29-7dda8c969f8b",
-      "cTime": 1634477049265,
-      "uTime": 1634477049265,
-      "tag": "普通用户",
-      "authority": "8",
-      "online": false
     }
   ],
   "developKit": [

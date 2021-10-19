@@ -7,17 +7,24 @@ module.exports = {
       path: "/add",
       name: "添加",
       service: measurement["add"],
-      params: { 
-        name: "测量类型",
-        unit: "单位",
+      params: {
+        name: "测量类型(必须)",
+        unit: "单位(必须)",
       },
-    }, 
+    },
     {
       path: "/list",
-      name: "列表分页查询",
+      name: "列表",
       service: measurement["list"],
       params: {
         currPage: "当前页",
+      },
+      resp: {
+        id: "编号",
+        cTime: "创建时间",
+        uTime: "更新时间",
+        name: "测量名称",
+        unit: "测量单位",
       },
     },
     {
@@ -33,16 +40,18 @@ module.exports = {
       name: "修改",
       service: measurement["edit"],
       params: {
+        id: "id(必须)",
+        name: "测量类型(必须)",
+        unit: "单位(必须)",
+      },
+    },
+    {
+      path: "/del",
+      name: "删除",
+      service: measurement["del"],
+      params: {
         id: "id",
       },
     },
-     {
-       path: "/del",
-       name: "删除",
-       service: measurement["del"],
-       params: {
-         id: "id"
-       }
-     }
   ],
 };

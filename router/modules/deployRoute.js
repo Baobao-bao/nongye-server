@@ -20,7 +20,7 @@ module.exports = {
     // },
      {
        path: "/list",
-       name: "列表分页查询",
+       name: "列表",
        service: deploy["list"],
        params: {
          currPage: "当前页"

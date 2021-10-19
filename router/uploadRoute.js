@@ -19,7 +19,7 @@ module.exports = {
     // },
     // {
     //   path: "/list",
-    //   name: "列表分页查询",
+    //   name: "列表",
     //   service: upload["list"],
     //   params: {
     //     currPage: "当前页"

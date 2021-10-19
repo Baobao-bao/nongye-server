@@ -9,7 +9,7 @@ module.exports = {
       name: "添加",
       service: group["add"],
       params: {
-        name: "group"
+        name: "群组名称"
       }
     },
     // {
@@ -19,10 +19,20 @@ module.exports = {
     // },
      {
        path: "/list",
-       name: "列表分页查询",
+       name: "列表",
        service: group["list"],
        params: {
          currPage: "当前页"
+       },
+       resp: {
+        "id": "编号",
+        "groupName": "群组名称",
+        "uTime": '更新时间',
+        "nodeNums": "传感器数量",
+        // "groupNums": 10,
+        "devNums": "设备总数量",
+        "onlineNums": "在线设备数量",
+        "cTime": "创建时间",
        }
      },
        {
@@ -30,7 +40,8 @@ module.exports = {
        name: "详情",
        service: group["detail"],
        params: {
-         id: "id"
+         id: "id",
+         
        }
      },
      {

@@ -16,9 +16,11 @@
       overflow: hidden;
     }
 
-    .docs,
+    .docs{
+      width: 40%;
+    }
     .test {
-      flex-grow: 1;
+      width: 60%;
     }
 
     .test {
@@ -144,8 +146,9 @@
 
         formatResp(objStr) {
           let obj = JSON.parse(objStr);
+          let flag = objStr === '{}';
           let data = {
-            ...obj,
+            data: !flag?[obj]:{},
             code: 6666,
             msg: 'success'
           }

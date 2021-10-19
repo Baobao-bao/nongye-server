@@ -2,6 +2,7 @@
 const mock = require("../../src/mock/service");
 module.exports = {
   path: "/mock",
+  hidden: true,
   name: "mock(模拟数据)模块",
   children: [
     {
@@ -19,7 +20,7 @@ module.exports = {
     // },
      {
        path: "/list",
-       name: "列表分页查询",
+       name: "列表",
        service: mock["list"],
        params: {
          currPage: "当前页"

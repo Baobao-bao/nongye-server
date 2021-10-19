@@ -46,7 +46,7 @@ module.exports = {
     },
     {
       path: "/list",
-      name: "列表分页查询",
+      name: "列表",
       hidden: true,
       service: user["list"],
       params: {

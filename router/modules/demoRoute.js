@@ -3,6 +3,7 @@ const demo = require("../../src/demo/service");
 module.exports = {
   path: "/demo",
   name: "demo(例子)模块",
+  hidden: true,
   children: [
     {
       path: "/add",
@@ -19,7 +20,7 @@ module.exports = {
     },
      {
        path: "/list",
-       name: "列表分页查询",
+       name: "列表",
        service: demo["list"],
        params: {
          currPage: "当前页"
