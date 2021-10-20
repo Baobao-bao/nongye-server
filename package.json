@@ -4,9 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon app.js",
-    "json": "json-server --watch ./db/db.json --port 9007",
-    "pull": "git pull origin master", 
+    "dev": "git pull && nodemon app.js",
+    "json": "json-server --watch ./db/db.json --port 9007", 
     "push": "git add . && git commit -m'xxx' && git push", 
     "debug":"node --inspect app.js"
   },
