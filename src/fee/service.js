@@ -17,6 +17,7 @@ class Service extends Common {
         id: Mock.mock("@id"),
         cTime,
         uTime,
+        type: "recharge",
         ...data,
       });
       ctx.body = {

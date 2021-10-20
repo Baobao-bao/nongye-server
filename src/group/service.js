@@ -1,5 +1,5 @@
 const $ = require("axios");
-let Mock = require('mockjs');
+let Mock = require("mockjs");
 const Common = require("../common/index");
 class Service extends Common {
   constructor() {
@@ -12,7 +12,7 @@ class Service extends Common {
       let cTime = Date.now();
       let uTime = Date.now();
       let res = await $.post(this.url + "/group", {
-        id: Mock.mock('@id'),
+        id: Mock.mock("@id"),
         cTime,
         uTime,
         ...data,
@@ -22,7 +22,7 @@ class Service extends Common {
         msg: "success",
         data: res.data,
       };
-    } catch (error) { 
+    } catch (error) {
       ctx.body = {
         code: 500,
         msg: error,
@@ -31,40 +31,38 @@ class Service extends Common {
   }
 
   async list(ctx) {
-    let { currPage, pageSize,keyword } = ctx.params;
-    // currPage=!!currPage?currPage:1;
-    // pageSize=!!pageSize?pageSize:5;
+    let { currPage, pageSize, keyword } = ctx.params;
+    currPage = !!currPage ? currPage : 1;
+    pageSize = !!pageSize ? pageSize : 5;
     let params = {
       _sort: "uTime",
       _order: "desc",
     };
     try {
-
       let groupRes = await $.get(this.url + "/group");
       let groupList = groupRes.data;
       // groupList = groupList.map(item=>item.groupName);
 
-
       let res = await $.get(this.url + "/sensor", { params });
-      let list = res.data; 
+      let list = res.data;
       let newList = groupList.map((item) => {
-        let itemList = list.filter((subitem) => item.groupName === subitem.devGroup);
+        let itemList = list.filter(
+          (subitem) => item.groupName === subitem.devGroup
+        );
         // let id = Mock.mock("@id");
         // 传感器数量
         let nodeNums = itemList.length;
         // 开发套件
         let groupNums = 10;
         // devNums 设备数量
-        let devNums = nodeNums+Mock.mock(/[1-3]/)*1;
+        let devNums = nodeNums + Mock.mock(/[1-3]/) * 1;
         // 在线设备数量
-        let onlineNums = itemList.filter(
-          (item) => item.online === true
-        ).length;
+        let onlineNums = itemList.filter((item) => item.online === true).length;
         let cTime =
           Mock.mock(/202[01]-0[1-9]-[1-2][1-28]/) +
           Mock.Random.time(" HH:mm:ss");
-          cTime = new Date(cTime);
-          cTime = cTime.getTime()
+        cTime = new Date(cTime);
+        cTime = cTime.getTime();
         return {
           // id,
           ...item,
@@ -76,12 +74,10 @@ class Service extends Common {
           cTime,
         };
       });
-      newList = this.filterList(newList,{groupNamekey:keyword})
+      newList = this.filterList(newList, { groupNamekey: keyword });
       let total = newList.length;
-      if (!!currPage) {
-        newList = this.pageing(newList,currPage,pageSize);
-      }
-      
+      newList = this.pageing(newList, currPage, pageSize);
+
       ctx.body = {
         code: 666,
         msg: "success",

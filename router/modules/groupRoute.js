@@ -22,6 +22,7 @@ module.exports = {
       service: group["list"],
       params: {
         currPage: "当前页(非必须)",
+        pageSize: "每页条数(非必须)",
         keyword: "搜索关键词(非必须)",
       },
       resp: {

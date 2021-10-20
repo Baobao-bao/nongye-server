@@ -40,7 +40,7 @@ module.exports = {
       service: fee["add"],
       params: {
         amount: "金额(必须)",
-        type: "类型:recharge,usage(必须)",
+        // type: "类型:recharge,usege(必须)",
         desc: "备注(可选)",
       },
     },
